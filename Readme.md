@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Наталья Лукашина](https://up.htmlacademy.ru/react/5/user/814025).
-* Наставник: `Неизвестно`.
+* Наставник: [Николай Карастелев](https://htmlacademy.ru/profile/bini1988).
 
 ---
 
