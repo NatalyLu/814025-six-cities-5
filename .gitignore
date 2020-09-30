@@ -10,3 +10,7 @@ Thumbs.db
 # Вспомогательные файлы
 *.log*
 node_modules/
+
+#Для отмены индексации изменений
+public/bundle.js
+public/bundle.js.map
