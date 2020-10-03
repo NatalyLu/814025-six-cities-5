@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/app/App";
+import App from "./components/app/app";
 
 const Settings = {
-  OFEFRS_COUNT: 5
+  OFEFRS_COUNT: 312
 };
 
 ReactDOM.render(

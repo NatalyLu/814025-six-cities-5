@@ -1,12 +1,12 @@
 import React from "react";
-import Index from "../index/index";
+import IndexPage from "../index-page/index-page";
 import PropTypes from "prop-types";
 
 const App = (props) => {
   const {offersCount} = props;
   return (
     <React.Fragment>
-      <Index offersCount={offersCount} />
+      <IndexPage offersCount={offersCount} />
     </React.Fragment>
   );
 };

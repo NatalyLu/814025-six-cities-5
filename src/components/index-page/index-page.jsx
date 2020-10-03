@@ -1,17 +1,14 @@
 import React from "react";
-import Header from "./header/Header";
-import Locations from "./locations/Locations";
-import Places from "./places/Places";
+import Header from "../header/header";
+import Locations from "../locations/locations";
+import Places from "../places/places";
 import PropTypes from "prop-types";
 
-const Index = (props) => {
+const IndexPage = (props) => {
   const {offersCount} = props;
   return (
     <div className="page page--gray page--main">
-      <header className="header">
-        <Header />
-      </header>
-
+      <Header />
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
@@ -30,8 +27,8 @@ const Index = (props) => {
   );
 };
 
-Index.propTypes = {
+IndexPage.propTypes = {
   offersCount: PropTypes.number.isRequired,
 };
 
-export default Index;
+export default IndexPage;
