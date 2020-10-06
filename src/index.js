@@ -8,6 +8,6 @@ const Settings = {
 
 ReactDOM.render(
     <App
-      offersCount= {Settings.OFEFRS_COUNT} />,
+      offersCount = {Settings.OFEFRS_COUNT} />,
     document.querySelector(`#root`)
 );
