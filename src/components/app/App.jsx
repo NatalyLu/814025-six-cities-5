@@ -8,6 +8,8 @@ import PropTypes from "prop-types";
 
 const App = (props) => {
   const offersCount = props.offersCount;
+  const offers = props.offers;
+  const reviews = props.reviews;
 
   return (
     <BrowserRouter>
@@ -21,14 +23,21 @@ const App = (props) => {
         <Route exact path="/login">
           <LoginPage />
         </Route>
-        <Route exact path="/offer/:id?" component={PropertyPage} />
+        {/* <Route exact path="/offer/:id?" component={PropertyPage} /> */}
+        <Route exact path="/offer/:id?">
+          <PropertyPage
+            offers = {offers}
+            reviews = {reviews}/>
+        </Route>
       </Switch>
     </BrowserRouter>
   );
 };
 
 App.propTypes = {
-  offersCount: PropTypes.number.isRequired
+  offersCount: PropTypes.number.isRequired,
+  offers: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired
 };
 
 export default App;
