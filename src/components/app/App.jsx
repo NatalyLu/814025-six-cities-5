@@ -15,7 +15,10 @@ const App = (props) => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <IndexPage offersCount={offersCount} />
+          <IndexPage
+            offers = {offers}
+            reviews = {reviews}
+            offersCount={offersCount} />
         </Route>
         <Route exact path="/favorites">
           <FavoritesPage />

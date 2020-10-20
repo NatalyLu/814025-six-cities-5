@@ -3,7 +3,10 @@ import Article from "../article/article";
 import PropTypes from "prop-types";
 
 const Places = (props) => {
-  const {offersCount} = props;
+  const offersCount = props.offersCount;
+  const offers = props.offers;
+  const reviews = props.reviews;
+
   return (
     <section className="cities__places places">
       <h2 className="visually-hidden">Places</h2>
@@ -30,11 +33,18 @@ const Places = (props) => {
         </select> */}
       </form>
       <div className="cities__places-list places__list tabs__content">
-        <Article />
-        <Article />
-        <Article />
-        <Article />
-        <Article />
+        <Article
+          offers={offers}
+          reviews={reviews} />
+        {/* <Article
+          offers={offers}
+          reviews={reviews} />
+        <Article
+          offers={offers}
+          reviews={reviews} />
+        <Article
+          offers={offers}
+          reviews={reviews} /> */}
       </div>
     </section>
   );
@@ -42,6 +52,8 @@ const Places = (props) => {
 
 Places.propTypes = {
   offersCount: PropTypes.number.isRequired,
+  offers: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired
 };
 
 export default Places;
