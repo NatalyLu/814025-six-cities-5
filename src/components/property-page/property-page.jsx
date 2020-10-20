@@ -2,6 +2,7 @@ import React, {PureComponent} from "react";
 import PropertyGallery from "../property-gallery/property-gallery";
 import PropertyInformation from "../property-information/property-information";
 import PropertyNearPlace from "../property-near-place/property-near-place";
+import {Towns} from "../../const";
 import PropTypes from "prop-types";
 
 class PropertyPage extends PureComponent {
@@ -60,7 +61,7 @@ class PropertyPage extends PureComponent {
 
 PropertyPage.propTypes = {
   offers: PropTypes.arrayOf(PropTypes.shape({
-    town: PropTypes.string.isRequired,
+    town: PropTypes.oneOf([Towns.AMSTERDAM, Towns.BRUSSELS, Towns.COLOGNE, Towns.PARIS, Towns.HAMBURG, Towns.DUSSELDORF]).isRequired,
     hotels: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       address: PropTypes.string.isRequired,
@@ -81,7 +82,7 @@ PropertyPage.propTypes = {
   })).isRequired,
 
   reviews: PropTypes.arrayOf(PropTypes.shape({
-    town: PropTypes.string.isRequired,
+    town: PropTypes.oneOf([Towns.AMSTERDAM, Towns.BRUSSELS, Towns.COLOGNE, Towns.PARIS, Towns.HAMBURG, Towns.DUSSELDORF]).isRequired,
     hotels: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       reviews: PropTypes.arrayOf(PropTypes.shape({
