@@ -17,7 +17,6 @@ const App = (props) => {
         <Route exact path="/">
           <IndexPage
             offers = {offers}
-            reviews = {reviews}
             offersCount={offersCount} />
         </Route>
         <Route exact path="/favorites">
@@ -29,8 +28,8 @@ const App = (props) => {
         {/* <Route exact path="/offer/:id?" component={PropertyPage} /> */}
         <Route exact path="/offer/:id?">
           <PropertyPage
-            offers = {offers}
-            reviews = {reviews}/>
+            offer={offers[0]}
+            reviews={reviews[0]}/>
         </Route>
       </Switch>
     </BrowserRouter>

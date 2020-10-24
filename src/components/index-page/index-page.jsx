@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 const IndexPage = (props) => {
   const offersCount = props.offersCount;
   const offers = props.offers;
-  const reviews = props.reviews;
   return (
     <div className="page page--gray page--main">
       <Header />
@@ -21,8 +20,7 @@ const IndexPage = (props) => {
           <div className="cities__places-container container">
             <Places
               offersCount={offersCount}
-              offers={offers}
-              reviews={reviews} />
+              offers={offers} />
             <div className="cities__right-section">
               <section className="cities__map map"></section>
             </div>
@@ -35,8 +33,7 @@ const IndexPage = (props) => {
 
 IndexPage.propTypes = {
   offersCount: PropTypes.number.isRequired,
-  offers: PropTypes.array.isRequired,
-  reviews: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired
 };
 
 export default IndexPage;

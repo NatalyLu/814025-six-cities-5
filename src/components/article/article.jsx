@@ -18,8 +18,8 @@ class Article extends PureComponent {
   // <article updateHoverState={this.updateHoverState}
 
   render() {
-    const town = this.props.offers[0].town;
-    const hotels = this.props.offers[0].hotels;
+    const town = this.props.offer.town;
+    const hotels = this.props.offer.hotels;
 
     return (
       <Fragment>
@@ -27,9 +27,10 @@ class Article extends PureComponent {
           <article key={`${town}-${i}`} className="cities__place-card place-card"
             onMouseOver={() =>{
               // const element = evt.target.onMouseOver;
-              this.setState({
-                hover: true
-              });
+              this.setState({hover: true});
+            }}
+            onMouseOut={() => {
+              this.setState({hover: false});
             }}
           >
             {hotel.status === `Premium` &&
@@ -39,7 +40,7 @@ class Article extends PureComponent {
             }
             <div className="cities__image-wrapper place-card__image-wrapper">
               <a href="#">
-                <img className="place-card__image" src={hotel.img} width="260" height="200" alt="Place image"/>
+                <img className="place-card__image" src={hotel.src} width="260" height="200" alt="Place image"/>
               </a>
             </div>
             <div className="place-card__info">
@@ -74,18 +75,17 @@ class Article extends PureComponent {
 }
 
 Article.propTypes = {
-  offersCount: PropTypes.number,
-
-  offers: PropTypes.arrayOf(PropTypes.shape({
+  offer: PropTypes.shape({
     town: PropTypes.oneOf([Towns.AMSTERDAM, Towns.BRUSSELS, Towns.COLOGNE, Towns.PARIS, Towns.HAMBURG, Towns.DUSSELDORF]).isRequired,
     hotels: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       address: PropTypes.string.isRequired,
       status: PropTypes.string.isRequired,
-      img: PropTypes.string.isRequired,
+      src: PropTypes.string.isRequired,
+      imgs: PropTypes.array.isRequired,
       rooms: PropTypes.number.isRequired,
       maxCountOfPeople: PropTypes.number.isRequired,
-      price: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
       starts: PropTypes.number.isRequired,
       type: PropTypes.string.isRequired,
       inside: PropTypes.arrayOf(PropTypes.string),
@@ -95,24 +95,7 @@ Article.propTypes = {
         description: PropTypes.string.isRequired,
       }).isRequired,
     })).isRequired
-  })).isRequired,
-
-  reviews: PropTypes.arrayOf(PropTypes.shape({
-    town: PropTypes.oneOf([Towns.AMSTERDAM, Towns.BRUSSELS, Towns.COLOGNE, Towns.PARIS, Towns.HAMBURG, Towns.DUSSELDORF]).isRequired,
-    hotels: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      reviews: PropTypes.arrayOf(PropTypes.shape({
-        nik: PropTypes.string.isRequired,
-        avatar: PropTypes.string.isRequired,
-        review: PropTypes.string.isRequired,
-        data: PropTypes.shape({
-          month: PropTypes.string.isRequired,
-          year: PropTypes.number.isRequired,
-        }).isRequired,
-        starts: PropTypes.number.isRequired,
-      }))
-    })).isRequired
-  })).isRequired
+  })
 };
 
 export default Article;
