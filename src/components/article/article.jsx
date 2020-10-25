@@ -1,4 +1,5 @@
 import React, {Fragment, PureComponent} from "react";
+import {Link} from "react-router-dom";
 import {Towns} from "../../const";
 import PropTypes from "prop-types";
 
@@ -39,9 +40,11 @@ class Article extends PureComponent {
               </div>
             }
             <div className="cities__image-wrapper place-card__image-wrapper">
-              <a href="#">
+              {/* <a href="#"> */}
+              <Link to='/offer'>
                 <img className="place-card__image" src={hotel.src} width="260" height="200" alt="Place image"/>
-              </a>
+              </Link>
+              {/* </a> */}
             </div>
             <div className="place-card__info">
               <div className="place-card__price-wrapper">
@@ -86,7 +89,7 @@ Article.propTypes = {
       rooms: PropTypes.number.isRequired,
       maxCountOfPeople: PropTypes.number.isRequired,
       price: PropTypes.number.isRequired,
-      starts: PropTypes.number.isRequired,
+      stars: PropTypes.number.isRequired,
       type: PropTypes.string.isRequired,
       inside: PropTypes.arrayOf(PropTypes.string),
       host: PropTypes.shape({

@@ -39,6 +39,7 @@ class Reviews extends PureComponent {
   }
 }
 Reviews.propTypes = {
+  // onNewReview: PropTypes.func.isRequired,
   hotelReviews: PropTypes.arrayOf(PropTypes.shape({
     nik: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Places = (props) => {
   const offersCount = props.offersCount;
-  const offers = props.offers;
+  const offer = props.offer;
 
   return (
     <section className="cities__places places">
@@ -33,7 +33,7 @@ const Places = (props) => {
       </form>
       <div className="cities__places-list places__list tabs__content">
         <Article
-          offer={offers[0]} />
+          offer={offer} />
       </div>
     </section>
   );
@@ -41,10 +41,14 @@ const Places = (props) => {
 
 Places.propTypes = {
   offersCount: PropTypes.number.isRequired,
-  offers: PropTypes.arrayOf(PropTypes.shape({
+  offer: PropTypes.shape({
     town: PropTypes.string.isRequired,
     hotels: PropTypes.array.isRequired
-  })).isRequired
+  }).isRequired
+  // offers: PropTypes.arrayOf(PropTypes.shape({
+  //   town: PropTypes.string.isRequired,
+  //   hotels: PropTypes.array.isRequired
+  // })).isRequired
 };
 
 export default Places;

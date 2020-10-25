@@ -83,7 +83,8 @@ class PropertyInformation extends PureComponent {
         <section className="property__reviews reviews">
           <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
 
-          <Reviews hotelReviews={hotelReviews}/>
+          <Reviews hotelReviews={hotelReviews} />
+          {/* onNewReview={onNewReview}/> */}
 
           <ReviewForm />
         </section>
@@ -94,6 +95,7 @@ class PropertyInformation extends PureComponent {
 
 PropertyInformation.propTypes = {
   hotelReviews: PropTypes.array,
+  // onNewReview: PropTypes.func.isRequired,
 
   hotel: PropTypes.shape({
     name: PropTypes.string.isRequired,

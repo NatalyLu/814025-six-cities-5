@@ -13,7 +13,7 @@ export default [
       rooms: 3,
       maxCountOfPeople: 4,
       price: 120,
-      starts: 4,
+      stars: 3.8,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -30,7 +30,7 @@ export default [
       rooms: 3,
       maxCountOfPeople: 2,
       price: 130,
-      starts: 3,
+      stars: 3,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`],
       host: {
@@ -47,7 +47,7 @@ export default [
       rooms: 4,
       maxCountOfPeople: 4,
       price: 130,
-      starts: 3,
+      stars: 3,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Cabel TV`],
       host: {
@@ -64,7 +64,7 @@ export default [
       rooms: 1,
       maxCountOfPeople: 2,
       price: 125,
-      starts: 5,
+      stars: 5,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -86,7 +86,7 @@ export default [
       rooms: 2,
       maxCountOfPeople: 4,
       price: 80,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`],
       host: {
@@ -103,7 +103,7 @@ export default [
       rooms: 1,
       maxCountOfPeople: 4,
       price: 50,
-      starts: 3,
+      stars: 3,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -120,7 +120,7 @@ export default [
       rooms: 3,
       maxCountOfPeople: 4,
       price: 130,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Cabel TV`],
       host: {
@@ -137,7 +137,7 @@ export default [
       rooms: 3,
       maxCountOfPeople: 6,
       price: 85,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -160,7 +160,7 @@ export default [
       rooms: 4,
       maxCountOfPeople: 6,
       price: 79,
-      starts: 3,
+      stars: 3,
       type: `Apartment`,
       inside: [`Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -177,7 +177,7 @@ export default [
       rooms: 1,
       maxCountOfPeople: 2,
       price: 80,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -194,7 +194,7 @@ export default [
       rooms: 2,
       maxCountOfPeople: 2,
       price: 130,
-      starts: 3,
+      stars: 3,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -211,7 +211,7 @@ export default [
       rooms: 3,
       maxCountOfPeople: 8,
       price: 85,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -234,7 +234,7 @@ export default [
       rooms: 2,
       maxCountOfPeople: 4,
       price: 149,
-      starts: 3,
+      stars: 3,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -251,7 +251,7 @@ export default [
       rooms: 2,
       maxCountOfPeople: 4,
       price: 180,
-      starts: 5,
+      stars: 5,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Baby seat`, `Cabel TV`],
       host: {
@@ -268,7 +268,7 @@ export default [
       rooms: 3,
       maxCountOfPeople: 4,
       price: 130,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`],
       host: {
@@ -285,7 +285,7 @@ export default [
       rooms: 1,
       maxCountOfPeople: 4,
       price: 85,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -308,7 +308,7 @@ export default [
       rooms: 2,
       maxCountOfPeople: 5,
       price: 99,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -325,7 +325,7 @@ export default [
       rooms: 1,
       maxCountOfPeople: 2,
       price: 105,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -342,7 +342,7 @@ export default [
       rooms: 3,
       maxCountOfPeople: 5,
       price: 70,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -359,7 +359,7 @@ export default [
       rooms: 3,
       maxCountOfPeople: 4,
       price: 85,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -382,7 +382,7 @@ export default [
       rooms: 2,
       maxCountOfPeople: 5,
       price: 49,
-      starts: 2,
+      stars: 2,
       type: `Apartment`,
       inside: [`Kitchen`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -399,7 +399,7 @@ export default [
       rooms: 3,
       maxCountOfPeople: 4,
       price: 70,
-      starts: 5,
+      stars: 5,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -416,7 +416,7 @@ export default [
       rooms: 3,
       maxCountOfPeople: 4,
       price: 80,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
       host: {
@@ -433,7 +433,7 @@ export default [
       rooms: 1,
       maxCountOfPeople: 2,
       price: 90,
-      starts: 4,
+      stars: 4,
       type: `Apartment`,
       inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Cabel TV`],
       host: {

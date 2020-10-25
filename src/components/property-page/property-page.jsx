@@ -2,12 +2,11 @@ import React from "react";
 import PropertyGallery from "../property-gallery/property-gallery";
 import PropertyInformation from "../property-information/property-information";
 import PropertyNearPlace from "../property-near-place/property-near-place";
-import {Towns} from "../../const";
 import PropTypes from "prop-types";
 
 const PropertyPage = (props) => {
-  const offer = props.offer;
-  const reviews = props.reviews;
+  const hotel = props.hotel;
+  const hotelsReviews = props.hotelsReviews;
 
   return (
     <div className="page">
@@ -38,12 +37,12 @@ const PropertyPage = (props) => {
         <section className="property">
           <div className="property__gallery-container container">
             <PropertyGallery
-              imgs={offer.hotels[0].imgs} />
+              imgs={hotel.imgs} />
           </div>
           <div className="property__container container">
             <PropertyInformation
-              hotel={offer.hotels[0]}
-              hotelReviews={reviews[0].hotels[0].hotelReviews} />
+              hotel={hotel}
+              hotelReviews={hotelsReviews.hotelReviews} />
           </div>
           <section className="property__map map"></section>
         </section>
@@ -64,17 +63,28 @@ const PropertyPage = (props) => {
 };
 
 PropertyPage.propTypes = {
-  reviews: PropTypes.shape({
-    town: PropTypes.oneOf([Towns.AMSTERDAM, Towns.BRUSSELS, Towns.COLOGNE, Towns.PARIS, Towns.HAMBURG, Towns.DUSSELDORF]).isRequired,
-    hotels: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      hotelReviews: PropTypes.array.isRequired
-    })).isRequired
+  hotelsReviews: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    hotelReviews: PropTypes.array.isRequired
   }).isRequired,
 
-  offer: PropTypes.shape({
-    town: PropTypes.oneOf([Towns.AMSTERDAM, Towns.BRUSSELS, Towns.COLOGNE, Towns.PARIS, Towns.HAMBURG, Towns.DUSSELDORF]).isRequired,
-    hotels: PropTypes.array.isRequired
+  hotel: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+    imgs: PropTypes.array.isRequired,
+    rooms: PropTypes.number.isRequired,
+    maxCountOfPeople: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    stars: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    inside: PropTypes.arrayOf(PropTypes.string),
+    host: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    }).isRequired,
   }).isRequired
 };
 
