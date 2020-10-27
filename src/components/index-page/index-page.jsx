@@ -5,8 +5,8 @@ import Places from "../places/places";
 import PropTypes from "prop-types";
 
 const IndexPage = (props) => {
-  const offersCount = props.offersCount;
-  const offer = props.offer;
+  const {offersCount, offer} = props;
+
   return (
     <div className="page page--gray page--main">
       <Header />

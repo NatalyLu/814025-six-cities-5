@@ -3,8 +3,7 @@ import Article from "../article/article";
 import PropTypes from "prop-types";
 
 const Places = (props) => {
-  const offersCount = props.offersCount;
-  const offer = props.offer;
+  const {offersCount, offer} = props;
 
   return (
     <section className="cities__places places">
@@ -45,10 +44,6 @@ Places.propTypes = {
     town: PropTypes.string.isRequired,
     hotels: PropTypes.array.isRequired
   }).isRequired
-  // offers: PropTypes.arrayOf(PropTypes.shape({
-  //   town: PropTypes.string.isRequired,
-  //   hotels: PropTypes.array.isRequired
-  // })).isRequired
 };
 
 export default Places;

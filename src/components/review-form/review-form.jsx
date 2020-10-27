@@ -1,4 +1,4 @@
-import React, {PureComponent} from "react";
+import React, {Fragment, PureComponent} from "react";
 import PropTypes from "prop-types";
 
 class ReviewForm extends PureComponent {
@@ -22,6 +22,21 @@ class ReviewForm extends PureComponent {
     this.setState({[name]: value});
   }
 
+  // ratingFilds () {
+  //   let content = [];
+  //   for (let i = 0; i < 5; i++) {
+  //     content.push(
+  //       <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value={i} id="${i}-stars" type="radio" />
+  //       <label key={`label-${i}`} htmlFor="${i}-stars" className="reviews__rating-label form__rating-label" title="good">
+  //         <svg className="form__star-image" width="37" height="33">
+  //           <use xlinkHref="#icon-star"></use>
+  //         </svg>
+  //       </label>
+  //     );
+  //   }
+  //   return content;
+  // }
+
   render() {
     const onNewReview = this.props;
     return (
@@ -38,7 +53,6 @@ class ReviewForm extends PureComponent {
               <use xlinkHref="#icon-star"></use>
             </svg>
           </label>
-
           <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value="4" id="4-stars" type="radio" />
           <label htmlFor="4-stars" className="reviews__rating-label form__rating-label" title="good">
             <svg className="form__star-image" width="37" height="33">

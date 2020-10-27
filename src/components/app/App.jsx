@@ -4,13 +4,11 @@ import IndexPage from "../index-page/index-page";
 import FavoritesPage from "../favorites-page/favorites-page";
 import LoginPage from "../login-page/login-page";
 import PropertyPage from "../property-page/property-page";
-import {Towns} from "../../const";
+
 import PropTypes from "prop-types";
 
 const App = (props) => {
-  const offersCount = props.offersCount;
-  const offers = props.offers;
-  const reviews = props.reviews;
+  const {offers, offersCount, reviews} = props;
   return (
     <BrowserRouter>
       <Switch>
@@ -39,7 +37,7 @@ const App = (props) => {
 App.propTypes = {
   offersCount: PropTypes.number.isRequired,
   reviews: PropTypes.arrayOf(PropTypes.shape({
-    town: PropTypes.oneOf([Towns.AMSTERDAM, Towns.BRUSSELS, Towns.COLOGNE, Towns.PARIS, Towns.HAMBURG, Towns.DUSSELDORF]).isRequired,
+    town: PropTypes.string.isRequired,
     hotels: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       hotelReviews: PropTypes.array.isRequired
@@ -47,7 +45,7 @@ App.propTypes = {
   }).isRequired).isRequired,
 
   offers: PropTypes.arrayOf(PropTypes.shape({
-    town: PropTypes.oneOf([Towns.AMSTERDAM, Towns.BRUSSELS, Towns.COLOGNE, Towns.PARIS, Towns.HAMBURG, Towns.DUSSELDORF]).isRequired,
+    town: PropTypes.string.isRequired,
     hotels: PropTypes.array.isRequired
   }).isRequired).isRequired
 };

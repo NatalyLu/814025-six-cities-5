@@ -5,8 +5,7 @@ import PropertyNearPlace from "../property-near-place/property-near-place";
 import PropTypes from "prop-types";
 
 const PropertyPage = (props) => {
-  const hotel = props.hotel;
-  const hotelsReviews = props.hotelsReviews;
+  const {hotel, hotelsReviews} = props;
 
   return (
     <div className="page">

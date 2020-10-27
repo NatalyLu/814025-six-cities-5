@@ -1,6 +1,5 @@
 import React, {Fragment, PureComponent} from "react";
 import {Link} from "react-router-dom";
-import {Towns} from "../../const";
 import PropTypes from "prop-types";
 
 class Article extends PureComponent {
@@ -19,8 +18,7 @@ class Article extends PureComponent {
   // <article updateHoverState={this.updateHoverState}
 
   render() {
-    const town = this.props.offer.town;
-    const hotels = this.props.offer.hotels;
+    const {town, hotels} = this.props.offer;
 
     return (
       <Fragment>
@@ -79,7 +77,7 @@ class Article extends PureComponent {
 
 Article.propTypes = {
   offer: PropTypes.shape({
-    town: PropTypes.oneOf([Towns.AMSTERDAM, Towns.BRUSSELS, Towns.COLOGNE, Towns.PARIS, Towns.HAMBURG, Towns.DUSSELDORF]).isRequired,
+    town: PropTypes.string.isRequired,
     hotels: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       address: PropTypes.string.isRequired,
