@@ -1,4 +1,4 @@
-import React, {PureComponent} from "react";
+import React, {PureComponent, Fragment} from "react";
 import PropTypes from "prop-types";
 
 class ReviewForm extends PureComponent {
@@ -10,78 +10,71 @@ class ReviewForm extends PureComponent {
       review: ``
     };
 
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.newComment = this.newComment.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFieldChange = this.handleFieldChange.bind(this);
+    this.onFieldsClear = this.onFieldsClear.bind(this);
   }
-  // handleSubmit(onNewReview, evt) {
-  //   evt.preventDefault();
-  //   onNewReview(this.state.rating, this.state.review);
-  // }
+
+  newComment(stars, com) {
+    let review = {
+      comment: com,
+      date: `2019-04-24`,
+      id: 1,
+      rating: Number(stars),
+      user: {
+        avatarUrl: `img/avatar-max.jpg`,
+        id: 4,
+        isPro: false,
+        name: `Max`,
+      }
+    };
+    return (review);
+  }
+
+  handleSubmit(evt) {
+    evt.preventDefault();
+    this.props.onNewReview(this.newComment(this.state.rating, this.state.review));
+    this.onFieldsClear();
+  }
+
   handleFieldChange(evt) {
     const {name, value} = evt.target;
     this.setState({[name]: value});
   }
 
-  // ratingFilds () {
-  //   let content = [];
-  //   for (let i = 0; i < 5; i++) {
-  //     content.push(
-  //       <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value={i} id="${i}-stars" type="radio" />
-  //       <label key={`label-${i}`} htmlFor="${i}-stars" className="reviews__rating-label form__rating-label" title="good">
-  //         <svg className="form__star-image" width="37" height="33">
-  //           <use xlinkHref="#icon-star"></use>
-  //         </svg>
-  //       </label>
-  //     );
-  //   }
-  //   return content;
-  // }
+  onFieldsClear() {
+    this.setState({
+      review: ``,
+      rating: ``
+    });
+  }
 
   render() {
-    const onNewReview = this.props;
+    const ratingFilds = () => {
+      let title = [`terribly`, `badly`, `not bad`, `good`, `perfect`];
+      let content = [];
+      for (let i = title.length; i >= 1; i--) {
+        content.push(<Fragment key={`stars-${i}`}>
+          <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value={i} id={`${i}-stars`} type="radio" />
+          <label htmlFor={`${i}-stars`} className="reviews__rating-label form__rating-label" title={title[i - 1]}>
+            <svg className="form__star-image" width="37" height="33">
+              <use xlinkHref="#icon-star"></use>
+            </svg>
+          </label>
+        </Fragment>
+        );
+      }
+      return content;
+    };
+
     return (
-      // <form onSubmit={(evt) => this.handleSubmit(onNewReview, evt)} className="reviews__form form" action="#" method="post">
-      <form onSubmit={(evt) => {
-        evt.preventDefault();
-        onNewReview(this.state.rating, this.state.review);
-      }} className="reviews__form form" action="#" method="post">
+      <form onSubmit={this.handleSubmit} className="reviews__form form" action="#" method="post">
         <label className="reviews__label form__label" htmlFor="review">Your review</label>
         <div className="reviews__rating-form form__rating">
-          <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value="5" id="5-stars" type="radio" />
-          <label htmlFor="5-stars" className="reviews__rating-label form__rating-label" title="perfect">
-            <svg className="form__star-image" width="37" height="33">
-              <use xlinkHref="#icon-star"></use>
-            </svg>
-          </label>
-          <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value="4" id="4-stars" type="radio" />
-          <label htmlFor="4-stars" className="reviews__rating-label form__rating-label" title="good">
-            <svg className="form__star-image" width="37" height="33">
-              <use xlinkHref="#icon-star"></use>
-            </svg>
-          </label>
-
-          <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value="3" id="3-stars" type="radio" />
-          <label htmlFor="3-stars" className="reviews__rating-label form__rating-label" title="not bad">
-            <svg className="form__star-image" width="37" height="33">
-              <use xlinkHref="#icon-star"></use>
-            </svg>
-          </label>
-
-          <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value="2" id="2-stars" type="radio" />
-          <label htmlFor="2-stars" className="reviews__rating-label form__rating-label" title="badly">
-            <svg className="form__star-image" width="37" height="33">
-              <use xlinkHref="#icon-star"></use>
-            </svg>
-          </label>
-
-          <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value="1" id="1-star" type="radio" />
-          <label htmlFor="1-star" className="reviews__rating-label form__rating-label" title="terribly">
-            <svg className="form__star-image" width="37" height="33">
-              <use xlinkHref="#icon-star"></use>
-            </svg>
-          </label>
+          {ratingFilds()}
         </div>
-        <textarea onChange={this.handleFieldChange} className="reviews__textarea form__textarea" id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved"></textarea>
+        <textarea onChange={this.handleFieldChange} value={this.state.review} className="reviews__textarea form__textarea" id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved"></textarea>
         <div className="reviews__button-wrapper">
           <p className="reviews__help">
             To submit review please make sure to set <span className="reviews__star">rating</span> and describe your stay with at least <b className="reviews__text-amount">50 characters</b>.
