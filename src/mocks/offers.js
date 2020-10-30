@@ -3,445 +3,829 @@ const AVATAR_URL = `https://api.adorable.io/avatars/128`;
 export default [
   // AMSTERDAM
   {
-    town: `amsterdam`,
-    hotels: [{
-      name: `Beautiful & luxurious studio at great location`,
-      address: `Spuistraat 288-292, 1012 VX Amsterdam`,
-      status: `Premium`,
-      src: `img/apartment-01.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 3,
-      maxCountOfPeople: 4,
-      price: 120,
-      stars: 3.8,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Angelina`,
-        avatar: `img/avatar-angelina.jpg`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`
+    city: {
+      name: `amsterdam`,
+      location: {
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 10
       }
-    }, {
-      name: `Hotel Fita`,
-      address: `Jan Luijkenstraat 37, 1071 CL Amsterdam`,
-      status: `Usual`,
-      src: `img/apartment-02.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 3,
-      maxCountOfPeople: 2,
-      price: 130,
-      stars: 3,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`],
-      host: {
-        name: `Mita`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`
-      }
-    }, {
-      name: `Hotel2Stay`,
-      address: `Tempelhofstraat 2, 1043 EC Amsterdam`,
-      status: `Usual`,
-      src: `img/apartment-03.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 4,
-      maxCountOfPeople: 4,
-      price: 130,
-      stars: 3,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Cabel TV`],
-      host: {
-        name: `Stasy`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`
-      }
-    }, {
-      name: `Hotel Estherea`,
-      address: `Singel 303-309, 1012 WJ Amsterdam`,
-      status: `Premium`,
-      src: `img/apartment-01.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 1,
-      maxCountOfPeople: 2,
-      price: 125,
-      stars: 5,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Alex`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`
-      }
-    }]
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 1,
+      name: `Angelina`,
+      avatar: `img/avatar-angelina.jpg`,
+      isPro: true,
+    },
+    id: 1,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: false,
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/apartment-01.jpg`,
+    price: 120,
+    rating: 4.8,
+    title: `Beautiful & luxurious studio at great location`,
+    type: `apartment`
   },
+  {
+    city: {
+      name: `amsterdam`,
+      location: {
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`],
+    host: {
+      id: 2,
+      name: `Mita`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 2,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: false,
+    location: {
+      latitude: 53.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 2,
+    previewImage: `img/apartment-01.jpg`,
+    price: 130,
+    rating: 3,
+    title: `Hotel Fita`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `amsterdam`,
+      location: {
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 1,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 3,
+      name: `Alex`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 3,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 51.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 2,
+    previewImage: `img/apartment-01.jpg`,
+    price: 125,
+    rating: 5,
+    title: `Hotel Estherea`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `amsterdam`,
+      location: {
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 1,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Towels`, `Cabel TV`],
+    host: {
+      id: 4,
+      name: `Alex`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 4,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 51.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 2,
+    previewImage: `img/apartment-01.jpg`,
+    price: 120,
+    rating: 5,
+    title: `Hotel Amsteram`,
+    type: `apartment`
+  },
+
   // BRUSSELS
   {
-    town: `brussels`,
-    hotels: [{
-      name: `Hotel NH Brussels Bloom`,
-      address: `Rue Royale 250, 1210 Bruxelles`,
-      status: `Premium`,
-      src: `img/brussels-01.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 2,
-      maxCountOfPeople: 4,
-      price: 80,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`],
-      host: {
-        name: `Mikel`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
+    city: {
+      name: `brussels`,
+      location: {
+        latitude: 62.370216,
+        longitude: 4.895168,
+        zoom: 10
       }
-    }, {
-      name: `Safestay Brussels`,
-      address: `Rue Grétry 53, 1000 Bruxelles`,
-      status: `Usual`,
-      src: `img/brussels-02.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 1,
-      maxCountOfPeople: 4,
-      price: 50,
-      stars: 3,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Bruss`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }, {
-      name: `MEININGER Hotel`,
-      address: `Quai du Hainaut 33, 1080 Molenbeek-Saint-Jean`,
-      status: `Premium`,
-      src: `img/brussels-03.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 3,
-      maxCountOfPeople: 4,
-      price: 130,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Cabel TV`],
-      host: {
-        name: `Rob`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }, {
-      name: `Best Hote`,
-      address: `Rue de la Grande Ile 26, 1000 Bruxelles`,
-      status: `Premium`,
-      src: `img/brussels-04.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 3,
-      maxCountOfPeople: 6,
-      price: 85,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Casie`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }
-    ]
+    },
+    bedrooms: 2,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`],
+    host: {
+      id: 5,
+      name: `Mikel`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 5,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 62.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 2,
+    previewImage: `img/brussels-01.jpg`,
+    price: 80,
+    rating: 4,
+    title: `Hotel NH Brussels Bloom`,
+    type: `apartment`
   },
+  {
+    city: {
+      name: `brussels`,
+      location: {
+        latitude: 62.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 1,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 6,
+      name: `Bruss`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 6,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: false,
+    location: {
+      latitude: 62.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/brussels-02.jpg`,
+    price: 50,
+    rating: 3,
+    title: `Safestay Brussels`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `brussels`,
+      location: {
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Cabel TV`],
+    host: {
+      id: 7,
+      name: `Rob`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 7,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 62.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/brussels-03.jpg`,
+    price: 130,
+    rating: 4,
+    title: `MEININGER Hotel`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `brussels`,
+      location: {
+        latitude: 62.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 8,
+      name: `Casie`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 8,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 61.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 6,
+    previewImage: `img/apartment-04.jpg`,
+    price: 85,
+    rating: 4,
+    title: `Best Hote`,
+    type: `apartment`
+  },
+
   // COLOGNE
   {
-    town: `cologne`,
-    hotels: [{
-      name: `Leonardo Royal Hotel`,
-      address: `Dürener Str. 287, 50935 Köln`,
-      status: `Usual`,
-      src: `img/cologne-01.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 4,
-      maxCountOfPeople: 6,
-      price: 79,
-      stars: 3,
-      type: `Apartment`,
-      inside: [`Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Mike`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
+    city: {
+      name: `cologne`,
+      location: {
+        latitude: 72.370216,
+        longitude: 4.895168,
+        zoom: 10
       }
-    }, {
-      name: `DJH Jugendherberge`,
-      address: `Siegesstraße 5, 50679 Köln`,
-      status: `Premium`,
-      src: `img/cologne-02.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 1,
-      maxCountOfPeople: 2,
-      price: 80,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Oustin`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }, {
-      name: `Hardrock Motown Hostel`,
-      address: `Sporergasse 2A 3. Et. + 4. Et, 50667 Köln`,
-      status: `Usual`,
-      src: `img/cologne-03.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 2,
-      maxCountOfPeople: 2,
-      price: 130,
-      stars: 3,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Katy`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }, {
-      name: `Dom Hotel`,
-      address: `Komödienstraße 54, 50667 Köln`,
-      status: `Premium`,
-      src: `img/cologne-04.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 3,
-      maxCountOfPeople: 8,
-      price: 85,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Veronika`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }
-    ]
+    },
+    bedrooms: 4,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 9,
+      name: `Mike`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 9,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: false,
+    location: {
+      latitude: 72.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 6,
+    previewImage: `img/cologne-01.jpg`,
+    price: 79,
+    rating: 3,
+    title: `Leonardo Royal Hotel`,
+    type: `apartment`
   },
+  {
+    city: {
+      name: `cologne`,
+      location: {
+        latitude: 72.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 1,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 10,
+      name: `Oustin`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 10,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 72.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 2,
+    previewImage: `img/cologne-02.jpg`,
+    price: 80,
+    rating: 4,
+    title: `DJH Jugendherberge`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `cologne`,
+      location: {
+        latitude: 72.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 2,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 11,
+      name: `Katy`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 11,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: false,
+    location: {
+      latitude: 72.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 2,
+    previewImage: `img/cologne-03.jpg`,
+    price: 130,
+    rating: 3,
+    title: `Hardrock Motown Hostel`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `cologne`,
+      location: {
+        latitude: 72.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 12,
+      name: `Veronika`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 12,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 72.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 8,
+    previewImage: `img/cologne-04.jpg`,
+    price: 85,
+    rating: 4,
+    title: `Dom Hotel`,
+    type: `apartment`
+  },
+
   // PARIS
   {
-    town: `paris`,
-    hotels: [{
-      name: `International Youth Hostel`,
-      address: `75011, 10 Rue Trousseau, 75011 Paris`,
-      status: `Usual`,
-      src: `img/paris-01.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 2,
-      maxCountOfPeople: 4,
-      price: 149,
-      stars: 3,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Melda`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
+    city: {
+      name: `paris`,
+      location: {
+        latitude: 82.370216,
+        longitude: 4.895168,
+        zoom: 10
       }
-    }, {
-      name: `Pullman Paris Tour Eiffel`,
-      address: `18 Avenue De Suffren, 22 Rue Jean Rey Entrée Au, 75015 Paris`,
-      status: `Premium`,
-      src: `img/paris-02.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 2,
-      maxCountOfPeople: 4,
-      price: 180,
-      stars: 5,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Mark`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }, {
-      name: `Hotel Eugene en Ville`,
-      address: `6 Rue Buffault, 75009 Paris`,
-      status: `Premium`,
-      src: `img/paris-03.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 3,
-      maxCountOfPeople: 4,
-      price: 130,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`],
-      host: {
-        name: `Kory`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }, {
-      name: `La Manufacture`,
-      address: `8 Rue Philippe de Champagne, 75013 Paris`,
-      status: `Premium`,
-      src: `img/paris-04.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 1,
-      maxCountOfPeople: 4,
-      price: 85,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Danny`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }
-    ]
+    },
+    bedrooms: 2,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 13,
+      name: `Melda`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 13,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: false,
+    location: {
+      latitude: 82.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/paris-01.jpg`,
+    price: 149,
+    rating: 3,
+    title: `International Youth Hostel`,
+    type: `apartment`
   },
+  {
+    city: {
+      name: `paris`,
+      location: {
+        latitude: 82.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 2,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 14,
+      name: `Mark`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 14,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 82.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/paris-02.jpg`,
+    price: 180,
+    rating: 5,
+    title: `Pullman Paris Tour Eiffel`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `paris`,
+      location: {
+        latitude: 82.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`],
+    host: {
+      id: 15,
+      name: `Kory`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 15,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 82.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/paris-03.jpg`,
+    price: 130,
+    rating: 4,
+    title: `Hotel Eugene en Ville`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `paris`,
+      location: {
+        latitude: 82.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 1,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 16,
+      name: `Danny`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 16,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 82.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/paris-04.jpg`,
+    price: 85,
+    rating: 4,
+    title: `La Manufacture`,
+    type: `apartment`
+  },
+
   // HAMBURG
   {
-    town: `hamburg`,
-    hotels: [{
-      name: `Generator Hamburg`,
-      address: `Steintorpl. 3, 20099 Hamburg`,
-      status: `Premium`,
-      src: `img/hamburg-01.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 2,
-      maxCountOfPeople: 5,
-      price: 99,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Max`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
+    city: {
+      name: `hamburg`,
+      location: {
+        latitude: 92.370216,
+        longitude: 4.895168,
+        zoom: 10
       }
-    }, {
-      name: `MEININGER Hotel`,
-      address: `Goetheallee 11, 22765 Hamburg`,
-      status: `Premium`,
-      src: `img/hamburg-02.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 1,
-      maxCountOfPeople: 2,
-      price: 105,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Encie`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }, {
-      name: `Arthotel ANA Hafen City`,
-      address: `Billwerder Neuer Deich 2 20539, Hamburg,`,
-      status: `Premium`,
-      src: `img/hamburg-03.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 3,
-      maxCountOfPeople: 5,
-      price: 70,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Carl`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }, {
-      name: `Super 8 by Wyndham`,
-      address: `Wikingerweg 4, 20537 Hamburg`,
-      status: `Premium`,
-      src: `img/hamburg-04.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 3,
-      maxCountOfPeople: 4,
-      price: 85,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Girardo`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
-      }
-    }
-    ]
+    },
+    bedrooms: 2,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 17,
+      name: `Max`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 17,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 92.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 5,
+    previewImage: `img/hamburg-01.jpg`,
+    price: 99,
+    rating: 4,
+    title: `Generator Hamburg`,
+    type: `apartment`
   },
+  {
+    city: {
+      name: `hamburg`,
+      location: {
+        latitude: 92.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 1,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 18,
+      name: `Encie`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 18,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 92.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 2,
+    previewImage: `img/hamburg-02.jpg`,
+    price: 105,
+    rating: 4,
+    title: `MEININGER Hotel`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `hamburg`,
+      location: {
+        latitude: 92.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 19,
+      name: `Carl`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 19,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 92.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 5,
+    previewImage: `img/hamburg-03.jpg`,
+    price: 70,
+    rating: 4,
+    title: `Arthotel ANA Hafen City`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `hamburg`,
+      location: {
+        latitude: 92.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 20,
+      name: `Girardo`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 20,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 92.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/hamburg-04.jpg`,
+    price: 85,
+    rating: 4,
+    title: `Super 8 by Wyndham`,
+    type: `apartment`
+  },
+
   // DUSSELDORF
   {
-    town: `dusseldorf`,
-    hotels: [{
-      name: `NK Hotel`,
-      address: `Scheurenstraße 4, 40215 Düsseldorf`,
-      status: `Usual`,
-      src: `img/dusseldorf-01.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 2,
-      maxCountOfPeople: 5,
-      price: 49,
-      stars: 2,
-      type: `Apartment`,
-      inside: [`Kitchen`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Bob`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
+    city: {
+      name: `dusseldorf`,
+      location: {
+        latitude: 42.370216,
+        longitude: 4.895168,
+        zoom: 10
       }
-    }, {
-      name: `Hotel Schumacher`,
-      address: `Worringer Str. 55, 40211 Düsseldorf`,
-      status: `Usual`,
-      src: `img/dusseldorf-02.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 3,
-      maxCountOfPeople: 4,
-      price: 70,
-      stars: 5,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Helen`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
+    },
+    bedrooms: 2,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Kitchen`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 21,
+      name: `Bob`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 21,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: false,
+    location: {
+      latitude: 42.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 5,
+    previewImage: `img/dusseldorf-01.jpg`,
+    price: 49,
+    rating: 2,
+    title: `NK Hotel`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `dusseldorf`,
+      location: {
+        latitude: 42.370216,
+        longitude: 4.895168,
+        zoom: 10
       }
-    }, {
-      name: `Hyatt Regency`,
-      address: `Speditionstraße 19, 40221 Düsseldorf`,
-      status: `Premium`,
-      src: `img/dusseldorf-03.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 3,
-      maxCountOfPeople: 4,
-      price: 80,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-      host: {
-        name: `Murat`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 22,
+      name: `Helen`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 22,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: false,
+    location: {
+      latitude: 42.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/dusseldorf-02.jpg`,
+    price: 70,
+    rating: 5,
+    title: `Hotel Schumacher`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `dusseldorf`,
+      location: {
+        latitude: 42.370216,
+        longitude: 4.895168,
+        zoom: 10
       }
-    }, {
-      name: `B&B Hotel`,
-      address: `Dusseldorfer Str. 246, 41460 Neuss,`,
-      status: `Premium`,
-      src: `img/dusseldorf-04.jpg`,
-      imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-      rooms: 1,
-      maxCountOfPeople: 2,
-      price: 90,
-      stars: 4,
-      type: `Apartment`,
-      inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Cabel TV`],
-      host: {
-        name: `Memed`,
-        avatar: `${AVATAR_URL}/${Math.random()}`,
-        description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Brussels. The building is green and from 18th century.`
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 23,
+      name: `Murat`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 23,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 42.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/dusseldorf-03.jpg`,
+    price: 80,
+    rating: 4,
+    title: `Hyatt Regency`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `dusseldorf`,
+      location: {
+        latitude: 42.370216,
+        longitude: 4.895168,
+        zoom: 10
       }
-    }
-    ]
+    },
+    bedrooms: 1,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Cabel TV`],
+    host: {
+      id: 24,
+      name: `Memed`,
+      avatar: `${AVATAR_URL}/${Math.random()}`,
+      isPro: true,
+    },
+    id: 24,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: true,
+    location: {
+      latitude: 42.35514938496378,
+      longitude: 3.673877537499948,
+      zoom: 8
+    },
+    maxAdults: 2,
+    previewImage: `img/dusseldorf-04.jpg`,
+    price: 90,
+    rating: 4,
+    title: `B&B Hotel`,
+    type: `apartment`
   }
 ];
