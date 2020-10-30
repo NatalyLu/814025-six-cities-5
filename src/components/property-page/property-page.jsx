@@ -2,10 +2,10 @@ import React from "react";
 import PropertyGallery from "../property-gallery/property-gallery";
 import PropertyInformation from "../property-information/property-information";
 import PropertyNearPlace from "../property-near-place/property-near-place";
-import PropTypes from "prop-types";
+import {reviewsShortPropTypes, offerPropTypes} from "../../prop-types";
 
 const PropertyPage = (props) => {
-  const {hotel, hotelsReviews} = props;
+  const {offer, offerReviews} = props;
 
   return (
     <div className="page">
@@ -36,12 +36,12 @@ const PropertyPage = (props) => {
         <section className="property">
           <div className="property__gallery-container container">
             <PropertyGallery
-              imgs={hotel.imgs} />
+              imgs={offer.imgs} />
           </div>
           <div className="property__container container">
             <PropertyInformation
-              hotel={hotel}
-              hotelReviews={hotelsReviews.hotelReviews} />
+              offer={offer}
+              offerReviews={offerReviews} />
           </div>
           <section className="property__map map"></section>
         </section>
@@ -62,29 +62,8 @@ const PropertyPage = (props) => {
 };
 
 PropertyPage.propTypes = {
-  hotelsReviews: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    hotelReviews: PropTypes.array.isRequired
-  }).isRequired,
-
-  hotel: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    address: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-    imgs: PropTypes.array.isRequired,
-    rooms: PropTypes.number.isRequired,
-    maxCountOfPeople: PropTypes.number.isRequired,
-    price: PropTypes.number.isRequired,
-    stars: PropTypes.number.isRequired,
-    type: PropTypes.string.isRequired,
-    inside: PropTypes.arrayOf(PropTypes.string),
-    host: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      avatar: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired
+  offerReviews: reviewsShortPropTypes,
+  offer: offerPropTypes,
 };
 
 

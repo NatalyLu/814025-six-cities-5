@@ -4,18 +4,19 @@ import IndexPage from "../index-page/index-page";
 import FavoritesPage from "../favorites-page/favorites-page";
 import LoginPage from "../login-page/login-page";
 import PropertyPage from "../property-page/property-page";
-
-import PropTypes from "prop-types";
+import {offersShortPropTypes, reviewsShortPropTypes} from "../../prop-types";
 
 const App = (props) => {
-  const {offers, offersCount, reviews} = props;
+  const {offers, reviews} = props;
+  const offersSameCity = offers.filter((offer) => (offer.city.name === `amsterdam`));
+  const offer = offersSameCity[0];
+  const offerReviews = reviews.filter((review) => (review.id === offer.id));
+
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <IndexPage
-            offer = {offers[0]}
-            offersCount={offersCount} />
+          <IndexPage offersSameCity={offersSameCity} />
         </Route>
         <Route exact path="/favorites">
           <FavoritesPage />
@@ -26,8 +27,8 @@ const App = (props) => {
         {/* <Route exact path="/offer/:id?" component={PropertyPage} /> */}
         <Route exact path="/offer/:id?">
           <PropertyPage
-            hotel={offers[0].hotels[0]}
-            hotelsReviews={reviews[0].hotels[0]}/>
+            offer={offer}
+            offerReviews={offerReviews} />
         </Route>
       </Switch>
     </BrowserRouter>
@@ -35,19 +36,8 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  offersCount: PropTypes.number.isRequired,
-  reviews: PropTypes.arrayOf(PropTypes.shape({
-    town: PropTypes.string.isRequired,
-    hotels: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      hotelReviews: PropTypes.array.isRequired
-    })).isRequired
-  }).isRequired).isRequired,
-
-  offers: PropTypes.arrayOf(PropTypes.shape({
-    town: PropTypes.string.isRequired,
-    hotels: PropTypes.array.isRequired
-  }).isRequired).isRequired
+  reviews: reviewsShortPropTypes,
+  offers: offersShortPropTypes,
 };
 
 export default App;
