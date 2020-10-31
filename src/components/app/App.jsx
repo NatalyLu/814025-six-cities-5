@@ -4,16 +4,19 @@ import IndexPage from "../index-page/index-page";
 import FavoritesPage from "../favorites-page/favorites-page";
 import LoginPage from "../login-page/login-page";
 import PropertyPage from "../property-page/property-page";
-import PropTypes from "prop-types";
+import {offersShortPropTypes, reviewsShortPropTypes} from "../../prop-types";
 
 const App = (props) => {
-  const offersCount = props.offersCount;
+  const {offers, reviews} = props;
+  const offersSameCity = offers.filter((offer) => (offer.city.name === `amsterdam`));
+  const offer = offersSameCity[0];
+  const offerReviews = reviews.filter((review) => (review.id === offer.id));
 
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <IndexPage offersCount={offersCount} />
+          <IndexPage offersSameCity={offersSameCity} />
         </Route>
         <Route exact path="/favorites">
           <FavoritesPage />
@@ -21,14 +24,20 @@ const App = (props) => {
         <Route exact path="/login">
           <LoginPage />
         </Route>
-        <Route exact path="/offer/:id?" component={PropertyPage} />
+        {/* <Route exact path="/offer/:id?" component={PropertyPage} /> */}
+        <Route exact path="/offer/:id?">
+          <PropertyPage
+            offer={offer}
+            offerReviews={offerReviews} />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
 };
 
 App.propTypes = {
-  offersCount: PropTypes.number.isRequired
+  reviews: reviewsShortPropTypes,
+  offers: offersShortPropTypes,
 };
 
 export default App;
