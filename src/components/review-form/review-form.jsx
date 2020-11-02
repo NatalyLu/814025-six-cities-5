@@ -51,28 +51,23 @@ class ReviewForm extends PureComponent {
   }
 
   render() {
-    const ratingFilds = () => {
-      let title = [`terribly`, `badly`, `not bad`, `good`, `perfect`];
-      let content = [];
-      for (let i = title.length; i >= 1; i--) {
-        content.push(<Fragment key={`stars-${i}`}>
-          <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value={i} id={`${i}-stars`} type="radio" />
-          <label htmlFor={`${i}-stars`} className="reviews__rating-label form__rating-label" title={title[i - 1]}>
-            <svg className="form__star-image" width="37" height="33">
-              <use xlinkHref="#icon-star"></use>
-            </svg>
-          </label>
-        </Fragment>
-        );
-      }
-      return content;
-    };
+    let titles = [`perfect`, `good`, `not bad`, `badly`, `terribly`];
+    let titlesLength = titles.length;
 
     return (
       <form onSubmit={this.handleSubmit} className="reviews__form form" action="#" method="post">
         <label className="reviews__label form__label" htmlFor="review">Your review</label>
         <div className="reviews__rating-form form__rating">
-          {ratingFilds()}
+          {(titles.map((title, i) => (
+            <Fragment key={`stars-${titlesLength - i}`}>
+              <input onChange={this.handleFieldChange} className="form__rating-input visually-hidden" name="rating" value={titlesLength - i} id={`${titlesLength - i}-stars`} type="radio" />
+              <label htmlFor={`${titlesLength - i}-stars`} className="reviews__rating-label form__rating-label" title={title}>
+                <svg className="form__star-image" width="37" height="33">
+                  <use xlinkHref="#icon-star"></use>
+                </svg>
+              </label>
+            </Fragment>
+          )))}
         </div>
         <textarea onChange={this.handleFieldChange} value={this.state.review} className="reviews__textarea form__textarea" id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved"></textarea>
         <div className="reviews__button-wrapper">
