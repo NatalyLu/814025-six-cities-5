@@ -2,10 +2,11 @@ import React from "react";
 import Header from "../header/header";
 import Locations from "../locations/locations";
 import Places from "../places/places";
-import {offersShortPropTypes} from "../../prop-types";
+import {offersShortPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
 
 const IndexPage = (props) => {
   const offersSameCity = props.offersSameCity;
+  const uniqueCities = props.uniqueCities;
 
   return (
     <div className="page page--gray page--main">
@@ -14,7 +15,7 @@ const IndexPage = (props) => {
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
-          <Locations />
+          <Locations uniqueCities={uniqueCities} />
         </div>
         <div className="cities">
           <div className="cities__places-container container">
@@ -30,7 +31,8 @@ const IndexPage = (props) => {
 };
 
 IndexPage.propTypes = {
-  offersSameCity: offersShortPropTypes
+  offersSameCity: offersShortPropTypes,
+  uniqueCities: uniqueCitiesPropTypes
 };
 
 export default IndexPage;

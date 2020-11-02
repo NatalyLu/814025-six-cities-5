@@ -57,3 +57,6 @@ export const reviewPropTypes = PropTypes.shape({
 // REVIEWS
 export const reviewsShortPropTypes = PropTypes.arrayOf(PropTypes.shape().isRequired).isRequired;
 export const reviewsFullPropTypes = PropTypes.arrayOf(reviewPropTypes).isRequired;
+
+// CITIES
+export const uniqueCitiesPropTypes = PropTypes.arrayOf(PropTypes.string);

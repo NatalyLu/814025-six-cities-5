@@ -1,42 +1,27 @@
 import React from "react";
+import {uniqueCitiesPropTypes} from "../../prop-types";
 
-const Locations = () => {
+// Paris, Cologne, Brussels, Amsterdam, Hamburg, Dusseldorf
+const Locations = (props) => {
+  const uniqueCities = props.uniqueCities;
+
   return (
     <section className="locations container">
       <ul className="locations__list tabs__list">
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Paris</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Cologne</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Brussels</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item tabs__item--active">
-            <span>Amsterdam</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Hamburg</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Dusseldorf</span>
-          </a>
-        </li>
+        {uniqueCities.map((city, i) => (
+          <li key={`city-${i}`} className="locations__item">
+            <a className={`locations__item-link tabs__item ${city === `Amsterdam` && `tabs__item--active`}`} href="#">
+              <span>{city}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </section>
   );
+};
+
+Locations.propTypes = {
+  uniqueCities: uniqueCitiesPropTypes
 };
 
 export default Locations;
