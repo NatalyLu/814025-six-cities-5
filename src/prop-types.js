@@ -78,3 +78,10 @@ export const offersFavoritesPropTypes = PropTypes.arrayOf(offerPropTypes);
 
 // NEAR PLACES
 export const nearPlacesPropTypes = PropTypes.arrayOf(offerPropTypes);
+
+// HEADER
+export const headerInfoPropTypes = PropTypes.shape({
+  headerClasses: PropTypes.shape(),
+  userName: PropTypes.string,
+  logoLink: PropTypes.string
+});

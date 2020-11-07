@@ -7,10 +7,18 @@ import {offersShortPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
 const IndexPage = (props) => {
   const offersSameCity = props.offersSameCity;
   const uniqueCities = props.uniqueCities;
+  const headerInfo = {
+    headerClasses: {
+      logoLinkClass: `header__logo-link--active`,
+      userNameClasses: `header__user-name user__name`
+    },
+    logoLink: ``,
+    userName: `Oliver.conner@gmail.com`
+  };
 
   return (
     <div className="page page--gray page--main">
-      <Header />
+      <Header headerInfo={headerInfo} />
 
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
