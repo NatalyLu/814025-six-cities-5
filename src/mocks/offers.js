@@ -56,7 +56,7 @@ export default [
     },
     id: 2,
     imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: false,
     location: {
       latitude: 53.35514938496378,
@@ -124,7 +124,7 @@ export default [
     },
     id: 4,
     imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     location: {
       latitude: 51.35514938496378,
@@ -194,7 +194,7 @@ export default [
     },
     id: 6,
     imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: false,
     location: {
       latitude: 62.35514938496378,
@@ -202,7 +202,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/brussels-02.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 50,
     rating: 3,
     title: `Safestay Brussels`,
@@ -470,7 +470,7 @@ export default [
     },
     id: 14,
     imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     location: {
       latitude: 82.35514938496378,
@@ -478,7 +478,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/paris-02.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 180,
     rating: 5,
     title: `Pullman Paris Tour Eiffel`,

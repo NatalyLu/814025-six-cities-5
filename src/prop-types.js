@@ -34,11 +34,11 @@ export const offerPropTypes = PropTypes.shape({
   rating: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired
-}).isRequired;
+});
 
 // OFFERS
 export const offersShortPropTypes = PropTypes.arrayOf(PropTypes.shape().isRequired).isRequired;
-export const offersFullPropTypes = PropTypes.arrayOf(offerPropTypes).isRequired;
+export const offersFullPropTypes = PropTypes.arrayOf(offerPropTypes.isRequired).isRequired;
 
 // REVIEW
 export const reviewPropTypes = PropTypes.shape({
@@ -60,3 +60,21 @@ export const reviewsFullPropTypes = PropTypes.arrayOf(reviewPropTypes).isRequire
 
 // CITIES
 export const uniqueCitiesPropTypes = PropTypes.arrayOf(PropTypes.string);
+
+// INFORMATION FOR CARD
+export const infoForCardPropTypes = PropTypes.shape({
+  offerLink: PropTypes.string.isRequired,
+  offerImgWidth: PropTypes.string,
+  offerImgHeight: PropTypes.string,
+  imgWidth: PropTypes.string,
+  classes: PropTypes.shape()
+}).isRequired;
+
+// RENDER STATUS (PREMIUM or NOTHING)
+export const renderStatusPropTypes = PropTypes.func;
+
+// FAVORITES OFFERS
+export const offersFavoritesPropTypes = PropTypes.arrayOf(offerPropTypes);
+
+// NEAR PLACES
+export const nearPlacesPropTypes = PropTypes.arrayOf(offerPropTypes);

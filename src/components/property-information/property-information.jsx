@@ -87,11 +87,8 @@ class PropertyInformation extends PureComponent {
         </div>
         <section className="property__reviews reviews">
           <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
-
           <Reviews offerReviews={this.state.reviews} />
-          {/* onNewReview={onNewReview}/> */}
 
-          {/* <ReviewForm /> */}
           <ReviewForm onNewReview={(review) => {
             this.setState({reviews: [...this.state.reviews, review]});
           }} />

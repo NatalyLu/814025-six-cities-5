@@ -1,11 +1,12 @@
 import React from "react";
 import PropertyGallery from "../property-gallery/property-gallery";
 import PropertyInformation from "../property-information/property-information";
-import PropertyNearPlace from "../property-near-place/property-near-place";
-import {reviewsShortPropTypes, offerPropTypes} from "../../prop-types";
+import PropertyNearPlaces from "../property-near-places/property-near-places";
+import {reviewsShortPropTypes, nearPlacesPropTypes, offerPropTypes} from "../../prop-types";
 
 const PropertyPage = (props) => {
-  const {offer, offerReviews} = props;
+  const {offer, nearPlaces, offerReviews} = props;
+
 
   return (
     <div className="page">
@@ -50,9 +51,8 @@ const PropertyPage = (props) => {
           <section className="near-places places">
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
             <div className="near-places__list places__list">
-              <PropertyNearPlace />
-              <PropertyNearPlace />
-              <PropertyNearPlace />
+              <PropertyNearPlaces
+                nearPlaces={nearPlaces} />
             </div>
           </section>
         </div>
@@ -64,6 +64,7 @@ const PropertyPage = (props) => {
 PropertyPage.propTypes = {
   offerReviews: reviewsShortPropTypes,
   offer: offerPropTypes,
+  nearPlaces: nearPlacesPropTypes
 };
 
 
