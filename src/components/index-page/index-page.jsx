@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../header/header";
 import Locations from "../locations/locations";
 import Places from "../places/places";
+import MainMap from "../main-map/main-map";
 import {offersShortPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
 
 const IndexPage = (props) => {
@@ -29,7 +30,7 @@ const IndexPage = (props) => {
           <div className="cities__places-container container">
             <Places offersSameCity={offersSameCity} />
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <MainMap offersSameCity={offersSameCity} />
             </div>
           </div>
         </div>
