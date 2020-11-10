@@ -10,13 +10,13 @@ class ReviewForm extends PureComponent {
       review: ``
     };
 
-    this.newComment = this.newComment.bind(this);
+    this.createNewComment = this.createNewComment.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFieldChange = this.handleFieldChange.bind(this);
     this.onFieldsClear = this.onFieldsClear.bind(this);
   }
 
-  newComment(stars, com) {
+  createNewComment(stars, com) {
     let review = {
       comment: com,
       date: `2019-04-24`,
@@ -34,7 +34,7 @@ class ReviewForm extends PureComponent {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    this.props.onNewReview(this.newComment(this.state.rating, this.state.review));
+    this.props.onNewReview(this.createNewComment(this.state.rating, this.state.review));
     this.onFieldsClear();
   }
 

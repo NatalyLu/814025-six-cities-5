@@ -1,15 +1,22 @@
-import React, {PureComponent} from "react";
+import React, {Fragment, PureComponent} from "react";
 import leaflet from "leaflet";
 // Импорт стилей карты
 import "leaflet/dist/leaflet.css";
-import {offersFullPropTypes} from "../../prop-types";
+import {offersPropTypes} from "../../prop-types";
 
 class MainMap extends PureComponent {
   constructor(props) {
     super(props);
 
-    // this.offers = this.props.offers;
+    this.offers = this.props.offersSameCity;
     this.offer = this.props.offersSameCity[0];
+    this.renderCore = this.renderCore.bind(this);
+  }
+
+  // Функция добавления маркеров на карту
+  renderCore(item, icon, map) {
+    const offerCords = [item.location.latitude, item.location.longitude];
+    return (leaflet.marker(offerCords, icon).addTo(map));
   }
 
   componentDidMount() {
@@ -38,25 +45,23 @@ class MainMap extends PureComponent {
     })
     .addTo(map);
 
-    // Добавим на карту один маркер
-    const offerCords = [this.offer.location.latitude, this.offer.location.longitude];
-    leaflet
-    .marker(offerCords, {icon})
-    .addTo(map);
+    // Добавим на карту маркеры
+    this.offers.map((offerForMap, i) => (
+      <Fragment key={`hotel-map-${i}`}>
+        {this.renderCore(offerForMap, {icon}, map)}
+      </Fragment>
+    ));
   }
 
-
   render() {
-
     return (
       <section id="map" className="cities__map map"></section>
     );
   }
 }
 
-
 MainMap.propTypes = {
-  offersSameCity: offersFullPropTypes
+  offersSameCity: offersPropTypes
 };
 
 export default MainMap;
