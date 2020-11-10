@@ -3,7 +3,7 @@ import PropertyGallery from "../property-gallery/property-gallery";
 import PropertyInformation from "../property-information/property-information";
 import PropertyNearPlaces from "../property-near-places/property-near-places";
 import Header from "../header/header";
-import {reviewsShortPropTypes, nearPlacesPropTypes, offerPropTypes} from "../../prop-types";
+import {reviewsPropTypes, nearPlacesPropTypes, offerPropTypes} from "../../prop-types";
 
 const PropertyPage = (props) => {
   const {offer, nearPlaces, offerReviews} = props;
@@ -48,7 +48,7 @@ const PropertyPage = (props) => {
 };
 
 PropertyPage.propTypes = {
-  offerReviews: reviewsShortPropTypes,
+  offerReviews: reviewsPropTypes,
   offer: offerPropTypes,
   nearPlaces: nearPlacesPropTypes
 };

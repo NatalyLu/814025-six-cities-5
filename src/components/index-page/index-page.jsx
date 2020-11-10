@@ -3,7 +3,7 @@ import Header from "../header/header";
 import Locations from "../locations/locations";
 import Places from "../places/places";
 import MainMap from "../main-map/main-map";
-import {offersShortPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
+import {offersPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
 
 const IndexPage = (props) => {
   const offersSameCity = props.offersSameCity;
@@ -40,7 +40,7 @@ const IndexPage = (props) => {
 };
 
 IndexPage.propTypes = {
-  offersSameCity: offersShortPropTypes,
+  offersSameCity: offersPropTypes,
   uniqueCities: uniqueCitiesPropTypes
 };
 

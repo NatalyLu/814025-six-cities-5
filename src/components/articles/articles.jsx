@@ -1,5 +1,5 @@
 import React, {Fragment, PureComponent} from "react";
-import {offersFullPropTypes} from "../../prop-types";
+import {offersPropTypes} from "../../prop-types";
 import Card from "../card/card";
 
 class Articles extends PureComponent {
@@ -57,7 +57,7 @@ class Articles extends PureComponent {
 }
 
 Articles.propTypes = {
-  offersSameCity: offersFullPropTypes
+  offersSameCity: offersPropTypes
 };
 
 export default Articles;

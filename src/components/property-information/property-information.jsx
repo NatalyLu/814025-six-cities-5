@@ -1,7 +1,7 @@
 import React, {PureComponent} from "react";
 import Reviews from "../reviews/reviews";
 import ReviewForm from "../review-form/review-form";
-import {offerPropTypes, reviewsShortPropTypes} from "../../prop-types";
+import {offerPropTypes, reviewsPropTypes} from "../../prop-types";
 
 class PropertyInformation extends PureComponent {
   constructor(props) {
@@ -99,7 +99,7 @@ class PropertyInformation extends PureComponent {
 }
 
 PropertyInformation.propTypes = {
-  offerReviews: reviewsShortPropTypes,
+  offerReviews: reviewsPropTypes,
   offer: offerPropTypes,
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Articles from "../articles/articles";
-import {offersShortPropTypes} from "../../prop-types";
+import {offersPropTypes} from "../../prop-types";
 
 const Places = (props) => {
   const offersSameCity = props.offersSameCity;
@@ -38,7 +38,7 @@ const Places = (props) => {
 };
 
 Places.propTypes = {
-  offersSameCity: offersShortPropTypes
+  offersSameCity: offersPropTypes
 };
 
 export default Places;

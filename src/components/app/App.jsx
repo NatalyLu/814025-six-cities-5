@@ -4,7 +4,7 @@ import IndexPage from "../index-page/index-page";
 import FavoritesPage from "../favorites-page/favorites-page";
 import LoginPage from "../login-page/login-page";
 import PropertyPage from "../property-page/property-page";
-import {offersShortPropTypes, reviewsShortPropTypes} from "../../prop-types";
+import {offersPropTypes, reviewsPropTypes} from "../../prop-types";
 import {getArrayOfCities} from "../../func";
 
 const App = (props) => {
@@ -49,8 +49,8 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  reviews: reviewsShortPropTypes,
-  offers: offersShortPropTypes,
+  reviews: reviewsPropTypes,
+  offers: offersPropTypes,
 };
 
 export default App;

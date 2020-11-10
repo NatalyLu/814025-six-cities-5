@@ -1,7 +1,7 @@
 import React from "react";
 import FavoritesLocations from "../favorites-locations/favorites-locations";
 import Header from "../header/header";
-import {uniqueCitiesPropTypes, offersFullPropTypes} from "../../prop-types";
+import {uniqueCitiesPropTypes, offersPropTypes} from "../../prop-types";
 import {sortArrayByField} from "../../func";
 
 const FavoritesPage = (props) => {
@@ -41,7 +41,7 @@ const FavoritesPage = (props) => {
 };
 
 FavoritesPage.propTypes = {
-  offersFavorites: offersFullPropTypes,
+  offersFavorites: offersPropTypes,
   uniqueFavoriteCities: uniqueCitiesPropTypes
 };
 
