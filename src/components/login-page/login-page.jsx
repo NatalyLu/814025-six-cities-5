@@ -2,17 +2,14 @@ import React from "react";
 import Header from "../header/header";
 
 const LoginPage = () => {
-  const headerInfo = {
-    logoLink: `main.html`,
-    userName: `Sign in`,
-    headerClasses: {
-      userNameClasses: `header__login`
-    }
-  };
+  const userName = `Sign in`;
+  const userNameClasses = `header__login`;
 
   return (
     <div className="page page--gray page--login">
-      <Header headerInfo={headerInfo} />
+      <Header
+        userName={userName}
+        userNameClasses={userNameClasses} />
 
       <main className="page__main page__main--login">
         <div className="page__login-container container">

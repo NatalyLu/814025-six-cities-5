@@ -1,16 +1,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {headerInfoPropTypes} from "../../prop-types";
+import {logoLinkClassPropTypes, userNameClassesPropTypes, userNamePropTypes} from "../../prop-types";
 
 const Header = (props) => {
-  const headerInfo = props.headerInfo;
+
+  const logoLink = `main.html`;
 
   return (
     <header className="header">
       <div className="container">
         <div className="header__wrapper">
           <div className="header__left">
-            <Link to={headerInfo.logoLink} className={`header__logo-link ${headerInfo.headerClasses.logoLinkClass}`}>
+            <Link to={logoLink} className={`header__logo-link ${props.logoLinkClass}`}>
               <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
             </Link>
           </div>
@@ -20,7 +21,7 @@ const Header = (props) => {
                 <a className="header__nav-link header__nav-link--profile" href="#">
                   <div className="header__avatar-wrapper user__avatar-wrapper">
                   </div>
-                  <span className={headerInfo.headerClasses.userNameClasses}>{headerInfo.userName}</span>
+                  <span className={props.userNameClasses}>{props.userName}</span>
                 </a>
               </li>
             </ul>
@@ -32,7 +33,10 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  headerInfo: headerInfoPropTypes
+  // headerInfo: headerInfoPropTypes
+  logoLinkClass: logoLinkClassPropTypes,
+  userNameClasses: userNameClassesPropTypes,
+  userName: userNamePropTypes,
 };
 
 export default Header;

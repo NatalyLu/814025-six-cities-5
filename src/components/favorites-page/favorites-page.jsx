@@ -7,17 +7,15 @@ import {sortArrayByField} from "../../func";
 const FavoritesPage = (props) => {
   const {offersFavorites, uniqueFavoriteCities} = props;
   const offersFavoritesSorted = offersFavorites.sort(sortArrayByField(`city.name`));
-  const headerInfo = {
-    logoLink: `main.html`,
-    userName: `Oliver.conner@gmail.com`,
-    headerClasses: {
-      userNameClasses: `header__user-name user__name`
-    }
-  };
+
+  const userName = `Oliver.conner@gmail.com`;
+  const userNameClasses = `header__user-name user__name`;
 
   return (
     <div className="page">
-      <Header headerInfo={headerInfo} />
+      <Header
+        userName={userName}
+        userNameClasses={userNameClasses} />
 
       <main className="page__main page__main--favorites">
         <div className="page__favorites-container container">
