@@ -1,22 +1,16 @@
 import React, {Fragment} from "react";
 import Card from "../card/card";
-import {offersFavoritesPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
-import {capitalizeFirstLetter} from "../../func";
+import {offersPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
 
 const FavoritesLocations = (props) => {
   const {offersFavoritesSorted, uniqueFavoriteCities} = props;
-  const infoForCard = {
-    offerLink: `/offer`,
-    offerImgWidth: `150`,
-    offerImgHeight: `110`,
-    imgWidth: `100%`,
-    classes: {
-      articleClasses: `favorites__card`,
-      cardImageClasses: `favorites__image-wrapper`,
-      cardInfoClasses: `favorites__card-info `,
-      bookmarkButtonClasses: `place-card__bookmark-button--active`
-    }
-  };
+
+  const offerImgWidth = `150`;
+  const offerImgHeight = `110`;
+  const articleClasses = `favorites__card`;
+  const cardImageClasses = `favorites__image-wrapper`;
+  const cardInfoClasses = `favorites__card-info `;
+  const bookmarkButtonClasses = `place-card__bookmark-button--active`;
 
   return (
     <Fragment>
@@ -25,15 +19,20 @@ const FavoritesLocations = (props) => {
           <div className="favorites__locations locations locations--current">
             <div className="locations__item">
               <a className="locations__item-link" href="#">
-                <span>{capitalizeFirstLetter(favCity)}</span>
+                <span>{favCity}</span>
               </a>
             </div>
           </div>
           <div className="favorites__places">
-            {offersFavoritesSorted.filter((offerFavorite) => (capitalizeFirstLetter(offerFavorite.city.name) === favCity)).map((favHotel, j) => (
+            {offersFavoritesSorted.filter((offerFavorite) => (offerFavorite.city.name) === favCity).map((favHotel, j) => (
               <Card key={`favorite-hotel-${j}`}
                 offer={favHotel}
-                infoForCard={infoForCard} />
+                offerImgWidth={offerImgWidth}
+                offerImgHeight={offerImgHeight}
+                articleClasses={articleClasses}
+                cardImageClasses={cardImageClasses}
+                cardInfoClasses={cardInfoClasses}
+                bookmarkButtonClasses={bookmarkButtonClasses} />
             ))}
           </div>
         </li>
@@ -43,7 +42,7 @@ const FavoritesLocations = (props) => {
 };
 
 FavoritesLocations.propTypes = {
-  offersFavoritesSorted: offersFavoritesPropTypes,
+  offersFavoritesSorted: offersPropTypes,
   uniqueFavoriteCities: uniqueCitiesPropTypes
 };
 

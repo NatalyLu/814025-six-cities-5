@@ -10,29 +10,10 @@ class Articles extends PureComponent {
       hover: false
     };
 
-    this.infoForCard = {
-      offerLink: `/offer`,
-      offerImgWidth: `260`,
-      offerImgHeight: `200`,
-      imgWidth: `80%`,
-      classes: {
-        articleClasses: `cities__place-card`,
-        cardImageClasses: `cities__image-wrapper`
-      }
-    };
-
-    this.renderStatus = this.renderStatus.bind(this);
-  }
-
-  renderStatus(isPremium) {
-    if (isPremium) {
-      return (
-        <div className="place-card__mark">
-          <span>Premium</span>
-        </div>
-      );
-    }
-    return (null);
+    this.offerImgWidth = `260`;
+    this.offerImgHeight = `200`;
+    this.articleClasses = `cities__place-card`;
+    this.cardImageClasses = `cities__image-wrapper`;
   }
 
   render() {
@@ -48,8 +29,10 @@ class Articles extends PureComponent {
               this.setState({hover: false});
             }}
             offer={offer}
-            infoForCard={this.infoForCard}
-            renderStatus={() => (this.renderStatus(offer.isPremium))} />
+            offerImgWidth={this.offerImgWidth}
+            offerImgHeight={this.offerImgHeight}
+            articleClasses={this.articleClasses}
+            cardImageClasses={this.cardImageClasses} />
         ))}
       </Fragment>
     );
