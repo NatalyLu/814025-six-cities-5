@@ -1,5 +1,5 @@
 import React from "react";
-import {reviewsFullPropTypes} from "../../prop-types";
+import {reviewsPropTypes} from "../../prop-types";
 import Review from "../review/review";
 
 const Reviews = (props) => {
@@ -15,7 +15,7 @@ const Reviews = (props) => {
 };
 
 Reviews.propTypes = {
-  offerReviews: reviewsFullPropTypes
+  offerReviews: reviewsPropTypes
 };
 
 export default Reviews;

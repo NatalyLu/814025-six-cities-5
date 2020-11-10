@@ -1,43 +1,5 @@
 import PropTypes from "prop-types";
 
-// OFFERS
-export const offersShortPropTypes = PropTypes.arrayOf(PropTypes.shape().isRequired).isRequired;
-export const offersFullPropTypes = PropTypes.arrayOf(PropTypes.shape({
-  city: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    location: PropTypes.shape({
-      latitude: PropTypes.number.isRequired,
-      longitude: PropTypes.number.isRequired,
-      zoom: PropTypes.number.isRequired
-    }).isRequired,
-  }).isRequired,
-  bedrooms: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
-  inside: PropTypes.array.isRequired,
-  host: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    avatar: PropTypes.string.isRequired,
-    isPro: PropTypes.bool.isRequired,
-  }).isRequired,
-  id: PropTypes.number.isRequired,
-  imgs: PropTypes.array.isRequired,
-  isFavorite: PropTypes.bool.isRequired,
-  isPremium: PropTypes.bool.isRequired,
-  location: PropTypes.shape({
-    latitude: PropTypes.number.isRequired,
-    longitude: PropTypes.number.isRequired,
-    zoom: PropTypes.number.isRequired
-  }).isRequired,
-  maxAdults: PropTypes.number.isRequired,
-  previewImage: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
-}).isRequired).isRequired;
-
-// OFFER
 export const offerPropTypes = PropTypes.shape({
   city: PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -71,24 +33,10 @@ export const offerPropTypes = PropTypes.shape({
   rating: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired
-}).isRequired;
+});
 
-// REVIEWS
-export const reviewsShortPropTypes = PropTypes.arrayOf(PropTypes.shape().isRequired).isRequired;
-export const reviewsFullPropTypes = PropTypes.arrayOf(PropTypes.shape({
-  comment: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired,
-  user: PropTypes.shape({
-    avatarUrl: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    isPro: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired
-  })
-}).isRequired).isRequired;
+export const offersPropTypes = PropTypes.arrayOf(offerPropTypes.isRequired).isRequired;
 
-// REVIEW
 export const reviewPropTypes = PropTypes.shape({
   comment: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
@@ -101,3 +49,33 @@ export const reviewPropTypes = PropTypes.shape({
     name: PropTypes.string.isRequired
   })
 }).isRequired;
+
+export const reviewsPropTypes = PropTypes.arrayOf(reviewPropTypes).isRequired;
+
+export const uniqueCitiesPropTypes = PropTypes.arrayOf(PropTypes.string);
+
+
+export const articleClassesPropTypes = PropTypes.string;
+export const cardImageClassesPropTypes = PropTypes.string;
+export const offerImgWidthPropTypes = PropTypes.string;
+export const offerImgHeightPropTypes = PropTypes.string;
+export const cardInfoClassesPropTypes = PropTypes.string;
+export const bookmarkButtonClassesPropTypes = PropTypes.string;
+
+export const logoLinkClassPropTypes = PropTypes.string;
+export const userNameClassesPropTypes = PropTypes.string;
+export const userNamePropTypes = PropTypes.string;
+
+export const mapClassesPropTypes = PropTypes.string;
+export const cityLocationPropTypes = PropTypes.shape({
+  latitude: PropTypes.number,
+  longitude: PropTypes.number,
+  zoom: PropTypes.number,
+});
+
+
+export const headerInfoPropTypes = PropTypes.shape({
+  headerClasses: PropTypes.shape(),
+  userName: PropTypes.string,
+  logoLink: PropTypes.string
+});

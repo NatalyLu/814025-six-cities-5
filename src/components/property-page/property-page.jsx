@@ -1,36 +1,26 @@
 import React from "react";
 import PropertyGallery from "../property-gallery/property-gallery";
 import PropertyInformation from "../property-information/property-information";
-import PropertyNearPlace from "../property-near-place/property-near-place";
-import {reviewsShortPropTypes, offerPropTypes} from "../../prop-types";
+import PropertyNearPlaces from "../property-near-places/property-near-places";
+import Header from "../header/header";
+import MainMap from "../main-map/main-map";
+import {reviewsPropTypes, offersPropTypes, offerPropTypes} from "../../prop-types";
 
 const PropertyPage = (props) => {
-  const {offer, offerReviews} = props;
+  const {offer, nearPlaces, offerReviews} = props;
+
+  const userName = `Oliver.conner@gmail.com`;
+  const userNameClasses = `header__user-name user__name`;
+  const mapClasses = `property__map`;
+  const cityLocation = offer.city.location;
+  // Создаем новый массив, состоящий из самого места (offer) и ближайщих мест
+  const offers = nearPlaces.concat(offer);
 
   return (
     <div className="page">
-      <header className="header">
-        <div className="container">
-          <div className="header__wrapper">
-            <div className="header__left">
-              <a className="header__logo-link" href="main.html">
-                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
-              </a>
-            </div>
-            <nav className="header__nav">
-              <ul className="header__nav-list">
-                <li className="header__nav-item user">
-                  <a className="header__nav-link header__nav-link--profile" href="#">
-                    <div className="header__avatar-wrapper user__avatar-wrapper">
-                    </div>
-                    <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header
+        userName={userName}
+        userNameClasses={userNameClasses} />
 
       <main className="page__main page__main--property">
         <section className="property">
@@ -43,16 +33,18 @@ const PropertyPage = (props) => {
               offer={offer}
               offerReviews={offerReviews} />
           </div>
-          <section className="property__map map"></section>
+          <MainMap
+            offers={offers}
+            cityLocation={cityLocation}
+            mapClasses={mapClasses} />
         </section>
 
         <div className="container">
           <section className="near-places places">
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
             <div className="near-places__list places__list">
-              <PropertyNearPlace />
-              <PropertyNearPlace />
-              <PropertyNearPlace />
+              <PropertyNearPlaces
+                nearPlaces={nearPlaces} />
             </div>
           </section>
         </div>
@@ -62,8 +54,9 @@ const PropertyPage = (props) => {
 };
 
 PropertyPage.propTypes = {
-  offerReviews: reviewsShortPropTypes,
+  offerReviews: reviewsPropTypes,
   offer: offerPropTypes,
+  nearPlaces: offersPropTypes
 };
 
 

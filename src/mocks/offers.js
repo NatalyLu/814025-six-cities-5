@@ -4,7 +4,7 @@ export default [
   // AMSTERDAM
   {
     city: {
-      name: `amsterdam`,
+      name: `Amsterdam`,
       location: {
         latitude: 52.370216,
         longitude: 4.895168,
@@ -25,8 +25,8 @@ export default [
     isFavorite: false,
     isPremium: false,
     location: {
-      latitude: 52.35514938496378,
-      longitude: 4.673877537499948,
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
       zoom: 8
     },
     maxAdults: 4,
@@ -38,7 +38,7 @@ export default [
   },
   {
     city: {
-      name: `amsterdam`,
+      name: `Amsterdam`,
       location: {
         latitude: 52.370216,
         longitude: 4.895168,
@@ -56,11 +56,11 @@ export default [
     },
     id: 2,
     imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: false,
     location: {
-      latitude: 53.35514938496378,
-      longitude: 4.673877537499948,
+      latitude: 52.369553943508,
+      longitude: 4.85309666406198,
       zoom: 8
     },
     maxAdults: 2,
@@ -72,7 +72,7 @@ export default [
   },
   {
     city: {
-      name: `amsterdam`,
+      name: `Amsterdam`,
       location: {
         latitude: 52.370216,
         longitude: 4.895168,
@@ -93,8 +93,8 @@ export default [
     isFavorite: false,
     isPremium: true,
     location: {
-      latitude: 51.35514938496378,
-      longitude: 4.673877537499948,
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
       zoom: 8
     },
     maxAdults: 2,
@@ -106,7 +106,7 @@ export default [
   },
   {
     city: {
-      name: `amsterdam`,
+      name: `Amsterdam`,
       location: {
         latitude: 52.370216,
         longitude: 4.895168,
@@ -124,17 +124,17 @@ export default [
     },
     id: 4,
     imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     location: {
-      latitude: 51.35514938496378,
-      longitude: 3.673877537499948,
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
       zoom: 8
     },
     maxAdults: 2,
     previewImage: `img/apartment-01.jpg`,
     price: 120,
-    rating: 5,
+    rating: 3.8,
     title: `Hotel Amsteram`,
     type: `apartment`
   },
@@ -176,7 +176,7 @@ export default [
   },
   {
     city: {
-      name: `brussels`,
+      name: `Brussels`,
       location: {
         latitude: 62.370216,
         longitude: 4.895168,
@@ -194,7 +194,7 @@ export default [
     },
     id: 6,
     imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: false,
     location: {
       latitude: 62.35514938496378,
@@ -202,7 +202,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/brussels-02.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 50,
     rating: 3,
     title: `Safestay Brussels`,
@@ -210,7 +210,7 @@ export default [
   },
   {
     city: {
-      name: `brussels`,
+      name: `Brussels`,
       location: {
         latitude: 52.370216,
         longitude: 4.895168,
@@ -244,7 +244,7 @@ export default [
   },
   {
     city: {
-      name: `brussels`,
+      name: `Brussels`,
       location: {
         latitude: 62.370216,
         longitude: 4.895168,
@@ -280,7 +280,7 @@ export default [
   // COLOGNE
   {
     city: {
-      name: `cologne`,
+      name: `Cologne`,
       location: {
         latitude: 72.370216,
         longitude: 4.895168,
@@ -314,7 +314,7 @@ export default [
   },
   {
     city: {
-      name: `cologne`,
+      name: `Cologne`,
       location: {
         latitude: 72.370216,
         longitude: 4.895168,
@@ -348,7 +348,7 @@ export default [
   },
   {
     city: {
-      name: `cologne`,
+      name: `Cologne`,
       location: {
         latitude: 72.370216,
         longitude: 4.895168,
@@ -382,7 +382,7 @@ export default [
   },
   {
     city: {
-      name: `cologne`,
+      name: `Cologne`,
       location: {
         latitude: 72.370216,
         longitude: 4.895168,
@@ -418,7 +418,7 @@ export default [
   // PARIS
   {
     city: {
-      name: `paris`,
+      name: `Paris`,
       location: {
         latitude: 82.370216,
         longitude: 4.895168,
@@ -452,7 +452,7 @@ export default [
   },
   {
     city: {
-      name: `paris`,
+      name: `Paris`,
       location: {
         latitude: 82.370216,
         longitude: 4.895168,
@@ -470,7 +470,7 @@ export default [
     },
     id: 14,
     imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     location: {
       latitude: 82.35514938496378,
@@ -478,7 +478,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/paris-02.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 180,
     rating: 5,
     title: `Pullman Paris Tour Eiffel`,
@@ -486,7 +486,7 @@ export default [
   },
   {
     city: {
-      name: `paris`,
+      name: `Paris`,
       location: {
         latitude: 82.370216,
         longitude: 4.895168,
@@ -520,7 +520,7 @@ export default [
   },
   {
     city: {
-      name: `paris`,
+      name: `Paris`,
       location: {
         latitude: 82.370216,
         longitude: 4.895168,
@@ -556,7 +556,7 @@ export default [
   // HAMBURG
   {
     city: {
-      name: `hamburg`,
+      name: `Hamburg`,
       location: {
         latitude: 92.370216,
         longitude: 4.895168,
@@ -590,7 +590,7 @@ export default [
   },
   {
     city: {
-      name: `hamburg`,
+      name: `Hamburg`,
       location: {
         latitude: 92.370216,
         longitude: 4.895168,
@@ -624,7 +624,7 @@ export default [
   },
   {
     city: {
-      name: `hamburg`,
+      name: `Hamburg`,
       location: {
         latitude: 92.370216,
         longitude: 4.895168,
@@ -658,7 +658,7 @@ export default [
   },
   {
     city: {
-      name: `hamburg`,
+      name: `Hamburg`,
       location: {
         latitude: 92.370216,
         longitude: 4.895168,
@@ -694,7 +694,7 @@ export default [
   // DUSSELDORF
   {
     city: {
-      name: `dusseldorf`,
+      name: `Dusseldorf`,
       location: {
         latitude: 42.370216,
         longitude: 4.895168,
@@ -728,7 +728,7 @@ export default [
   },
   {
     city: {
-      name: `dusseldorf`,
+      name: `Dusseldorf`,
       location: {
         latitude: 42.370216,
         longitude: 4.895168,
@@ -762,7 +762,7 @@ export default [
   },
   {
     city: {
-      name: `dusseldorf`,
+      name: `Dusseldorf`,
       location: {
         latitude: 42.370216,
         longitude: 4.895168,
@@ -796,7 +796,7 @@ export default [
   },
   {
     city: {
-      name: `dusseldorf`,
+      name: `Dusseldorf`,
       location: {
         latitude: 42.370216,
         longitude: 4.895168,

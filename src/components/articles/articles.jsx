@@ -1,6 +1,6 @@
 import React, {Fragment, PureComponent} from "react";
-import {offersFullPropTypes} from "../../prop-types";
-import Article from "../article/article";
+import {offersPropTypes} from "../../prop-types";
+import Card from "../card/card";
 
 class Articles extends PureComponent {
   constructor(props) {
@@ -9,28 +9,30 @@ class Articles extends PureComponent {
     this.state = {
       hover: false
     };
-    // this.updateHoverState = this.updateHoverState.bind(this);
-  }
 
-  // updateHoverState(hover) {
-  //   this.setState({hover: hover});
-  // }
-  // <article updateHoverState={this.updateHoverState}
+    this.offerImgWidth = `260`;
+    this.offerImgHeight = `200`;
+    this.articleClasses = `cities__place-card`;
+    this.cardImageClasses = `cities__image-wrapper`;
+  }
 
   render() {
     const offersSameCity = this.props.offersSameCity;
     return (
       <Fragment>
         {offersSameCity.map((offer, i) => (
-          <Article key={`${offer.city.name}-${i}`}
+          <Card key={`${offer.city.name}-${i}`}
             onMouseOver={() =>{
-              // const element = evt.target.onMouseOver;
               this.setState({hover: true});
             }}
             onMouseOut={() => {
               this.setState({hover: false});
             }}
-            offer={offer} />
+            offer={offer}
+            offerImgWidth={this.offerImgWidth}
+            offerImgHeight={this.offerImgHeight}
+            articleClasses={this.articleClasses}
+            cardImageClasses={this.cardImageClasses} />
         ))}
       </Fragment>
     );
@@ -38,7 +40,7 @@ class Articles extends PureComponent {
 }
 
 Articles.propTypes = {
-  offersSameCity: offersFullPropTypes
+  offersSameCity: offersPropTypes
 };
 
 export default Articles;

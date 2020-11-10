@@ -1,7 +1,7 @@
 import React, {PureComponent} from "react";
 import Reviews from "../reviews/reviews";
 import ReviewForm from "../review-form/review-form";
-import {offerPropTypes, reviewsShortPropTypes} from "../../prop-types";
+import {offerPropTypes, reviewsPropTypes} from "../../prop-types";
 
 class PropertyInformation extends PureComponent {
   constructor(props) {
@@ -36,7 +36,7 @@ class PropertyInformation extends PureComponent {
         </div>
         <div className="property__rating rating">
           <div className="property__stars rating__stars">
-            <span style={{width: `80%`}}></span>
+            <span style={{width: `${(offer.rating * 20)}%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
           <span className="property__rating-value rating__value">{offer.rating}</span>
@@ -87,11 +87,8 @@ class PropertyInformation extends PureComponent {
         </div>
         <section className="property__reviews reviews">
           <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
-
           <Reviews offerReviews={this.state.reviews} />
-          {/* onNewReview={onNewReview}/> */}
 
-          {/* <ReviewForm /> */}
           <ReviewForm onNewReview={(review) => {
             this.setState({reviews: [...this.state.reviews, review]});
           }} />
@@ -102,7 +99,7 @@ class PropertyInformation extends PureComponent {
 }
 
 PropertyInformation.propTypes = {
-  offerReviews: reviewsShortPropTypes,
+  offerReviews: reviewsPropTypes,
   offer: offerPropTypes,
 };
 

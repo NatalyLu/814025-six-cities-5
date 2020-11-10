@@ -16,7 +16,7 @@ const Review = (props) => {
       <div className="reviews__info">
         <div className="reviews__rating rating">
           <div className="reviews__stars rating__stars">
-            <span style={{width: `80%`}}></span>
+            <span style={{width: `${(review.rating * 20)}%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
