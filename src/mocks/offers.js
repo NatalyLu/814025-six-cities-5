@@ -4,7 +4,7 @@ export default [
   // AMSTERDAM
   {
     city: {
-      name: `amsterdam`,
+      name: `Amsterdam`,
       location: {
         latitude: 52.370216,
         longitude: 4.895168,
@@ -38,7 +38,7 @@ export default [
   },
   {
     city: {
-      name: `amsterdam`,
+      name: `Amsterdam`,
       location: {
         latitude: 52.370216,
         longitude: 4.895168,
@@ -72,7 +72,7 @@ export default [
   },
   {
     city: {
-      name: `amsterdam`,
+      name: `Amsterdam`,
       location: {
         latitude: 52.370216,
         longitude: 4.895168,
@@ -106,7 +106,7 @@ export default [
   },
   {
     city: {
-      name: `amsterdam`,
+      name: `Amsterdam`,
       location: {
         latitude: 52.370216,
         longitude: 4.895168,
@@ -134,7 +134,7 @@ export default [
     maxAdults: 2,
     previewImage: `img/apartment-01.jpg`,
     price: 120,
-    rating: 5,
+    rating: 3.8,
     title: `Hotel Amsteram`,
     type: `apartment`
   },
@@ -176,7 +176,7 @@ export default [
   },
   {
     city: {
-      name: `brussels`,
+      name: `Brussels`,
       location: {
         latitude: 62.370216,
         longitude: 4.895168,
@@ -210,7 +210,7 @@ export default [
   },
   {
     city: {
-      name: `brussels`,
+      name: `Brussels`,
       location: {
         latitude: 52.370216,
         longitude: 4.895168,
@@ -244,7 +244,7 @@ export default [
   },
   {
     city: {
-      name: `brussels`,
+      name: `Brussels`,
       location: {
         latitude: 62.370216,
         longitude: 4.895168,
@@ -280,7 +280,7 @@ export default [
   // COLOGNE
   {
     city: {
-      name: `cologne`,
+      name: `Cologne`,
       location: {
         latitude: 72.370216,
         longitude: 4.895168,
@@ -314,7 +314,7 @@ export default [
   },
   {
     city: {
-      name: `cologne`,
+      name: `Cologne`,
       location: {
         latitude: 72.370216,
         longitude: 4.895168,
@@ -348,7 +348,7 @@ export default [
   },
   {
     city: {
-      name: `cologne`,
+      name: `Cologne`,
       location: {
         latitude: 72.370216,
         longitude: 4.895168,
@@ -382,7 +382,7 @@ export default [
   },
   {
     city: {
-      name: `cologne`,
+      name: `Cologne`,
       location: {
         latitude: 72.370216,
         longitude: 4.895168,
@@ -418,7 +418,7 @@ export default [
   // PARIS
   {
     city: {
-      name: `paris`,
+      name: `Paris`,
       location: {
         latitude: 82.370216,
         longitude: 4.895168,
@@ -452,7 +452,7 @@ export default [
   },
   {
     city: {
-      name: `paris`,
+      name: `Paris`,
       location: {
         latitude: 82.370216,
         longitude: 4.895168,
@@ -486,7 +486,7 @@ export default [
   },
   {
     city: {
-      name: `paris`,
+      name: `Paris`,
       location: {
         latitude: 82.370216,
         longitude: 4.895168,
@@ -520,7 +520,7 @@ export default [
   },
   {
     city: {
-      name: `paris`,
+      name: `Paris`,
       location: {
         latitude: 82.370216,
         longitude: 4.895168,
@@ -556,7 +556,7 @@ export default [
   // HAMBURG
   {
     city: {
-      name: `hamburg`,
+      name: `Hamburg`,
       location: {
         latitude: 92.370216,
         longitude: 4.895168,
@@ -590,7 +590,7 @@ export default [
   },
   {
     city: {
-      name: `hamburg`,
+      name: `Hamburg`,
       location: {
         latitude: 92.370216,
         longitude: 4.895168,
@@ -624,7 +624,7 @@ export default [
   },
   {
     city: {
-      name: `hamburg`,
+      name: `Hamburg`,
       location: {
         latitude: 92.370216,
         longitude: 4.895168,
@@ -658,7 +658,7 @@ export default [
   },
   {
     city: {
-      name: `hamburg`,
+      name: `Hamburg`,
       location: {
         latitude: 92.370216,
         longitude: 4.895168,
@@ -694,7 +694,7 @@ export default [
   // DUSSELDORF
   {
     city: {
-      name: `dusseldorf`,
+      name: `Dusseldorf`,
       location: {
         latitude: 42.370216,
         longitude: 4.895168,
@@ -728,7 +728,7 @@ export default [
   },
   {
     city: {
-      name: `dusseldorf`,
+      name: `Dusseldorf`,
       location: {
         latitude: 42.370216,
         longitude: 4.895168,
@@ -762,7 +762,7 @@ export default [
   },
   {
     city: {
-      name: `dusseldorf`,
+      name: `Dusseldorf`,
       location: {
         latitude: 42.370216,
         longitude: 4.895168,
@@ -796,7 +796,7 @@ export default [
   },
   {
     city: {
-      name: `dusseldorf`,
+      name: `Dusseldorf`,
       location: {
         latitude: 42.370216,
         longitude: 4.895168,
