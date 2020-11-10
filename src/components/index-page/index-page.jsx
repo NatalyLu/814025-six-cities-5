@@ -8,18 +8,20 @@ import {offersPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
 const IndexPage = (props) => {
   const offersSameCity = props.offersSameCity;
   const uniqueCities = props.uniqueCities;
-  const headerInfo = {
-    headerClasses: {
-      logoLinkClass: `header__logo-link--active`,
-      userNameClasses: `header__user-name user__name`
-    },
-    logoLink: ``,
-    userName: `Oliver.conner@gmail.com`
-  };
+
+  const logoLinkClass = `header__logo-link--active`;
+  const userNameClasses = `header__user-name user__name`;
+  const userName = `Oliver.conner@gmail.com`;
+
+  const mapClasses = `cities__map`;
+  const cityLocation = offersSameCity[0].city.location;
 
   return (
     <div className="page page--gray page--main">
-      <Header headerInfo={headerInfo} />
+      <Header
+        logoLinkClass={logoLinkClass}
+        userNameClasses={userNameClasses}
+        userName={userName} />
 
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
@@ -30,7 +32,10 @@ const IndexPage = (props) => {
           <div className="cities__places-container container">
             <Places offersSameCity={offersSameCity} />
             <div className="cities__right-section">
-              <MainMap offersSameCity={offersSameCity} />
+              <MainMap
+                offers={offersSameCity}
+                cityLocation={cityLocation}
+                mapClasses={mapClasses} />
             </div>
           </div>
         </div>

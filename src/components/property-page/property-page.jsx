@@ -3,21 +3,24 @@ import PropertyGallery from "../property-gallery/property-gallery";
 import PropertyInformation from "../property-information/property-information";
 import PropertyNearPlaces from "../property-near-places/property-near-places";
 import Header from "../header/header";
-import {reviewsPropTypes, nearPlacesPropTypes, offerPropTypes} from "../../prop-types";
+import MainMap from "../main-map/main-map";
+import {reviewsPropTypes, offersPropTypes, offerPropTypes} from "../../prop-types";
 
 const PropertyPage = (props) => {
   const {offer, nearPlaces, offerReviews} = props;
-  const headerInfo = {
-    logoLink: `main.html`,
-    userName: `Oliver.conner@gmail.com`,
-    headerClasses: {
-      userNameClasses: `header__user-name user__name`
-    }
-  };
+
+  const userName = `Oliver.conner@gmail.com`;
+  const userNameClasses = `header__user-name user__name`;
+  const mapClasses = `property__map`;
+  const cityLocation = offer.city.location;
+  // Создаем новый массив, состоящий из самого места (offer) и ближайщих мест
+  const offers = nearPlaces.concat(offer);
 
   return (
     <div className="page">
-      <Header headerInfo={headerInfo} />
+      <Header
+        userName={userName}
+        userNameClasses={userNameClasses} />
 
       <main className="page__main page__main--property">
         <section className="property">
@@ -30,7 +33,10 @@ const PropertyPage = (props) => {
               offer={offer}
               offerReviews={offerReviews} />
           </div>
-          <section className="property__map map"></section>
+          <MainMap
+            offers={offers}
+            cityLocation={cityLocation}
+            mapClasses={mapClasses} />
         </section>
 
         <div className="container">
@@ -50,7 +56,7 @@ const PropertyPage = (props) => {
 PropertyPage.propTypes = {
   offerReviews: reviewsPropTypes,
   offer: offerPropTypes,
-  nearPlaces: nearPlacesPropTypes
+  nearPlaces: offersPropTypes
 };
 
 

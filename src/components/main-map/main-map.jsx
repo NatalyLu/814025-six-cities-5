@@ -2,14 +2,15 @@ import React, {Fragment, PureComponent} from "react";
 import leaflet from "leaflet";
 // Импорт стилей карты
 import "leaflet/dist/leaflet.css";
-import {offersPropTypes} from "../../prop-types";
+import {offersPropTypes, cityLocationPropTypes, mapClassesPropTypes} from "../../prop-types";
 
 class MainMap extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.offers = this.props.offersSameCity;
-    this.offer = this.props.offersSameCity[0];
+    this.mapClasses = this.props.mapClasses;
+    this.offers = this.props.offers;
+    this.cityLocation = this.props.cityLocation;
     this.renderCore = this.renderCore.bind(this);
   }
 
@@ -20,8 +21,8 @@ class MainMap extends PureComponent {
   }
 
   componentDidMount() {
-    const city = [this.offer.city.location.latitude, this.offer.city.location.longitude];
-    const zoom = this.offer.city.location.zoom;
+    const city = [this.cityLocation.latitude, this.cityLocation.longitude];
+    const zoom = this.cityLocation.zoom;
 
     // Конфигурация иконки-метки на карте
     const icon = leaflet.icon({
@@ -55,13 +56,15 @@ class MainMap extends PureComponent {
 
   render() {
     return (
-      <section id="map" className="cities__map map"></section>
+      <section id="map" className={`${this.mapClasses} map`}></section>
     );
   }
 }
 
 MainMap.propTypes = {
-  offersSameCity: offersPropTypes
+  offers: offersPropTypes,
+  mapClasses: mapClassesPropTypes,
+  cityLocation: cityLocationPropTypes
 };
 
 export default MainMap;

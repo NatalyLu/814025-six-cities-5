@@ -9,7 +9,7 @@ import {getArrayOfCities} from "../../func";
 
 const App = (props) => {
   const {offers, reviews} = props;
-  const offersSameCity = offers.filter((offer) => (offer.city.name === `amsterdam`));
+  const offersSameCity = offers.filter((offer) => (offer.city.name === `Amsterdam`));
   const offer = offersSameCity[0];
   const uniqueCities = getArrayOfCities(offers);
 
@@ -19,7 +19,7 @@ const App = (props) => {
   const offerReviews = reviews.filter((review) => (review.id === offer.id));
 
   const nearPlaces = [];
-  nearPlaces.push(offers[1], offers[2], offers[0]);
+  nearPlaces.push(offers[1], offers[2], offers[3]);
 
   return (
     <BrowserRouter>
