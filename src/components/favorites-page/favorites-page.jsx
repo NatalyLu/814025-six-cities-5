@@ -8,14 +8,11 @@ const FavoritesPage = (props) => {
   const {offersFavorites, uniqueFavoriteCities} = props;
   const offersFavoritesSorted = offersFavorites.sort(sortArrayByField(`city.name`));
 
-  const userName = `Oliver.conner@gmail.com`;
-  const userNameClasses = `header__user-name user__name`;
-
   return (
     <div className="page">
       <Header
-        userName={userName}
-        userNameClasses={userNameClasses} />
+        userName={`Oliver.conner@gmail.com`}
+        userNameClasses={`header__user-name user__name`} />
 
       <main className="page__main page__main--favorites">
         <div className="page__favorites-container container">

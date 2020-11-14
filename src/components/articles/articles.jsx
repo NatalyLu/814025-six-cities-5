@@ -9,11 +9,6 @@ class Articles extends PureComponent {
     this.state = {
       hover: false
     };
-
-    this.offerImgWidth = `260`;
-    this.offerImgHeight = `200`;
-    this.articleClasses = `cities__place-card`;
-    this.cardImageClasses = `cities__image-wrapper`;
   }
 
   render() {
@@ -29,10 +24,10 @@ class Articles extends PureComponent {
               this.setState({hover: false});
             }}
             offer={offer}
-            offerImgWidth={this.offerImgWidth}
-            offerImgHeight={this.offerImgHeight}
-            articleClasses={this.articleClasses}
-            cardImageClasses={this.cardImageClasses} />
+            offerImgWidth={`260`}
+            offerImgHeight={`200`}
+            articleClasses={`cities__place-card`}
+            cardImageClasses={`cities__image-wrapper`} />
         ))}
       </Fragment>
     );

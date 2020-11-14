@@ -33,7 +33,6 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  // headerInfo: headerInfoPropTypes
   logoLinkClass: logoLinkClassPropTypes,
   userNameClasses: userNameClassesPropTypes,
   userName: userNamePropTypes,

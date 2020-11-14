@@ -5,13 +5,6 @@ import {offersPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
 const FavoritesLocations = (props) => {
   const {offersFavoritesSorted, uniqueFavoriteCities} = props;
 
-  const offerImgWidth = `150`;
-  const offerImgHeight = `110`;
-  const articleClasses = `favorites__card`;
-  const cardImageClasses = `favorites__image-wrapper`;
-  const cardInfoClasses = `favorites__card-info `;
-  const bookmarkButtonClasses = `place-card__bookmark-button--active`;
-
   return (
     <Fragment>
       {uniqueFavoriteCities.map((favCity, i) => (
@@ -27,12 +20,12 @@ const FavoritesLocations = (props) => {
             {offersFavoritesSorted.filter((offerFavorite) => (offerFavorite.city.name) === favCity).map((favHotel, j) => (
               <Card key={`favorite-hotel-${j}`}
                 offer={favHotel}
-                offerImgWidth={offerImgWidth}
-                offerImgHeight={offerImgHeight}
-                articleClasses={articleClasses}
-                cardImageClasses={cardImageClasses}
-                cardInfoClasses={cardInfoClasses}
-                bookmarkButtonClasses={bookmarkButtonClasses} />
+                offerImgWidth={`150`}
+                offerImgHeight={`110`}
+                articleClasses={`favorites__card`}
+                cardImageClasses={`favorites__image-wrapper`}
+                cardInfoClasses={`favorites__card-info`}
+                bookmarkButtonClasses={`place-card__bookmark-button--active`} />
             ))}
           </div>
         </li>

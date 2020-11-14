@@ -5,22 +5,16 @@ import Card from "../card/card";
 const PropertyNearPlaces = (props) => {
   const nearPlaces = props.nearPlaces;
 
-  const offerImgWidth = `260`;
-  const offerImgHeight = `200`;
-  const articleClasses = `near-places__card`;
-  const cardImageClasses = `near-places__image-wrapper`;
-  const bookmarkButtonClasses = `place-card__bookmark-button--active`;
-
   return (
     <Fragment>
       {nearPlaces.map((nearPlace, i) => (
         <Card key={`near-place-${i}`}
           offer={nearPlace}
-          offerImgWidth={offerImgWidth}
-          offerImgHeight={offerImgHeight}
-          articleClasses={articleClasses}
-          cardImageClasses={cardImageClasses}
-          bookmarkButtonClasses={bookmarkButtonClasses} />
+          offerImgWidth={`260`}
+          offerImgHeight={`200`}
+          articleClasses={`near-places__card`}
+          cardImageClasses={`near-places__image-wrapper`}
+          bookmarkButtonClasses={`place-card__bookmark-button--active`} />
       ))}
     </Fragment>
   );

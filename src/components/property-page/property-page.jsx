@@ -8,10 +8,6 @@ import {reviewsPropTypes, offersPropTypes, offerPropTypes} from "../../prop-type
 
 const PropertyPage = (props) => {
   const {offer, nearPlaces, offerReviews} = props;
-
-  const userName = `Oliver.conner@gmail.com`;
-  const userNameClasses = `header__user-name user__name`;
-  const mapClasses = `property__map`;
   const cityLocation = offer.city.location;
   // Создаем новый массив, состоящий из самого места (offer) и ближайщих мест
   const offers = nearPlaces.concat(offer);
@@ -19,8 +15,8 @@ const PropertyPage = (props) => {
   return (
     <div className="page">
       <Header
-        userName={userName}
-        userNameClasses={userNameClasses} />
+        userName={`Oliver.conner@gmail.com`}
+        userNameClasses={`header__user-name user__name`} />
 
       <main className="page__main page__main--property">
         <section className="property">
@@ -36,7 +32,7 @@ const PropertyPage = (props) => {
           <MainMap
             offers={offers}
             cityLocation={cityLocation}
-            mapClasses={mapClasses} />
+            mapClasses={`property__map`} />
         </section>
 
         <div className="container">
