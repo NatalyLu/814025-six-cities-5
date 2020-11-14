@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {offerPropTypes, articleClassesPropTypes, cardImageClassesPropTypes, offerImgWidthPropTypes, offerImgHeightPropTypes, cardInfoClassesPropTypes, bookmarkButtonClassesPropTypes} from "../../prop-types";
+import {offerPropTypes} from "../../prop-types";
+import PropTypes from "prop-types";
 
 const Card = (props) => {
   const offer = props.offer;
@@ -48,12 +49,12 @@ const Card = (props) => {
 
 Card.propTypes = {
   offer: offerPropTypes,
-  articleClasses: articleClassesPropTypes,
-  cardImageClasses: cardImageClassesPropTypes,
-  offerImgWidth: offerImgWidthPropTypes,
-  offerImgHeight: offerImgHeightPropTypes,
-  cardInfoClasses: cardInfoClassesPropTypes,
-  bookmarkButtonClasses: bookmarkButtonClassesPropTypes,
+  articleClasses: PropTypes.string,
+  cardImageClasses: PropTypes.string,
+  offerImgWidth: PropTypes.string,
+  offerImgHeight: PropTypes.string,
+  cardInfoClasses: PropTypes.string,
+  bookmarkButtonClasses: PropTypes.string,
 };
 
 export default Card;

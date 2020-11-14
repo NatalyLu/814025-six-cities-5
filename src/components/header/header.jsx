@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {logoLinkClassPropTypes, userNameClassesPropTypes, userNamePropTypes} from "../../prop-types";
+import PropTypes from "prop-types";
 
 const Header = (props) => {
 
@@ -33,9 +33,9 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  logoLinkClass: logoLinkClassPropTypes,
-  userNameClasses: userNameClassesPropTypes,
-  userName: userNamePropTypes,
+  logoLinkClass: PropTypes.string,
+  userNameClasses: PropTypes.string,
+  userName: PropTypes.string,
 };
 
 export default Header;
