@@ -1,4 +1,4 @@
-import React, {Fragment, PureComponent} from "react";
+import React, {PureComponent} from "react";
 import leaflet from "leaflet";
 // Импорт стилей карты
 import "leaflet/dist/leaflet.css";
@@ -47,11 +47,9 @@ class MainMap extends PureComponent {
     .addTo(map);
 
     // Добавим на карту маркеры
-    this.offers.map((offerForMap, i) => (
-      <Fragment key={`hotel-map-${i}`}>
-        {this.renderCore(offerForMap, {icon}, map)}
-      </Fragment>
-    ));
+    this.offers.forEach((item) => {
+      this.renderCore(item, {icon}, map);
+    });
   }
 
   render() {
