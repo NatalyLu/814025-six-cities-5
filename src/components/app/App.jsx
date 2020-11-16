@@ -6,6 +6,7 @@ import LoginPage from "../login-page/login-page";
 import PropertyPage from "../property-page/property-page";
 import {offersPropTypes, reviewsPropTypes} from "../../prop-types";
 import {getArrayOfCities} from "../../func";
+import {connect} from "react-redux";
 
 const App = (props) => {
   const {offers, reviews} = props;
@@ -26,7 +27,6 @@ const App = (props) => {
       <Switch>
         <Route exact path="/">
           <IndexPage
-            offersSameCity={offersSameCity}
             uniqueCities={uniqueCities} />
         </Route>
         <Route exact path="/favorites">
@@ -48,9 +48,14 @@ const App = (props) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  offers: state.offers
+});
+
 App.propTypes = {
   reviews: reviewsPropTypes,
   offers: offersPropTypes,
 };
 
-export default App;
+export {App};
+export default connect(mapStateToProps)(App);

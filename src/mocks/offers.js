@@ -46,6 +46,74 @@ export default [
       }
     },
     bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 1,
+      name: `Angelina`,
+      avatar: `img/avatar-angelina.jpg`,
+      isPro: true,
+    },
+    id: 1,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: false,
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.95309666406198,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/apartment-01.jpg`,
+    price: 120,
+    rating: 4.8,
+    title: `Beautiful & luxurious studio at great location`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 3,
+    description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
+    inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    host: {
+      id: 1,
+      name: `Angelina`,
+      avatar: `img/avatar-angelina.jpg`,
+      isPro: true,
+    },
+    id: 1,
+    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    isFavorite: false,
+    isPremium: false,
+    location: {
+      latitude: 52.4009553943508,
+      longitude: 4.85309666406198,
+      zoom: 8
+    },
+    maxAdults: 4,
+    previewImage: `img/apartment-01.jpg`,
+    price: 120,
+    rating: 4.8,
+    title: `Beautiful & luxurious studio at great location`,
+    type: `apartment`
+  },
+  {
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 10
+      }
+    },
+    bedrooms: 3,
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century. An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
     inside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`],
     host: {
@@ -142,7 +210,7 @@ export default [
   // BRUSSELS
   {
     city: {
-      name: `brussels`,
+      name: `Brussels`,
       location: {
         latitude: 62.370216,
         longitude: 4.895168,
@@ -168,7 +236,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/brussels-01.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 80,
     rating: 4,
     title: `Hotel NH Brussels Bloom`,
@@ -236,7 +304,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/brussels-03.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 130,
     rating: 4,
     title: `MEININGER Hotel`,
@@ -270,7 +338,7 @@ export default [
       zoom: 8
     },
     maxAdults: 6,
-    previewImage: `img/apartment-04.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 85,
     rating: 4,
     title: `Best Hote`,
@@ -306,7 +374,7 @@ export default [
       zoom: 8
     },
     maxAdults: 6,
-    previewImage: `img/cologne-01.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 79,
     rating: 3,
     title: `Leonardo Royal Hotel`,
@@ -340,7 +408,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/cologne-02.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 80,
     rating: 4,
     title: `DJH Jugendherberge`,
@@ -374,7 +442,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/cologne-03.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 130,
     rating: 3,
     title: `Hardrock Motown Hostel`,
@@ -408,7 +476,7 @@ export default [
       zoom: 8
     },
     maxAdults: 8,
-    previewImage: `img/cologne-04.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 85,
     rating: 4,
     title: `Dom Hotel`,
@@ -444,7 +512,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/paris-01.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 149,
     rating: 3,
     title: `International Youth Hostel`,
@@ -512,7 +580,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/paris-03.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 130,
     rating: 4,
     title: `Hotel Eugene en Ville`,
@@ -546,7 +614,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/paris-04.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 85,
     rating: 4,
     title: `La Manufacture`,
@@ -582,7 +650,7 @@ export default [
       zoom: 8
     },
     maxAdults: 5,
-    previewImage: `img/hamburg-01.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 99,
     rating: 4,
     title: `Generator Hamburg`,
@@ -616,7 +684,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/hamburg-02.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 105,
     rating: 4,
     title: `MEININGER Hotel`,
@@ -650,7 +718,7 @@ export default [
       zoom: 8
     },
     maxAdults: 5,
-    previewImage: `img/hamburg-03.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 70,
     rating: 4,
     title: `Arthotel ANA Hafen City`,
@@ -684,7 +752,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/hamburg-04.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 85,
     rating: 4,
     title: `Super 8 by Wyndham`,
@@ -720,7 +788,7 @@ export default [
       zoom: 8
     },
     maxAdults: 5,
-    previewImage: `img/dusseldorf-01.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 49,
     rating: 2,
     title: `NK Hotel`,
@@ -754,7 +822,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/dusseldorf-02.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 70,
     rating: 5,
     title: `Hotel Schumacher`,
@@ -788,7 +856,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/dusseldorf-03.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 80,
     rating: 4,
     title: `Hyatt Regency`,
@@ -822,7 +890,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/dusseldorf-04.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     price: 90,
     rating: 4,
     title: `B&B Hotel`,
