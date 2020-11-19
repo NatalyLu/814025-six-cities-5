@@ -4,19 +4,20 @@ import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../action";
+import {offersPropTypes} from "../../prop-types";
 
 // Paris, Cologne, Brussels, Amsterdam, Hamburg, Dusseldorf
 const Locations = (props) => {
-  const {selectedCity, selectCity, getSameCityOffersList, getAllOffersList} = props;
+  const {selectedCity, changeCity, changeSameCityOffersList, offers} = props;
 
-  const handleSelectCity = (evt) => {
+  const handlechangeCity = (evt) => {
     evt.preventDefault();
-    const city = selectCity(evt.target.innerText);
-    getSameCityOffersList();
-    return city;
+    changeCity(evt.target.innerText);
+    changeSameCityOffersList();
+    return;
   };
 
-  const uniqueCities = getArrayOfCities(getAllOffersList());
+  const uniqueCities = getArrayOfCities(offers);
 
   return (
     <section className="locations container">
@@ -24,7 +25,7 @@ const Locations = (props) => {
         {uniqueCities.map((city, i) => (
           <li key={`city-${i}`} className="locations__item">
             <Link className={`locations__item-link tabs__item ${city === selectedCity && `tabs__item--active`}`} to="#" onClick={(item) => {
-              handleSelectCity(item);
+              handlechangeCity(item);
             }}>
               <span>{city}</span>
             </Link>
@@ -36,26 +37,24 @@ const Locations = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  selectedCity: state.selectedCity
+  selectedCity: state.selectedCity,
+  offers: state.offers
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  selectCity(city) {
-    dispatch(ActionCreator.selectCity(city));
+  changeCity(city) {
+    dispatch(ActionCreator.changeCity(city));
   },
-  getSameCityOffersList() {
-    dispatch(ActionCreator.getSameCityOffersList());
-  },
-  getAllOffersList() {
-    dispatch(ActionCreator.getAllOffersList());
+  changeSameCityOffersList() {
+    dispatch(ActionCreator.changeSameCityOffersList());
   }
 });
 
 Locations.propTypes = {
   selectedCity: PropTypes.string,
-  selectCity: PropTypes.func,
-  getSameCityOffersList: PropTypes.func,
-  getAllOffersList: PropTypes.func
+  changeCity: PropTypes.func,
+  changeSameCityOffersList: PropTypes.func,
+  offers: offersPropTypes
 };
 
 export {Locations};

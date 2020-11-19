@@ -1,12 +1,20 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {offerPropTypes} from "../../prop-types";
+import {offerPropTypes, offersPropTypes} from "../../prop-types";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
+import {ActionCreator} from "../../action";
 
 const Card = (props) => {
-  const offer = props.offer;
+  const {offer, changeFavoriteOffersList} = props;
   const ratingImgWidth = `${(offer.rating * 20)}%`;
   const offerLink = `/offer`;
+
+  const handleChangeStatus = (item, evt) => {
+    evt.preventDefault();
+    changeFavoriteOffersList(item.id);
+    return;
+  };
 
   return (
     <article className={`${props.articleClasses} place-card`}>
@@ -25,7 +33,7 @@ const Card = (props) => {
             <b className="place-card__price-value">{offer.price}</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
-          <button className={`place-card__bookmark-button ${props.bookmarkButtonClasses} button`} type="button">
+          <button className={`${offer.isFavorite && `place-card__bookmark-button--active`} place-card__bookmark-button ${props.bookmarkButtonClasses} button`} type="button" onClick={(evt) => handleChangeStatus(offer, evt)}>
             <svg className="place-card__bookmark-icon" width="18" height="19">
               <use xlinkHref="#icon-bookmark"></use>
             </svg>
@@ -47,6 +55,16 @@ const Card = (props) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  offersFavorites: state.offersFavorites
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  changeFavoriteOffersList(id) {
+    dispatch(ActionCreator.changeFavoriteOffersList(id));
+  }
+});
+
 Card.propTypes = {
   offer: offerPropTypes,
   articleClasses: PropTypes.string,
@@ -55,6 +73,9 @@ Card.propTypes = {
   offerImgHeight: PropTypes.string,
   cardInfoClasses: PropTypes.string,
   bookmarkButtonClasses: PropTypes.string,
+  changeFavoriteOffersList: PropTypes.func,
+  offersFavorites: offersPropTypes
 };
 
-export default Card;
+export {Card};
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

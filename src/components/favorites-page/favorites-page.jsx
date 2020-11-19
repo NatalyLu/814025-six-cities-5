@@ -1,13 +1,8 @@
 import React from "react";
 import FavoritesLocations from "../favorites-locations/favorites-locations";
 import Header from "../header/header";
-import {uniqueCitiesPropTypes, offersPropTypes} from "../../prop-types";
-import {sortArrayByField} from "../../func";
 
-const FavoritesPage = (props) => {
-  const {offersFavorites, uniqueFavoriteCities} = props;
-  const offersFavoritesSorted = offersFavorites.sort(sortArrayByField(`city.name`));
-
+const FavoritesPage = () => {
   return (
     <div className="page">
       <Header
@@ -19,9 +14,7 @@ const FavoritesPage = (props) => {
           <section className="favorites">
             <h1 className="favorites__title">Saved lisYting</h1>
             <ul className="favorites__list">
-              <FavoritesLocations
-                uniqueFavoriteCities={uniqueFavoriteCities}
-                offersFavoritesSorted={offersFavoritesSorted} />
+              <FavoritesLocations />
             </ul>
           </section>
         </div>
@@ -34,11 +27,5 @@ const FavoritesPage = (props) => {
     </div>
   );
 };
-
-FavoritesPage.propTypes = {
-  offersFavorites: offersPropTypes,
-  uniqueFavoriteCities: uniqueCitiesPropTypes
-};
-
 
 export default FavoritesPage;

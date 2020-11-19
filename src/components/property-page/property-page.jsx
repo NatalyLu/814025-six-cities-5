@@ -1,59 +1,80 @@
-import React from "react";
+import React, {PureComponent} from "react";
 import PropertyGallery from "../property-gallery/property-gallery";
 import PropertyInformation from "../property-information/property-information";
 import PropertyNearPlaces from "../property-near-places/property-near-places";
 import Header from "../header/header";
-import MainMap from "../main-map/main-map";
-import {reviewsPropTypes, offersPropTypes, offerPropTypes} from "../../prop-types";
+import Map from "../map/map";
+import {connect} from "react-redux";
+import {ActionCreator} from "../../action";
+import {offersPropTypes, reviewsPropTypes} from "../../prop-types";
+import PropTypes from "prop-types";
 
-const PropertyPage = (props) => {
-  const {offer, nearPlaces, offerReviews} = props;
-  const cityLocation = offer.city.location;
-  // Создаем новый массив, состоящий из самого места (offer) и ближайщих мест
-  const offers = nearPlaces.concat(offer);
+class PropertyPage extends PureComponent {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className="page">
-      <Header
-        userName={`Oliver.conner@gmail.com`}
-        userNameClasses={`header__user-name user__name`} />
+    this.offers = props.offers;
+    this.changeOfferReviewsList = props.changeOfferReviewsList;
+    this.offer = this.offers[0];
+  }
 
-      <main className="page__main page__main--property">
-        <section className="property">
-          <div className="property__gallery-container container">
-            <PropertyGallery
-              imgs={offer.imgs} />
-          </div>
-          <div className="property__container container">
-            <PropertyInformation
-              offer={offer}
-              offerReviews={offerReviews} />
-          </div>
-          <MainMap
-            offers={offers}
-            cityLocation={cityLocation}
-            mapClasses={`property__map`} />
-        </section>
+  componentDidMount() {
+    this.props.changeOfferReviewsList(this.offer.id);
+  }
 
-        <div className="container">
-          <section className="near-places places">
-            <h2 className="near-places__title">Other places in the neighbourhood</h2>
-            <div className="near-places__list places__list">
-              <PropertyNearPlaces
-                nearPlaces={nearPlaces} />
+  render() {
+    const nearPlaces = [];
+    nearPlaces.push(this.offers[1], this.offers[2], this.offers[3], this.offer);
+
+    return (
+      <div className="page">
+        <Header
+          userName={`Oliver.conner@gmail.com`}
+          userNameClasses={`header__user-name user__name`} />
+
+        <main className="page__main page__main--property">
+          <section className="property">
+            <div className="property__gallery-container container">
+              <PropertyGallery imgs={this.offer.imgs} />
             </div>
+            <div className="property__container container">
+              <PropertyInformation
+                offer={this.offer}
+                offerReviews={this.props.offerReviews} />
+            </div>
+            <Map mapClasses={`property__map`} />
           </section>
-        </div>
-      </main>
-    </div>
-  );
-};
+
+          <div className="container">
+            <section className="near-places places">
+              <h2 className="near-places__title">Other places in the neighbourhood</h2>
+              <div className="near-places__list places__list">
+                <PropertyNearPlaces nearPlaces={nearPlaces} />
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+  offers: state.offers,
+  offerReviews: state.offerReviews
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  changeOfferReviewsList(idOffer) {
+    dispatch(ActionCreator.changeOfferReviewsList(idOffer));
+  }
+});
 
 PropertyPage.propTypes = {
+  offers: offersPropTypes,
   offerReviews: reviewsPropTypes,
-  offer: offerPropTypes,
-  nearPlaces: offersPropTypes
+  changeOfferReviewsList: PropTypes.func
 };
 
-
-export default PropertyPage;
+export {PropertyPage};
+export default connect(mapStateToProps, mapDispatchToProps)(PropertyPage);

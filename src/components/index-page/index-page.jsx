@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../header/header";
 import Locations from "../locations/locations";
 import Places from "../places/places";
-import MainMap from "../main-map/main-map";
+import Map from "../map/map";
 
 const IndexPage = () => {
 
@@ -22,8 +22,7 @@ const IndexPage = () => {
           <div className="cities__places-container container">
             <Places />
             <div className="cities__right-section">
-              <MainMap
-                mapClasses={`cities__map`} />
+              <Map mapClasses={`cities__map`} />
             </div>
           </div>
         </div>

@@ -1,18 +1,24 @@
 export const ActionType = {
   CHANGE_CITY: `CHANGE_CITY`,
-  GET_SAME_CITY_OFFERS_LIST: `GET_SAME_CITY_OFFERS_LIST`,
-  GET_ALL_OFFERS_LIST: `GET_ALL_OFFERS_LIST`
+  CHANGE_SAME_CITY_OFFERS_LIST: `CHANGE_SAME_CITY_OFFERS_LIST`,
+  CHANGE_FAVORITE_OFFERS_LIST: `CHANGE_FAVORITE_OFFERS_LIST`,
+  CHANGE_OFFER_REVIEWS_LIST: `CHANGE_OFFER_REVIEWS_LIST`
 };
 
 export const ActionCreator = {
-  selectCity: (city) => ({
+  changeCity: (city) => ({
     type: ActionType.CHANGE_CITY,
     selectedCity: city
   }),
-  getSameCityOffersList: () => ({
-    type: ActionType.GET_SAME_CITY_OFFERS_LIST,
+  changeSameCityOffersList: () => ({
+    type: ActionType.CHANGE_SAME_CITY_OFFERS_LIST
   }),
-  getAllOffersList: () => ({
-    type: ActionType.GET_ALL_OFFERS_LIST
+  changeFavoriteOffersList: (id) => ({
+    type: ActionType.CHANGE_FAVORITE_OFFERS_LIST,
+    favoriteId: id
+  }),
+  changeOfferReviewsList: (idOffer) => ({
+    type: ActionType.CHANGE_OFFER_REVIEWS_LIST,
+    offerId: idOffer
   })
 };

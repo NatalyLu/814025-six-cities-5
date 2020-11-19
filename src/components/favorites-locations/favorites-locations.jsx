@@ -1,9 +1,12 @@
 import React, {Fragment} from "react";
 import Card from "../card/card";
-import {offersPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
+import {offersPropTypes} from "../../prop-types";
+import {sortArrayByField, getArrayOfCities} from "../../func";
+import {connect} from "react-redux";
 
 const FavoritesLocations = (props) => {
-  const {offersFavoritesSorted, uniqueFavoriteCities} = props;
+  const offersFavoritesSorted = props.offersFavorites.sort(sortArrayByField(`city.name`));
+  const uniqueFavoriteCities = getArrayOfCities(offersFavoritesSorted);
 
   return (
     <Fragment>
@@ -34,9 +37,14 @@ const FavoritesLocations = (props) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  offersFavorites: state.offersFavorites
+});
+
+
 FavoritesLocations.propTypes = {
-  offersFavoritesSorted: offersPropTypes,
-  uniqueFavoriteCities: uniqueCitiesPropTypes
+  offersFavorites: offersPropTypes,
 };
 
-export default FavoritesLocations;
+export {FavoritesLocations};
+export default connect(mapStateToProps)(FavoritesLocations);
