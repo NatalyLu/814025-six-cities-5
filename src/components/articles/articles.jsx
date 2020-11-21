@@ -12,10 +12,9 @@ class Articles extends PureComponent {
   }
 
   render() {
-    const offersSameCity = this.props.offersSameCity;
     return (
       <Fragment>
-        {offersSameCity.map((offer, i) => (
+        {this.props.offersSameCity.map((offer, i) => (
           <Card key={`${offer.city.name}-${i}`}
             onMouseOver={() =>{
               this.setState({hover: true});

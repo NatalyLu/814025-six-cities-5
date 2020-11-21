@@ -10,7 +10,7 @@ const initionalState = {
   changedFavorite: false,
   offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
   reviews: offerReviewsList,
-  offerReviews: [offerReviewsList[0]]
+  offerReviews: [offerReviewsList[0]],
 };
 
 const reducer = (state = initionalState, action) => {
@@ -19,18 +19,20 @@ const reducer = (state = initionalState, action) => {
       return extend(state, {
         selectedCity: action.selectedCity
       });
+
     case ActionType.CHANGE_SAME_CITY_OFFERS_LIST:
       return extend(state, {
         offersSameCity: state.offers.filter((offer) => (offer.city.name === state.selectedCity))
       });
-    case ActionType.CHANGE_FAVORITE_OFFERS_LIST:
-      const newFav = state.offers.filter((item) => (item.id === action.favoriteId));
-      // не знаю, как это записать без присваивания
-      const result = newFav[0].isFavorite ? (newFav[0].isFavorite = false) : (newFav[0].isFavorite = true);
 
+    case ActionType.CHANGE_FAVORITE_OFFERS_LIST:
+      const offersFav = state.offers.map((item) => (item.id === action.favoriteId ? extend(item, {isFavorite: !item.isFavorite}) : item));
       return extend(state, {
-        offersFavorites: state.offers.filter((Offerfav) => (Offerfav.isFavorite))
+        offersFavorites: offersFav.filter((Offerfav) => (Offerfav.isFavorite)),
+        offers: offersFav,
+        offersSameCity: offersFav.filter((offer) => (offer.city.name === state.selectedCity))
       });
+
     case ActionType.CHANGE_OFFER_REVIEWS_LIST:
       return extend(state, {
         offerReviews: state.reviews.filter((review) => (review.id === action.offerId))

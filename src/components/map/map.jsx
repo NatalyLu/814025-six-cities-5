@@ -9,15 +9,9 @@ class Map extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      offersSameCity: props.offersSameCity,
-      city: [props.offersSameCity[0].city.location.latitude, props.offersSameCity[0].city.location.longitude],
-      zoom: props.offersSameCity[0].city.location.zoom
-    };
-
-    this.mapClasses = props.mapClasses;
     this.addMarkers = this.addMarkers.bind(this);
     this.map = 0;
+    this.markGroup = [];
 
     // Конфигурация иконки-метки на карте
     this.icon = leaflet.icon({
@@ -28,25 +22,28 @@ class Map extends PureComponent {
 
   // Функция добавления на карту маркеров
   addMarkers(offersSameCity) {
-    // map.removeLayer(layerGroup());
     let markers = [];
     const icon = this.icon;
     offersSameCity.forEach((item) => {
       markers.push(leaflet.marker([item.location.latitude, item.location.longitude], {icon}));
     });
-    leaflet.layerGroup(markers).addTo(this.map);
+    this.markGroup = leaflet.layerGroup(markers).addTo(this.map);
   }
 
 
   componentDidMount() {
+    const {offersSameCity = []} = this.props;
+    const [{city: {location}}] = offersSameCity;
+    const zoom = location.zoom;
+
     // Инициализация карты и установка фокуса на определённый город
     this.map = leaflet.map(`map`, {
-      center: this.state.city,
-      zoom: this.state.zoom,
+      center: [location.latitude, location.longitude],
+      zoom,
       zoomControl: false,
       marker: true
     });
-    this.map.setView(this.state.city, this.state.zoom);
+    this.map.setView([location.latitude, location.longitude], location.zoom);
 
     // Подключаем слой карты (voyager)
     leaflet.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
@@ -54,24 +51,24 @@ class Map extends PureComponent {
     })
     .addTo(this.map);
 
-    this.addMarkers(this.state.offersSameCity);
+    this.addMarkers(offersSameCity);
   }
 
 
-  componentDidUpdate() {
-    // this.setState({offersSameCity: this.props.offersSameCity});
-    // this.setState({city: [this.props.offersSameCity[0].city.location.latitude, this.props.offersSameCity[0].city.location.longitude]});
-    // this.setState({zoom: this.props.offersSameCity[0].city.location.zoom});
+  componentDidUpdate(prevProps) {
+    if (this.props.offersSameCity !== prevProps.offersSameCity) {
+      const {offersSameCity = []} = this.props;
+      const [{city: {location}}] = offersSameCity;
 
-    // this.map.setView(this.state.city, this.state.zoom);
-    // this.addMarkers(this.state.offersSameCity);
-    this.map.setView([this.props.offersSameCity[0].city.location.latitude, this.props.offersSameCity[0].city.location.longitude], this.state.zoom);
-    this.addMarkers(this.props.offersSameCity);
+      this.map.setView([location.latitude, location.longitude], location.zoom);
+      this.map.removeLayer(this.markGroup);
+      this.addMarkers(offersSameCity);
+    }
   }
 
   render() {
     return (
-      <section id="map" className={`${this.mapClasses} map`}></section>
+      <section id="map" className={`${this.props.mapClasses} map`}></section>
     );
   }
 }

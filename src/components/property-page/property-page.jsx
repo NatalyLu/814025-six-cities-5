@@ -23,8 +23,7 @@ class PropertyPage extends PureComponent {
   }
 
   render() {
-    const nearPlaces = [];
-    nearPlaces.push(this.offers[1], this.offers[2], this.offers[3], this.offer);
+    const nearPlaces = this.offers.slice(0, 4);
 
     return (
       <div className="page">

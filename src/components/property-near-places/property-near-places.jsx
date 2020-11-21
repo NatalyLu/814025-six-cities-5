@@ -13,8 +13,7 @@ const PropertyNearPlaces = (props) => {
           offerImgWidth={`260`}
           offerImgHeight={`200`}
           articleClasses={`near-places__card`}
-          cardImageClasses={`near-places__image-wrapper`}
-          bookmarkButtonClasses={`place-card__bookmark-button--active`} />
+          cardImageClasses={`near-places__image-wrapper`} />
       ))}
     </Fragment>
   );
