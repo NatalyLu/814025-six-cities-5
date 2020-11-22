@@ -50,32 +50,6 @@ export const reviewPropTypes = PropTypes.shape({
   })
 }).isRequired;
 
-export const reviewsPropTypes = PropTypes.arrayOf(reviewPropTypes).isRequired;
-
-export const uniqueCitiesPropTypes = PropTypes.arrayOf(PropTypes.string);
-
-
-export const articleClassesPropTypes = PropTypes.string;
-export const cardImageClassesPropTypes = PropTypes.string;
-export const offerImgWidthPropTypes = PropTypes.string;
-export const offerImgHeightPropTypes = PropTypes.string;
-export const cardInfoClassesPropTypes = PropTypes.string;
-export const bookmarkButtonClassesPropTypes = PropTypes.string;
-
-export const logoLinkClassPropTypes = PropTypes.string;
-export const userNameClassesPropTypes = PropTypes.string;
-export const userNamePropTypes = PropTypes.string;
+export const reviewsPropTypes = PropTypes.arrayOf(reviewPropTypes);
 
 export const mapClassesPropTypes = PropTypes.string;
-export const cityLocationPropTypes = PropTypes.shape({
-  latitude: PropTypes.number,
-  longitude: PropTypes.number,
-  zoom: PropTypes.number,
-});
-
-
-export const headerInfoPropTypes = PropTypes.shape({
-  headerClasses: PropTypes.shape(),
-  userName: PropTypes.string,
-  logoLink: PropTypes.string
-});

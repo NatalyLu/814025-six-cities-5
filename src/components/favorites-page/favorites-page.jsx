@@ -1,30 +1,20 @@
 import React from "react";
 import FavoritesLocations from "../favorites-locations/favorites-locations";
 import Header from "../header/header";
-import {uniqueCitiesPropTypes, offersPropTypes} from "../../prop-types";
-import {sortArrayByField} from "../../func";
 
-const FavoritesPage = (props) => {
-  const {offersFavorites, uniqueFavoriteCities} = props;
-  const offersFavoritesSorted = offersFavorites.sort(sortArrayByField(`city.name`));
-
-  const userName = `Oliver.conner@gmail.com`;
-  const userNameClasses = `header__user-name user__name`;
-
+const FavoritesPage = () => {
   return (
     <div className="page">
       <Header
-        userName={userName}
-        userNameClasses={userNameClasses} />
+        userName={`Oliver.conner@gmail.com`}
+        userNameClasses={`header__user-name user__name`} />
 
       <main className="page__main page__main--favorites">
         <div className="page__favorites-container container">
           <section className="favorites">
             <h1 className="favorites__title">Saved lisYting</h1>
             <ul className="favorites__list">
-              <FavoritesLocations
-                uniqueFavoriteCities={uniqueFavoriteCities}
-                offersFavoritesSorted={offersFavoritesSorted} />
+              <FavoritesLocations />
             </ul>
           </section>
         </div>
@@ -37,11 +27,5 @@ const FavoritesPage = (props) => {
     </div>
   );
 };
-
-FavoritesPage.propTypes = {
-  offersFavorites: offersPropTypes,
-  uniqueFavoriteCities: uniqueCitiesPropTypes
-};
-
 
 export default FavoritesPage;

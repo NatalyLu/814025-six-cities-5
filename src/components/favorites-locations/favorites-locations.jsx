@@ -1,16 +1,12 @@
 import React, {Fragment} from "react";
 import Card from "../card/card";
-import {offersPropTypes, uniqueCitiesPropTypes} from "../../prop-types";
+import {offersPropTypes} from "../../prop-types";
+import {sortArrayByField, getArrayOfCities} from "../../func";
+import {connect} from "react-redux";
 
 const FavoritesLocations = (props) => {
-  const {offersFavoritesSorted, uniqueFavoriteCities} = props;
-
-  const offerImgWidth = `150`;
-  const offerImgHeight = `110`;
-  const articleClasses = `favorites__card`;
-  const cardImageClasses = `favorites__image-wrapper`;
-  const cardInfoClasses = `favorites__card-info `;
-  const bookmarkButtonClasses = `place-card__bookmark-button--active`;
+  const offersFavoritesSorted = props.offersFavorites.sort(sortArrayByField(`city.name`));
+  const uniqueFavoriteCities = getArrayOfCities(offersFavoritesSorted);
 
   return (
     <Fragment>
@@ -27,12 +23,12 @@ const FavoritesLocations = (props) => {
             {offersFavoritesSorted.filter((offerFavorite) => (offerFavorite.city.name) === favCity).map((favHotel, j) => (
               <Card key={`favorite-hotel-${j}`}
                 offer={favHotel}
-                offerImgWidth={offerImgWidth}
-                offerImgHeight={offerImgHeight}
-                articleClasses={articleClasses}
-                cardImageClasses={cardImageClasses}
-                cardInfoClasses={cardInfoClasses}
-                bookmarkButtonClasses={bookmarkButtonClasses} />
+                offerImgWidth={`150`}
+                offerImgHeight={`110`}
+                articleClasses={`favorites__card`}
+                cardImageClasses={`favorites__image-wrapper`}
+                cardInfoClasses={`favorites__card-info`}
+                bookmarkButtonClasses={`place-card__bookmark-button--active`} />
             ))}
           </div>
         </li>
@@ -41,9 +37,14 @@ const FavoritesLocations = (props) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  offersFavorites: state.offersFavorites
+});
+
+
 FavoritesLocations.propTypes = {
-  offersFavoritesSorted: offersPropTypes,
-  uniqueFavoriteCities: uniqueCitiesPropTypes
+  offersFavorites: offersPropTypes,
 };
 
-export default FavoritesLocations;
+export {FavoritesLocations};
+export default connect(mapStateToProps)(FavoritesLocations);
