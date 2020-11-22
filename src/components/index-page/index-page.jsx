@@ -1,10 +1,12 @@
 import React from "react";
+import {connect} from "react-redux";
+import {offersPropTypes} from "../../prop-types";
 import Header from "../header/header";
 import Locations from "../locations/locations";
 import Places from "../places/places";
 import Map from "../map/map";
 
-const IndexPage = () => {
+const IndexPage = (props) => {
 
   return (
     <div className="page page--gray page--main">
@@ -22,7 +24,9 @@ const IndexPage = () => {
           <div className="cities__places-container container">
             <Places />
             <div className="cities__right-section">
-              <Map mapClasses={`cities__map`} />
+              <Map
+                offers={props.offersSameCity}
+                mapClasses={`cities__map`} />
             </div>
           </div>
         </div>
@@ -31,4 +35,13 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+IndexPage.propTypes = {
+  offersSameCity: offersPropTypes
+};
+
+const mapStateToProps = (state) => ({
+  offersSameCity: state.offersSameCity,
+});
+
+export {IndexPage};
+export default connect(mapStateToProps)(IndexPage);

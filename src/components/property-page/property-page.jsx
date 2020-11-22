@@ -23,7 +23,7 @@ class PropertyPage extends PureComponent {
   }
 
   render() {
-    const nearPlaces = this.offers.slice(0, 4);
+    const nearPlaces = this.offers.slice(0, 3);
 
     return (
       <div className="page">
@@ -41,7 +41,9 @@ class PropertyPage extends PureComponent {
                 offer={this.offer}
                 offerReviews={this.props.offerReviews} />
             </div>
-            <Map mapClasses={`property__map`} />
+            <Map
+              offers={nearPlaces}
+              mapClasses={`property__map`} />
           </section>
 
           <div className="container">
