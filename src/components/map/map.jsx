@@ -1,5 +1,4 @@
 import React, {PureComponent} from "react";
-import {connect} from "react-redux";
 import {offersPropTypes, mapClassesPropTypes} from "../../prop-types";
 import leaflet from "leaflet";
 // Импорт стилей карты
@@ -21,10 +20,10 @@ class Map extends PureComponent {
   }
 
   // Функция добавления на карту маркеров
-  addMarkers(offersSameCity) {
+  addMarkers(offers) {
     let markers = [];
     const icon = this.icon;
-    offersSameCity.forEach((item) => {
+    offers.forEach((item) => {
       markers.push(leaflet.marker([item.location.latitude, item.location.longitude], {icon}));
     });
     this.markGroup = leaflet.layerGroup(markers).addTo(this.map);
@@ -32,8 +31,8 @@ class Map extends PureComponent {
 
 
   componentDidMount() {
-    const {offersSameCity = []} = this.props;
-    const [{city: {location}}] = offersSameCity;
+    const {offers = []} = this.props;
+    const [{city: {location}}] = offers;
     const zoom = location.zoom;
 
     // Инициализация карты и установка фокуса на определённый город
@@ -51,19 +50,17 @@ class Map extends PureComponent {
     })
     .addTo(this.map);
 
-    this.addMarkers(offersSameCity);
+    this.addMarkers(offers);
   }
 
 
-  componentDidUpdate(prevProps) {
-    if (this.props.offersSameCity !== prevProps.offersSameCity) {
-      const {offersSameCity = []} = this.props;
-      const [{city: {location}}] = offersSameCity;
+  componentDidUpdate() {
+    const {offers = []} = this.props;
+    const [{city: {location}}] = offers;
 
-      this.map.setView([location.latitude, location.longitude], location.zoom);
-      this.map.removeLayer(this.markGroup);
-      this.addMarkers(offersSameCity);
-    }
+    this.map.setView([location.latitude, location.longitude], location.zoom);
+    this.map.removeLayer(this.markGroup);
+    this.addMarkers(offers);
   }
 
   render() {
@@ -73,14 +70,9 @@ class Map extends PureComponent {
   }
 }
 
-const mapStateToProps = (state) => ({
-  offersSameCity: state.offersSameCity,
-});
-
 Map.propTypes = {
-  offersSameCity: offersPropTypes,
+  offers: offersPropTypes,
   mapClasses: mapClassesPropTypes
 };
 
-export {Map};
-export default connect(mapStateToProps)(Map);
+export default Map;
