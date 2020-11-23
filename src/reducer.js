@@ -11,7 +11,9 @@ const initionalState = {
   offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
   reviews: offerReviewsList,
   offerReviews: [offerReviewsList[0]],
-  filterType: `popular`
+  filterType: `popular`,
+  mapMarkerUrl: `img/pin.svg`,
+  mapOfferId: -1
 };
 
 const reducer = (state = initionalState, action) => {
@@ -42,6 +44,11 @@ const reducer = (state = initionalState, action) => {
     case ActionType.CHANGE_FILTER_TYPE:
       return extend(state, {
         filterType: action.filterType
+      });
+    case ActionType.CHANGE_MAP_MARKER_URL:
+      return extend(state, {
+        mapMarkerUrl: action.markerUrl,
+        mapOfferId: action.offerId
       });
   }
   return state;

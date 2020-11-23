@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import {ActionCreator} from "../../action";
 
 const Card = (props) => {
-  const {offer, changeFavoriteOffersList} = props;
+  const {offer, changeFavoriteOffersList, changeMapMarkerUrl} = props;
   const ratingImgWidth = `${(offer.rating * 20)}%`;
   const offerLink = `/offer`;
 
@@ -16,8 +16,16 @@ const Card = (props) => {
     return;
   };
 
+  const handelHoverCard = () => {
+    changeMapMarkerUrl(`img/pin-active.svg`, offer.id);
+  };
+
+  const handelBlurCard = () => {
+    changeMapMarkerUrl(`img/pin.svg`, offer.id);
+  };
+
   return (
-    <article className={`${props.articleClasses} place-card`}>
+    <article className={`${props.articleClasses} place-card`} onMouseEnter={handelHoverCard} onMouseLeave={handelBlurCard}>
       {offer.isPremium &&
         <div className="place-card__mark">
           <span>Premium</span>
@@ -62,6 +70,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   changeFavoriteOffersList(id) {
     dispatch(ActionCreator.changeFavoriteOffersList(id));
+  },
+  changeMapMarkerUrl(url, id) {
+    dispatch(ActionCreator.changeMapMarkerUrl(url, id));
   }
 });
 
@@ -74,6 +85,7 @@ Card.propTypes = {
   cardInfoClasses: PropTypes.string,
   bookmarkButtonClasses: PropTypes.string,
   changeFavoriteOffersList: PropTypes.func,
+  changeMapMarkerUrl: PropTypes.func,
   offersFavorites: offersPropTypes
 };
 

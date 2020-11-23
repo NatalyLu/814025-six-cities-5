@@ -1,5 +1,7 @@
 import React, {PureComponent} from "react";
 import {offersPropTypes, mapClassesPropTypes} from "../../prop-types";
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
 import leaflet from "leaflet";
 // Импорт стилей карты
 import "leaflet/dist/leaflet.css";
@@ -8,25 +10,35 @@ class Map extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.addMarkers = this.addMarkers.bind(this);
     this.map = 0;
-    this.markGroup = [];
+    this.markerGroup = [];
 
-    // Конфигурация иконки-метки на карте
-    this.icon = leaflet.icon({
-      iconUrl: `img/pin.svg`,
+    this.createIcon = this.createMarker.bind(this);
+    this.addMarkers = this.addMarkers.bind(this);
+  }
+
+  // Конфигурация иконки-метки на карте
+  createMarker(url = `img/pin.svg`) {
+    return (leaflet.icon({
+      iconUrl: url,
       iconSize: [30, 30]
-    });
+    }));
   }
 
   // Функция добавления на карту маркеров
   addMarkers(offers) {
     let markers = [];
-    const icon = this.icon;
+    let marker = {};
+
     offers.forEach((item) => {
-      markers.push(leaflet.marker([item.location.latitude, item.location.longitude], {icon}));
+      if (item.id === this.props.offerId) {
+        marker = this.createMarker(this.props.markerUrl);
+      } else {
+        marker = this.createMarker();
+      }
+      markers.push(leaflet.marker([item.location.latitude, item.location.longitude], {marker}));
     });
-    this.markGroup = leaflet.layerGroup(markers).addTo(this.map);
+    this.markerGroup = leaflet.layerGroup(markers).addTo(this.map);
   }
 
 
@@ -59,7 +71,7 @@ class Map extends PureComponent {
     const [{city: {location}}] = offers;
 
     this.map.setView([location.latitude, location.longitude], location.zoom);
-    this.map.removeLayer(this.markGroup);
+    this.map.removeLayer(this.markerGroup);
     this.addMarkers(offers);
   }
 
@@ -70,9 +82,17 @@ class Map extends PureComponent {
   }
 }
 
+const mapStateToProps = (state) => ({
+  markerUrl: state.mapMarkerUrl,
+  offerId: state.mapOfferId
+});
+
 Map.propTypes = {
   offers: offersPropTypes,
-  mapClasses: mapClassesPropTypes
+  mapClasses: mapClassesPropTypes,
+  markerUrl: PropTypes.string,
+  offerId: PropTypes.number,
 };
 
-export default Map;
+export {Map};
+export default connect(mapStateToProps)(Map);

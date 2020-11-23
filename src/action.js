@@ -4,7 +4,8 @@ export const ActionType = {
   CHANGE_FAVORITE_OFFERS_LIST: `CHANGE_FAVORITE_OFFERS_LIST`,
   CHANGE_OFFER_REVIEWS_LIST: `CHANGE_OFFER_REVIEWS_LIST`,
   CHANGE_FILTER_TYPE: `CHANGE_FILTER_TYPE`,
-  SORTING_OFFERS: `SORTING_OFFERS`
+  SORTING_OFFERS: `SORTING_OFFERS`,
+  CHANGE_MAP_MARKER_URL: `CHANGE_MAP_MARKER_URL`
 };
 
 export const ActionCreator = {
@@ -30,5 +31,10 @@ export const ActionCreator = {
   sortingOffers: (arrayNameForSorting) => ({
     type: ActionType.SORTING_OFFERS,
     array: arrayNameForSorting
+  }),
+  changeMapMarkerUrl: (url, id) => ({
+    type: ActionType.CHANGE_MAP_MARKER_URL,
+    markerUrl: url,
+    offerId: id
   })
 };
