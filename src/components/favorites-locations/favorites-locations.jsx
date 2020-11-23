@@ -1,11 +1,11 @@
 import React, {Fragment} from "react";
 import Card from "../card/card";
 import {offersPropTypes} from "../../prop-types";
-import {sortArrayByField, getArrayOfCities} from "../../func";
+import {sortArrayByFieldHighToLow, getArrayOfCities} from "../../func";
 import {connect} from "react-redux";
 
 const FavoritesLocations = (props) => {
-  const offersFavoritesSorted = props.offersFavorites.sort(sortArrayByField(`city.name`));
+  const offersFavoritesSorted = props.offersFavorites.sort(sortArrayByFieldHighToLow(`city.name`));
   const uniqueFavoriteCities = getArrayOfCities(offersFavoritesSorted);
 
   return (

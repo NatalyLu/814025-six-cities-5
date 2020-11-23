@@ -11,6 +11,7 @@ const initionalState = {
   offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
   reviews: offerReviewsList,
   offerReviews: [offerReviewsList[0]],
+  filterType: `popular`
 };
 
 const reducer = (state = initionalState, action) => {
@@ -36,6 +37,11 @@ const reducer = (state = initionalState, action) => {
     case ActionType.CHANGE_OFFER_REVIEWS_LIST:
       return extend(state, {
         offerReviews: state.reviews.filter((review) => (review.id === action.offerId))
+      });
+
+    case ActionType.CHANGE_FILTER_TYPE:
+      return extend(state, {
+        filterType: action.filterType
       });
   }
   return state;

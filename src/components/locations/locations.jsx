@@ -10,7 +10,7 @@ import {offersPropTypes} from "../../prop-types";
 const Locations = (props) => {
   const {selectedCity, changeCity, changeSameCityOffersList, offers} = props;
 
-  const handlechangeCity = (evt) => {
+  const handleChangeCity = (evt) => {
     evt.preventDefault();
     changeCity(evt.target.innerText);
     changeSameCityOffersList();
@@ -25,7 +25,7 @@ const Locations = (props) => {
         {uniqueCities.map((city, i) => (
           <li key={`city-${i}`} className="locations__item">
             <Link className={`locations__item-link tabs__item ${city === selectedCity && `tabs__item--active`}`} to="#" onClick={(item) => {
-              handlechangeCity(item);
+              handleChangeCity(item);
             }}>
               <span>{city}</span>
             </Link>

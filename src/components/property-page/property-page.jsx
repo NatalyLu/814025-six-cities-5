@@ -60,9 +60,10 @@ class PropertyPage extends PureComponent {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   offers: state.offers,
-  offerReviews: state.offerReviews
+  offerReviews: state.offerReviews,
+  id: ownProps.match.params.id
 });
 
 const mapDispatchToProps = (dispatch) => ({

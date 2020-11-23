@@ -2,6 +2,9 @@ import React from "react";
 import Articles from "../articles/articles";
 import {offersPropTypes} from "../../prop-types";
 import {connect} from "react-redux";
+import SortingOptions from "../sorting-options/sorting-options";
+import {getFilteredOffers} from "../../filter-selector";
+import PropTypes from "prop-types";
 
 const Places = (props) => {
   const offersSameCity = props.offersSameCity;
@@ -9,7 +12,7 @@ const Places = (props) => {
   return (
     <section className="cities__places places">
       <h2 className="visually-hidden">Places</h2>
-      <b className="places__found">{offersSameCity.length} places to stay in {offersSameCity[0].city.name}</b>
+      <b className="places__found">{offersSameCity.length} places to stay in {props.selectedCity}</b>
       <form className="places__sorting" action="#" method="get">
         <span className="places__sorting-caption">Sort by</span>
         <span className="places__sorting-type" tabIndex="0">
@@ -18,12 +21,7 @@ const Places = (props) => {
             <use xlinkHref="#icon-arrow-select"></use>
           </svg>
         </span>
-        <ul className="places__options places__options--custom places__options--opened">
-          <li className="places__option places__option--active" tabIndex="0">Popular</li>
-          <li className="places__option" tabIndex="0">Price: low to high</li>
-          <li className="places__option" tabIndex="0">Price: high to low</li>
-          <li className="places__option" tabIndex="0">Top rated first</li>
-        </ul>
+        <SortingOptions />
       </form>
       <div className="cities__places-list places__list tabs__content">
         <Articles offersSameCity={offersSameCity} />
@@ -33,14 +31,15 @@ const Places = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  offersSameCity: state.offersSameCity
+  offersSameCity: getFilteredOffers(state),
+  selectedCity: state.selectedCity
 });
 
 Places.propTypes = {
-  offersSameCity: offersPropTypes
+  offersSameCity: offersPropTypes,
+  getFilteredOffers: PropTypes.func,
+  selectedCity: PropTypes.string
 };
 
 export {Places};
 export default connect(mapStateToProps)(Places);
-
-
