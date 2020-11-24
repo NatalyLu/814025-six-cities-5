@@ -1,7 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
 import {offersPropTypes} from "../../prop-types";
-import PropTypes from "prop-types";
 import Header from "../header/header";
 import Locations from "../locations/locations";
 import Places from "../places/places";
@@ -37,14 +36,13 @@ const IndexPage = (props) => {
   );
 };
 
-IndexPage.propTypes = {
-  offersSameCity: offersPropTypes,
-  getSameCityOffersList: PropTypes.func,
-};
-
 const mapStateToProps = (state) => ({
   offersSameCity: getSameCityOffersList(state)
 });
+
+IndexPage.propTypes = {
+  offersSameCity: offersPropTypes,
+};
 
 export {IndexPage};
 export default connect(mapStateToProps)(IndexPage);

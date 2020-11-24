@@ -10,7 +10,7 @@ export const FilterType = {
 };
 
 const getFilter = (state) => state.filterType;
-const getOffers = (state) => getSameCityOffersList(state); // state.offersSameCity;
+const getOffers = (state) => getSameCityOffersList(state);
 
 export const getFilteredOffers = createSelector(
     [getFilter, getOffers],

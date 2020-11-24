@@ -13,7 +13,6 @@ const initionalState = {
   mapOfferId: -1,
 
   reviews: offerReviewsList,
-  offerReviews: [offerReviewsList[0]]
 };
 
 const reducer = (state = initionalState, action) => {
@@ -31,19 +30,20 @@ const reducer = (state = initionalState, action) => {
         offersSameCity: offersFav.filter((offer) => (offer.city.name === state.selectedCity))
       });
 
-    case ActionType.CHANGE_OFFER_REVIEWS_LIST:
-      return extend(state, {
-        offerReviews: state.reviews.filter((review) => (review.id === action.offerId))
-      });
-
     case ActionType.CHANGE_FILTER_TYPE:
       return extend(state, {
         filterType: action.filterType
       });
+
     case ActionType.CHANGE_MAP_MARKER_URL:
       return extend(state, {
         mapMarkerUrl: action.markerUrl,
         mapOfferId: action.offerId
+      });
+
+    case ActionType.ADD_NEW_REVIEW:
+      return extend(state, {
+        reviews: [...state.reviews, action.newReview]
       });
   }
   return state;

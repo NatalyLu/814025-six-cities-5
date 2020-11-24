@@ -1,4 +1,6 @@
 import React, {PureComponent, Fragment} from "react";
+import {connect} from "react-redux";
+import {ActionCreator} from "../../action";
 import PropTypes from "prop-types";
 
 class ReviewForm extends PureComponent {
@@ -34,7 +36,7 @@ class ReviewForm extends PureComponent {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    this.props.onNewReview(this.createNewComment(this.state.rating, this.state.review));
+    this.props.addNewReview(this.createNewComment(this.state.rating, this.state.review));
     this.onFieldsClear();
   }
 
@@ -81,8 +83,15 @@ class ReviewForm extends PureComponent {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  addNewReview(city) {
+    dispatch(ActionCreator.addNewReview(city));
+  }
+});
+
 ReviewForm.propTypes = {
-  onNewReview: PropTypes.func.isRequired,
+  addNewReview: PropTypes.func.isRequired,
 };
 
-export default ReviewForm;
+export {ReviewForm};
+export default connect(null, mapDispatchToProps)(ReviewForm);

@@ -19,8 +19,6 @@ const App = () => {
           <LoginPage />
         </Route>
         <Route path="/offer/:id?" component={PropertyPage} />
-        {/* <PropertyPage  /> */}
-        {/* </Route> */}
       </Switch>
     </BrowserRouter>
   );
