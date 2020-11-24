@@ -11,7 +11,7 @@ class Map extends PureComponent {
     super(props);
 
     this.map = 0;
-    this.markerGroup = [];
+    this.markerGroup = {};
 
     this.createIcon = this.createMarker.bind(this);
     this.addMarkers = this.addMarkers.bind(this);
@@ -28,15 +28,19 @@ class Map extends PureComponent {
   // Функция добавления на карту маркеров
   addMarkers(offers) {
     let markers = [];
-    let marker = {};
+    let icon = {};
+
+    if (this.markerGroup.options) {
+      this.map.removeLayer(this.markerGroup);
+    }
 
     offers.forEach((item) => {
       if (item.id === this.props.offerId) {
-        marker = this.createMarker(this.props.markerUrl);
+        icon = this.createMarker(this.props.markerUrl);
       } else {
-        marker = this.createMarker();
+        icon = this.createMarker();
       }
-      markers.push(leaflet.marker([item.location.latitude, item.location.longitude], {marker}));
+      markers.push(leaflet.marker([item.location.latitude, item.location.longitude], {icon}));
     });
     this.markerGroup = leaflet.layerGroup(markers).addTo(this.map);
   }
@@ -71,7 +75,6 @@ class Map extends PureComponent {
     const [{city: {location}}] = offers;
 
     this.map.setView([location.latitude, location.longitude], location.zoom);
-    this.map.removeLayer(this.markerGroup);
     this.addMarkers(offers);
   }
 
