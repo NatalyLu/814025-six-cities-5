@@ -3,7 +3,7 @@ import Articles from "../articles/articles";
 import {offersPropTypes} from "../../prop-types";
 import {connect} from "react-redux";
 import SortingOptions from "../sorting-options/sorting-options";
-import {getFilteredOffers} from "../../filter-selector";
+import {getFilteredOffers} from "../../selectors/offers/filter-selector";
 import PropTypes from "prop-types";
 
 const Places = (props) => {

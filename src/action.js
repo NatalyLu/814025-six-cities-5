@@ -1,6 +1,5 @@
 export const ActionType = {
   CHANGE_CITY: `CHANGE_CITY`,
-  CHANGE_SAME_CITY_OFFERS_LIST: `CHANGE_SAME_CITY_OFFERS_LIST`,
   CHANGE_FAVORITE_OFFERS_LIST: `CHANGE_FAVORITE_OFFERS_LIST`,
   CHANGE_OFFER_REVIEWS_LIST: `CHANGE_OFFER_REVIEWS_LIST`,
   CHANGE_FILTER_TYPE: `CHANGE_FILTER_TYPE`,
@@ -13,16 +12,9 @@ export const ActionCreator = {
     type: ActionType.CHANGE_CITY,
     selectedCity: city
   }),
-  changeSameCityOffersList: () => ({
-    type: ActionType.CHANGE_SAME_CITY_OFFERS_LIST
-  }),
   changeFavoriteOffersList: (id) => ({
     type: ActionType.CHANGE_FAVORITE_OFFERS_LIST,
     favoriteId: id
-  }),
-  changeOfferReviewsList: (idOffer) => ({
-    type: ActionType.CHANGE_OFFER_REVIEWS_LIST,
-    offerId: idOffer
   }),
   changeFilterType: (fType) => ({
     type: ActionType.CHANGE_FILTER_TYPE,
@@ -36,5 +28,10 @@ export const ActionCreator = {
     type: ActionType.CHANGE_MAP_MARKER_URL,
     markerUrl: url,
     offerId: id
-  })
+  }),
+
+  changeOfferReviewsList: (idOffer) => ({
+    type: ActionType.CHANGE_OFFER_REVIEWS_LIST,
+    offerId: idOffer
+  }),
 };

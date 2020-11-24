@@ -8,12 +8,11 @@ import {offersPropTypes} from "../../prop-types";
 
 // Paris, Cologne, Brussels, Amsterdam, Hamburg, Dusseldorf
 const Locations = (props) => {
-  const {selectedCity, changeCity, changeSameCityOffersList, offers} = props;
+  const {selectedCity, changeCity, offers} = props;
 
   const handleChangeCity = (evt) => {
     evt.preventDefault();
     changeCity(evt.target.innerText);
-    changeSameCityOffersList();
     return;
   };
 
@@ -44,16 +43,12 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   changeCity(city) {
     dispatch(ActionCreator.changeCity(city));
-  },
-  changeSameCityOffersList() {
-    dispatch(ActionCreator.changeSameCityOffersList());
   }
 });
 
 Locations.propTypes = {
   selectedCity: PropTypes.string,
   changeCity: PropTypes.func,
-  changeSameCityOffersList: PropTypes.func,
   offers: offersPropTypes
 };
 

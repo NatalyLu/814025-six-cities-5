@@ -6,14 +6,14 @@ import {ActionType} from "./action";
 const initionalState = {
   selectedCity: offersCities[0].city.name,
   offers: offersCities,
-  offersSameCity: offersCities.filter((offer) => (offer.city.name === offersCities[0].city.name)),
   changedFavorite: false,
   offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
-  reviews: offerReviewsList,
-  offerReviews: [offerReviewsList[0]],
   filterType: `popular`,
   mapMarkerUrl: `img/pin.svg`,
-  mapOfferId: -1
+  mapOfferId: -1,
+
+  reviews: offerReviewsList,
+  offerReviews: [offerReviewsList[0]]
 };
 
 const reducer = (state = initionalState, action) => {
@@ -21,11 +21,6 @@ const reducer = (state = initionalState, action) => {
     case ActionType.CHANGE_CITY:
       return extend(state, {
         selectedCity: action.selectedCity
-      });
-
-    case ActionType.CHANGE_SAME_CITY_OFFERS_LIST:
-      return extend(state, {
-        offersSameCity: state.offers.filter((offer) => (offer.city.name === state.selectedCity))
       });
 
     case ActionType.CHANGE_FAVORITE_OFFERS_LIST:

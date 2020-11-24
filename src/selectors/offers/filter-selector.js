@@ -1,5 +1,6 @@
 import {createSelector} from "reselect";
-import {sortArrayByFieldLowToHigh, sortArrayByFieldHighToLow} from "./func";
+import {sortArrayByFieldLowToHigh, sortArrayByFieldHighToLow} from "../../func";
+import {getSameCityOffersList} from "./same-cities-list-selector";
 
 export const FilterType = {
   POPULAR: `popular`,
@@ -9,7 +10,7 @@ export const FilterType = {
 };
 
 const getFilter = (state) => state.filterType;
-const getOffers = (state) => state.offersSameCity;
+const getOffers = (state) => getSameCityOffersList(state); // state.offersSameCity;
 
 export const getFilteredOffers = createSelector(
     [getFilter, getOffers],
