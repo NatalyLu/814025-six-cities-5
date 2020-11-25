@@ -9,8 +9,9 @@ const initionalState = {
   changedFavorite: false,
   offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
   filterType: `popular`,
-  mapMarkerUrl: `/img/pin.svg`,
+  isCardHover: false,
   mapOfferId: -1,
+  isOpenList: false,
 
   reviews: offerReviewsList,
 };
@@ -37,13 +38,18 @@ const reducer = (state = initionalState, action) => {
 
     case ActionType.CHANGE_MAP_MARKER_URL:
       return extend(state, {
-        mapMarkerUrl: action.markerUrl,
+        isCardHover: action.isCardHover,
         mapOfferId: action.offerId
       });
 
     case ActionType.ADD_NEW_REVIEW:
       return extend(state, {
         reviews: [...state.reviews, action.newReview]
+      });
+
+    case ActionType.CHANGE_OPEN_LIST_FLAG:
+      return extend(state, {
+        isOpenList: !state.isOpenList
       });
   }
   return state;

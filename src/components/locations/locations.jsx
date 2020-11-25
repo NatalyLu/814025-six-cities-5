@@ -1,14 +1,13 @@
 import React from "react";
-import {getArrayOfCities} from "../../func";
+import {getOffersCitiesList} from "../../func";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../action";
-import {offersPropTypes} from "../../prop-types";
 
 // Paris, Cologne, Brussels, Amsterdam, Hamburg, Dusseldorf
 const Locations = (props) => {
-  const {selectedCity, changeCity, offers} = props;
+  const {selectedCity, changeCity} = props;
 
   const handleChangeCity = (evt) => {
     evt.preventDefault();
@@ -16,7 +15,7 @@ const Locations = (props) => {
     return;
   };
 
-  const uniqueCities = getArrayOfCities(offers);
+  const uniqueCities = getOffersCitiesList();
 
   return (
     <section className="locations container">
@@ -36,8 +35,7 @@ const Locations = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  selectedCity: state.selectedCity,
-  offers: state.offers
+  selectedCity: state.selectedCity
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -48,8 +46,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 Locations.propTypes = {
   selectedCity: PropTypes.string,
-  changeCity: PropTypes.func,
-  offers: offersPropTypes
+  changeCity: PropTypes.func
 };
 
 export {Locations};

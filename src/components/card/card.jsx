@@ -9,6 +9,7 @@ const Card = (props) => {
   const {offer, changeFavoriteOffersList, changeMapMarkerUrl} = props;
   const ratingImgWidth = `${(offer.rating * 20)}%`;
   const offerLink = `/offer/${offer.id}`;
+  let isHovered = false;
 
   const handleChangeStatus = (item, evt) => {
     evt.preventDefault();
@@ -17,11 +18,13 @@ const Card = (props) => {
   };
 
   const handelHoverCard = () => {
-    changeMapMarkerUrl(`/img/pin-active.svg`, offer.id);
+    isHovered = true;
+    changeMapMarkerUrl(isHovered, offer.id);
   };
 
   const handelBlurCard = () => {
-    changeMapMarkerUrl(`/img/pin.svg`, offer.id);
+    isHovered = false;
+    changeMapMarkerUrl(isHovered, offer.id);
   };
 
   return (
@@ -67,8 +70,8 @@ const mapDispatchToProps = (dispatch) => ({
   changeFavoriteOffersList(id) {
     dispatch(ActionCreator.changeFavoriteOffersList(id));
   },
-  changeMapMarkerUrl(url, id) {
-    dispatch(ActionCreator.changeMapMarkerUrl(url, id));
+  changeMapMarkerUrl(isCardHover, id) {
+    dispatch(ActionCreator.changeMapMarkerUrl(isCardHover, id));
   }
 });
 

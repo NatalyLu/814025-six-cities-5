@@ -4,7 +4,8 @@ export const ActionType = {
   CHANGE_FILTER_TYPE: `CHANGE_FILTER_TYPE`,
   SORTING_OFFERS: `SORTING_OFFERS`,
   CHANGE_MAP_MARKER_URL: `CHANGE_MAP_MARKER_URL`,
-  ADD_NEW_REVIEW: `ADD_NEW_REVIEW`
+  ADD_NEW_REVIEW: `ADD_NEW_REVIEW`,
+  CHANGE_OPEN_LIST_FLAG: `CHANGE_OPEN_LIST_FLAG`
 };
 
 export const ActionCreator = {
@@ -24,14 +25,18 @@ export const ActionCreator = {
     type: ActionType.SORTING_OFFERS,
     array: arrayNameForSorting
   }),
-  changeMapMarkerUrl: (url, id) => ({
+  changeMapMarkerUrl: (flagHov, id) => ({
     type: ActionType.CHANGE_MAP_MARKER_URL,
-    markerUrl: url,
+    isCardHover: flagHov,
     offerId: id
   }),
 
   addNewReview: (review) => ({
     type: ActionType.ADD_NEW_REVIEW,
     newReview: review
+  }),
+
+  changeOpenListFlag: () => ({
+    type: ActionType.CHANGE_OPEN_LIST_FLAG
   })
 };

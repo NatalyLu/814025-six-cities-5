@@ -35,8 +35,8 @@ class Map extends PureComponent {
     }
 
     offers.forEach((item) => {
-      if (item.id === this.props.offerId) {
-        icon = this.createMarker(this.props.markerUrl);
+      if ((item.id === this.props.offerId) && (this.props.isCardHover)) {
+        icon = this.createMarker(`/img/pin-active.svg`);
       } else {
         icon = this.createMarker();
       }
@@ -86,14 +86,14 @@ class Map extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  markerUrl: state.mapMarkerUrl,
+  isCardHover: state.isCardHover,
   offerId: state.mapOfferId
 });
 
 Map.propTypes = {
   offers: offersPropTypes,
   mapClasses: mapClassesPropTypes,
-  markerUrl: PropTypes.string,
+  isCardHover: PropTypes.bool,
   offerId: PropTypes.number,
 };
 
