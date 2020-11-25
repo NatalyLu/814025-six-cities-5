@@ -25,7 +25,7 @@ class ReviewForm extends PureComponent {
       id: 1,
       rating: Number(stars),
       user: {
-        avatarUrl: `img/avatar-max.jpg`,
+        avatarUrl: `/img/avatar-max.jpg`,
         id: 4,
         isPro: false,
         name: `Max`,

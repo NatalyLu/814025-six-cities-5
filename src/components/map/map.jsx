@@ -18,7 +18,7 @@ class Map extends PureComponent {
   }
 
   // Конфигурация иконки-метки на карте
-  createMarker(url = `img/pin.svg`) {
+  createMarker(url = `/img/pin.svg`) {
     return (leaflet.icon({
       iconUrl: url,
       iconSize: [30, 30]

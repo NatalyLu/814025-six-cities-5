@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {offerPropTypes, offersPropTypes} from "../../prop-types";
+import {offerPropTypes} from "../../prop-types";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../action";
@@ -8,7 +8,7 @@ import {ActionCreator} from "../../action";
 const Card = (props) => {
   const {offer, changeFavoriteOffersList, changeMapMarkerUrl} = props;
   const ratingImgWidth = `${(offer.rating * 20)}%`;
-  const offerLink = `/offer`;
+  const offerLink = `/offer/${offer.id}`;
 
   const handleChangeStatus = (item, evt) => {
     evt.preventDefault();
@@ -17,11 +17,11 @@ const Card = (props) => {
   };
 
   const handelHoverCard = () => {
-    changeMapMarkerUrl(`img/pin-active.svg`, offer.id);
+    changeMapMarkerUrl(`/img/pin-active.svg`, offer.id);
   };
 
   const handelBlurCard = () => {
-    changeMapMarkerUrl(`img/pin.svg`, offer.id);
+    changeMapMarkerUrl(`/img/pin.svg`, offer.id);
   };
 
   return (
@@ -55,17 +55,13 @@ const Card = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{offer.title}</a>
+          <Link to={offerLink}>{offer.title}</Link>
         </h2>
         <p className="place-card__type">{offer.type}</p>
       </div>
     </article>
   );
 };
-
-const mapStateToProps = (state) => ({
-  offersFavorites: state.offersFavorites
-});
 
 const mapDispatchToProps = (dispatch) => ({
   changeFavoriteOffersList(id) {
@@ -86,8 +82,7 @@ Card.propTypes = {
   bookmarkButtonClasses: PropTypes.string,
   changeFavoriteOffersList: PropTypes.func,
   changeMapMarkerUrl: PropTypes.func,
-  offersFavorites: offersPropTypes
 };
 
 export {Card};
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default connect(null, mapDispatchToProps)(Card);

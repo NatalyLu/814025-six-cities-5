@@ -17,11 +17,11 @@ export default [
     host: {
       id: 1,
       name: `Angelina`,
-      avatar: `img/avatar-angelina.jpg`,
+      avatar: `/img/avatar-angelina.jpg`,
       isPro: true,
     },
     id: 1,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -30,7 +30,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 120,
     rating: 4.8,
     title: `Beautiful & luxurious studio at great location`,
@@ -51,11 +51,11 @@ export default [
     host: {
       id: 1,
       name: `Angelina`,
-      avatar: `img/avatar-angelina.jpg`,
+      avatar: `/img/avatar-angelina.jpg`,
       isPro: true,
     },
     id: 2,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -64,7 +64,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 120,
     rating: 4.8,
     title: `Beautiful & luxurious studio at great location`,
@@ -85,11 +85,11 @@ export default [
     host: {
       id: 1,
       name: `Angelina`,
-      avatar: `img/avatar-angelina.jpg`,
+      avatar: `/img/avatar-angelina.jpg`,
       isPro: true,
     },
     id: 3,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -98,7 +98,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 120,
     rating: 4.8,
     title: `Beautiful & luxurious studio at great location`,
@@ -123,7 +123,7 @@ export default [
       isPro: true,
     },
     id: 4,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: true,
     isPremium: false,
     location: {
@@ -132,7 +132,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 130,
     rating: 3,
     title: `Hotel Fita`,
@@ -157,7 +157,7 @@ export default [
       isPro: true,
     },
     id: 5,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -166,7 +166,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 125,
     rating: 5,
     title: `Hotel Estherea`,
@@ -191,7 +191,7 @@ export default [
       isPro: true,
     },
     id: 6,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: true,
     isPremium: true,
     location: {
@@ -200,7 +200,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 120,
     rating: 3.8,
     title: `Hotel Amsteram`,
@@ -227,7 +227,7 @@ export default [
       isPro: true,
     },
     id: 7,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -236,7 +236,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 80,
     rating: 4,
     title: `Hotel NH Brussels Bloom`,
@@ -261,7 +261,7 @@ export default [
       isPro: true,
     },
     id: 8,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: true,
     isPremium: false,
     location: {
@@ -270,7 +270,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 50,
     rating: 3,
     title: `Safestay Brussels`,
@@ -295,7 +295,7 @@ export default [
       isPro: true,
     },
     id: 9,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -304,7 +304,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 130,
     rating: 4,
     title: `MEININGER Hotel`,
@@ -329,7 +329,7 @@ export default [
       isPro: true,
     },
     id: 10,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -338,7 +338,7 @@ export default [
       zoom: 8
     },
     maxAdults: 6,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 85,
     rating: 4,
     title: `Best Hote`,
@@ -365,7 +365,7 @@ export default [
       isPro: true,
     },
     id: 11,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -374,7 +374,7 @@ export default [
       zoom: 8
     },
     maxAdults: 6,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 79,
     rating: 3,
     title: `Leonardo Royal Hotel`,
@@ -399,7 +399,7 @@ export default [
       isPro: true,
     },
     id: 12,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -408,7 +408,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 80,
     rating: 4,
     title: `DJH Jugendherberge`,
@@ -433,7 +433,7 @@ export default [
       isPro: true,
     },
     id: 13,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -442,7 +442,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 130,
     rating: 3,
     title: `Hardrock Motown Hostel`,
@@ -467,7 +467,7 @@ export default [
       isPro: true,
     },
     id: 14,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -476,7 +476,7 @@ export default [
       zoom: 8
     },
     maxAdults: 8,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 85,
     rating: 4,
     title: `Dom Hotel`,
@@ -503,7 +503,7 @@ export default [
       isPro: true,
     },
     id: 15,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -512,7 +512,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 149,
     rating: 3,
     title: `International Youth Hostel`,
@@ -537,7 +537,7 @@ export default [
       isPro: true,
     },
     id: 16,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: true,
     isPremium: true,
     location: {
@@ -546,7 +546,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 180,
     rating: 5,
     title: `Pullman Paris Tour Eiffel`,
@@ -571,7 +571,7 @@ export default [
       isPro: true,
     },
     id: 17,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -580,7 +580,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 130,
     rating: 4,
     title: `Hotel Eugene en Ville`,
@@ -605,7 +605,7 @@ export default [
       isPro: true,
     },
     id: 18,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -614,7 +614,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 85,
     rating: 4,
     title: `La Manufacture`,
@@ -641,7 +641,7 @@ export default [
       isPro: true,
     },
     id: 19,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -650,7 +650,7 @@ export default [
       zoom: 8
     },
     maxAdults: 5,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 99,
     rating: 4,
     title: `Generator Hamburg`,
@@ -675,7 +675,7 @@ export default [
       isPro: true,
     },
     id: 20,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -684,7 +684,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 105,
     rating: 4,
     title: `MEININGER Hotel`,
@@ -709,7 +709,7 @@ export default [
       isPro: true,
     },
     id: 21,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -718,7 +718,7 @@ export default [
       zoom: 8
     },
     maxAdults: 5,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 70,
     rating: 4,
     title: `Arthotel ANA Hafen City`,
@@ -743,7 +743,7 @@ export default [
       isPro: true,
     },
     id: 22,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -752,7 +752,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 85,
     rating: 4,
     title: `Super 8 by Wyndham`,
@@ -779,7 +779,7 @@ export default [
       isPro: true,
     },
     id: 23,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -788,7 +788,7 @@ export default [
       zoom: 8
     },
     maxAdults: 5,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 49,
     rating: 2,
     title: `NK Hotel`,
@@ -813,7 +813,7 @@ export default [
       isPro: true,
     },
     id: 24,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: false,
     location: {
@@ -822,7 +822,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 70,
     rating: 5,
     title: `Hotel Schumacher`,
@@ -847,7 +847,7 @@ export default [
       isPro: true,
     },
     id: 25,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -856,7 +856,7 @@ export default [
       zoom: 8
     },
     maxAdults: 4,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 80,
     rating: 4,
     title: `Hyatt Regency`,
@@ -881,7 +881,7 @@ export default [
       isPro: true,
     },
     id: 26,
-    imgs: [`img/room.jpg`, `img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/apartment-01.jpg`, `img/apartment-01.jpg`],
+    imgs: [`/img/room.jpg`, `/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/apartment-01.jpg`, `/img/apartment-01.jpg`],
     isFavorite: false,
     isPremium: true,
     location: {
@@ -890,7 +890,7 @@ export default [
       zoom: 8
     },
     maxAdults: 2,
-    previewImage: `img/apartment-01.jpg`,
+    previewImage: `/img/apartment-01.jpg`,
     price: 90,
     rating: 4,
     title: `B&B Hotel`,

@@ -9,7 +9,7 @@ const initionalState = {
   changedFavorite: false,
   offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
   filterType: `popular`,
-  mapMarkerUrl: `img/pin.svg`,
+  mapMarkerUrl: `/img/pin.svg`,
   mapOfferId: -1,
 
   reviews: offerReviewsList,

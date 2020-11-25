@@ -6,10 +6,11 @@ import Header from "../header/header";
 import Map from "../map/map";
 import {connect} from "react-redux";
 import {offersPropTypes} from "../../prop-types";
+import PropTypes from "prop-types";
 
 const PropertyPage = (props) => {
   const offers = props.offers;
-  const offer = offers[0];
+  const offer = offers.find((off) => (off.id === Number(props.id)));
   const nearPlaces = offers.slice(0, 3);
 
   return (
@@ -52,6 +53,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 PropertyPage.propTypes = {
   offers: offersPropTypes,
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
 export {PropertyPage};
