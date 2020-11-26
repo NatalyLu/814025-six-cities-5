@@ -4,48 +4,48 @@ import {ActionCreator} from "../../action";
 import PropTypes from "prop-types";
 
 const SortingOptions = (props) => {
-  const {changeFilterType} = props;
 
-  const handleChangeActiveClass = (evt, activeClass) => {
-    const tarClasses = evt.target.classList;
-    const childrens = evt.currentTarget.children;
+  const SORT_TYPES_LIST = [
+    {label: `Popular`, value: `popular`},
+    {label: `Price: low to high`, value: `price-low-to-high`},
+    {label: `Price: high to low`, value: `price-high-to-low`},
+    {label: `Top rated first`, value: `top-rated-first`},
+  ];
 
-    for (let length = 0; length < childrens.length; length++) {
-      if (childrens[length].classList.contains(activeClass)) {
-        childrens[length].classList.remove(activeClass);
-      }
-    }
-    tarClasses.add(activeClass);
-  };
-
-  const handleChangeFilter = (evt) => {
-    changeFilterType(evt.target.dataset[`filter`]);
+  const handleChangeFilter = (evt, filter) => {
+    props.changeFilterType(filter);
+    props.changeOpenListFlag();
     return;
   };
 
   return (
-    <ul className={`places__options places__options--custom ${props.isOpenList && `places__options--opened`}`} onClick={(evt) => (handleChangeActiveClass(evt, `places__option--active`))}>
-      <li className="places__option places__option--active" tabIndex="0" data-filter="popular" onClick={handleChangeFilter}>Popular</li>
-      <li className="places__option" tabIndex="0" data-filter="price-low-to-high" onClick={handleChangeFilter}>Price: low to high</li>
-      <li className="places__option" tabIndex="0" data-filter="price-high-to-low" onClick={handleChangeFilter}>Price: high to low</li>
-      <li className="places__option" tabIndex="0" data-filter="top-rated-first" onClick={handleChangeFilter}>Top rated first</li>
+    <ul className={`places__options places__options--custom ${props.isOpenList && `places__options--opened`}`} >
+      {SORT_TYPES_LIST.map(({label, value}) => (
+        <li key={`sort-by-${value}`} className={`places__option ${value === props.filterType ? `places__option--active` : ``}`} tabIndex="0" data-filter={value} onClick={(evt) => handleChangeFilter(evt, value)}>{label}</li>
+      ))}
     </ul>
   );
 };
 
 const mapStateToProps = (state) => ({
-  isOpenList: state.isOpenList
+  isOpenList: state.isOpenList,
+  filterType: state.filterType
 });
 
 const mapDispatchToProps = (dispatch) => ({
   changeFilterType(fType) {
     dispatch(ActionCreator.changeFilterType(fType));
   },
+  changeOpenListFlag() {
+    dispatch(ActionCreator.changeOpenListFlag());
+  }
 });
 
 SortingOptions.propTypes = {
   changeFilterType: PropTypes.func,
-  isOpenList: PropTypes.bool
+  isOpenList: PropTypes.bool,
+  changeOpenListFlag: PropTypes.func,
+  filterType: PropTypes.string
 };
 
 export {SortingOptions};
