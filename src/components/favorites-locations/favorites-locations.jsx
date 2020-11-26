@@ -3,7 +3,7 @@ import Card from "../card/card";
 import {offersPropTypes} from "../../prop-types";
 import {getArrayOfCities} from "../../func";
 import {connect} from "react-redux";
-import {getOffersSortedList} from "../../selectors/offers/favorites-sorted-list";
+import {getOffersSortedList} from "../../selectors/offers/favorites-sorted-list-selector";
 
 const FavoritesLocations = (props) => {
   const offersFavoritesSorted = props.offersFavoritesSorted;
@@ -40,7 +40,6 @@ const FavoritesLocations = (props) => {
 
 const mapStateToProps = (state, sortingParam = `city.name`) => ({
   offersFavoritesSorted: getOffersSortedList(state, sortingParam)
-
 });
 
 

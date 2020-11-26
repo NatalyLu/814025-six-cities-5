@@ -37,7 +37,7 @@ const IndexPage = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  offersSameCity: getSameCityOffersList(state)
+  offersSameCity: getSameCityOffersList(state, state.offers)
 });
 
 IndexPage.propTypes = {

@@ -25,7 +25,7 @@ export const ActionCreator = {
     type: ActionType.SORTING_OFFERS,
     array: arrayNameForSorting
   }),
-  changeMapMarkerUrl: (flagHov, id) => ({
+  changeActiveOfferId: (flagHov, id) => ({
     type: ActionType.CHANGE_MAP_MARKER_URL,
     isCardHover: flagHov,
     offerId: id

@@ -6,9 +6,8 @@ import {connect} from "react-redux";
 import {ActionCreator} from "../../action";
 
 const Card = (props) => {
-  const {offer, changeFavoriteOffersList, changeMapMarkerUrl} = props;
+  const {offer, changeFavoriteOffersList, changeActiveOfferId} = props;
   const ratingImgWidth = `${(offer.rating * 20)}%`;
-  const offerLink = `/offer/${offer.id}`;
   let isHovered = false;
 
   const handleChangeStatus = (item, evt) => {
@@ -19,12 +18,12 @@ const Card = (props) => {
 
   const handelHoverCard = () => {
     isHovered = true;
-    changeMapMarkerUrl(isHovered, offer.id);
+    changeActiveOfferId(isHovered, offer.id);
   };
 
   const handelBlurCard = () => {
     isHovered = false;
-    changeMapMarkerUrl(isHovered, offer.id);
+    changeActiveOfferId(isHovered, offer.id);
   };
 
   return (
@@ -34,9 +33,9 @@ const Card = (props) => {
           <span>Premium</span>
         </div>}
       <div className={`${props.cardImageClasses} place-card__image-wrapper`}>
-        <Link to={offerLink}>
+        <a href="#">
           <img className="place-card__image" src={offer.previewImage} width={props.offerImgWidth} height={props.offerImgHeight} alt="Place image"/>
-        </Link>
+        </a>
       </div>
       <div className={`${props.cardInfoClasses} place-card__info`}>
         <div className="place-card__price-wrapper">
@@ -58,7 +57,7 @@ const Card = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={offerLink}>{offer.title}</Link>
+          <Link to={`/offer/${offer.id}`}>{offer.title}</Link>
         </h2>
         <p className="place-card__type">{offer.type}</p>
       </div>
@@ -70,8 +69,8 @@ const mapDispatchToProps = (dispatch) => ({
   changeFavoriteOffersList(id) {
     dispatch(ActionCreator.changeFavoriteOffersList(id));
   },
-  changeMapMarkerUrl(isCardHover, id) {
-    dispatch(ActionCreator.changeMapMarkerUrl(isCardHover, id));
+  changeActiveOfferId(isCardHover, id) {
+    dispatch(ActionCreator.changeActiveOfferId(isCardHover, id));
   }
 });
 
@@ -84,7 +83,7 @@ Card.propTypes = {
   cardInfoClasses: PropTypes.string,
   bookmarkButtonClasses: PropTypes.string,
   changeFavoriteOffersList: PropTypes.func,
-  changeMapMarkerUrl: PropTypes.func,
+  changeActiveOfferId: PropTypes.func,
 };
 
 export {Card};
