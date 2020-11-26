@@ -22,6 +22,3 @@ export const sortArrayByFieldHighToLow = (field) => {
 export const extend = (a, b) => {
   return Object.assign({}, a, b);
 };
-
-// Возвращает массив городов
-export const getOffersCitiesList = () => [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];

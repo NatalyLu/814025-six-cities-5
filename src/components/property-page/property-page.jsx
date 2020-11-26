@@ -5,13 +5,11 @@ import PropertyNearPlaces from "../property-near-places/property-near-places";
 import Header from "../header/header";
 import Map from "../map/map";
 import {connect} from "react-redux";
-import {offersPropTypes} from "../../prop-types";
-import PropTypes from "prop-types";
+import {offersPropTypes, offerPropTypes} from "../../prop-types";
+import {getOfferById} from "../../selectors/offers/offer-by-id-selector";
 
 const PropertyPage = (props) => {
-  const offers = props.offers;
-  const offer = offers.find((off) => (off.id === Number(props.id)));
-  const nearPlaces = offers.slice(0, 3);
+  const nearPlaces = props.offers.slice(0, 3);
 
   return (
     <div className="page">
@@ -22,14 +20,15 @@ const PropertyPage = (props) => {
       <main className="page__main page__main--property">
         <section className="property">
           <div className="property__gallery-container container">
-            <PropertyGallery imgs={offer.imgs} />
+            <PropertyGallery imgs={props.offer.imgs} />
           </div>
           <div className="property__container container">
             <PropertyInformation
-              offer={offer} />
+              offer={props.offer} />
           </div>
           <Map
             offers={nearPlaces}
+            targetOffer={props.offer}
             mapClasses={`property__map`} />
         </section>
 
@@ -48,12 +47,12 @@ const PropertyPage = (props) => {
 
 const mapStateToProps = (state, ownProps) => ({
   offers: state.offers,
-  id: ownProps.match.params.id,
+  offer: getOfferById(state, ownProps.match.params.id)
 });
 
 PropertyPage.propTypes = {
   offers: offersPropTypes,
-  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+  offer: offerPropTypes
 };
 
 export {PropertyPage};

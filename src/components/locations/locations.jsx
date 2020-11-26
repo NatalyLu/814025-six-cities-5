@@ -1,32 +1,28 @@
 import React from "react";
-import {getOffersCitiesList} from "../../func";
+import {getOffersCitiesList} from "../../selectors/offers/cities-list-selector";
 import PropTypes from "prop-types";
-import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../action";
 
-// Paris, Cologne, Brussels, Amsterdam, Hamburg, Dusseldorf
 const Locations = (props) => {
   const {selectedCity, changeCity} = props;
 
-  const handleChangeCity = (evt) => {
-    evt.preventDefault();
-    changeCity(evt.target.innerText);
+  const handleChangeCity = (currentCity) => {
+    changeCity(currentCity);
     return;
   };
-
-  const uniqueCities = getOffersCitiesList();
 
   return (
     <section className="locations container">
       <ul className="locations__list tabs__list">
-        {uniqueCities.map((city, i) => (
+        {props.uniqueCities.map((city, i) => (
           <li key={`city-${i}`} className="locations__item">
-            <Link className={`locations__item-link tabs__item ${city === selectedCity && `tabs__item--active`}`} to="#" onClick={(item) => {
-              handleChangeCity(item);
+            <a className={`locations__item-link tabs__item ${city === selectedCity && `tabs__item--active`}`} href="#" onClick={(evt) => {
+              evt.preventDefault();
+              handleChangeCity(city);
             }}>
               <span>{city}</span>
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
@@ -35,7 +31,8 @@ const Locations = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  selectedCity: state.selectedCity
+  selectedCity: state.selectedCity,
+  uniqueCities: getOffersCitiesList()
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -46,7 +43,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 Locations.propTypes = {
   selectedCity: PropTypes.string,
-  changeCity: PropTypes.func
+  changeCity: PropTypes.func,
+  uniqueCities: PropTypes.arrayOf(PropTypes.string)
 };
 
 export {Locations};
