@@ -6,6 +6,7 @@ import SortingOptions from "../sorting-options/sorting-options";
 import {getFilteredOffers} from "../../selectors/offers/filter-selector";
 import PropTypes from "prop-types";
 import {ActionCreator} from "../../action";
+import {Link} from "react-router-dom";
 
 const Places = (props) => {
   const offersSameCity = props.offersSameCity;
@@ -18,6 +19,7 @@ const Places = (props) => {
     <section className="cities__places places">
       <h2 className="visually-hidden">Places</h2>
       <b className="places__found">{offersSameCity.length} places to stay in {props.selectedCity}</b>
+      <Link to={`/favorites`}>Favorites</Link>
       <form className="places__sorting" action="#" method="get">
         <span className="places__sorting-caption">Sort by</span>
         <span className="places__sorting-type" tabIndex="0" onClick={handleOpenList}>
@@ -48,7 +50,6 @@ const mapDispatchToProps = (dispatch) => ({
 
 Places.propTypes = {
   offersSameCity: offersPropTypes,
-  getFilteredOffers: PropTypes.func,
   selectedCity: PropTypes.string,
   changeOpenListFlag: PropTypes.func
 };
