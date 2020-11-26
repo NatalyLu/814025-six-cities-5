@@ -1,5 +1,5 @@
 import React, {PureComponent} from "react";
-import {offersPropTypes, mapClassesPropTypes} from "../../prop-types";
+import {offersPropTypes, offerPropTypes, mapClassesPropTypes} from "../../prop-types";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import leaflet from "leaflet";
@@ -30,12 +30,16 @@ class Map extends PureComponent {
     let markers = [];
     let icon = {};
 
+    if (this.props.targetOffer) {
+      offers = [...offers, this.props.targetOffer];
+    }
+
     if (this.markerGroup.options) {
       this.map.removeLayer(this.markerGroup);
     }
 
     offers.forEach((item) => {
-      if ((item.id === this.props.offerId) && (this.props.isCardHover)) {
+      if ((item.id === this.props.offerId) && (this.props.isCardHover) || (item.id === this.props.targetOffer.id)) {
         icon = this.createMarker(`/img/pin-active.svg`);
       } else {
         icon = this.createMarker();
@@ -95,6 +99,7 @@ Map.propTypes = {
   mapClasses: mapClassesPropTypes,
   isCardHover: PropTypes.bool,
   offerId: PropTypes.number,
+  targetOffer: offerPropTypes
 };
 
 export {Map};
