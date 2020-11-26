@@ -27,8 +27,7 @@ const reducer = (state = initionalState, action) => {
       const offersFav = state.offers.map((item) => (item.id === action.favoriteId ? extend(item, {isFavorite: !item.isFavorite}) : item));
       return extend(state, {
         offersFavorites: offersFav.filter((Offerfav) => (Offerfav.isFavorite)),
-        offers: offersFav,
-        offersSameCity: offersFav.filter((offer) => (offer.city.name === state.selectedCity))
+        offers: offersFav
       });
 
     case ActionType.CHANGE_FILTER_TYPE:
