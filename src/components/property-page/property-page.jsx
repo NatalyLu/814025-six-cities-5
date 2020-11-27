@@ -1,81 +1,59 @@
-import React, {PureComponent} from "react";
+import React from "react";
 import PropertyGallery from "../property-gallery/property-gallery";
 import PropertyInformation from "../property-information/property-information";
 import PropertyNearPlaces from "../property-near-places/property-near-places";
 import Header from "../header/header";
 import Map from "../map/map";
 import {connect} from "react-redux";
-import {ActionCreator} from "../../action";
-import {offersPropTypes, reviewsPropTypes} from "../../prop-types";
-import PropTypes from "prop-types";
+import {offersPropTypes, offerPropTypes} from "../../prop-types";
+import {getOfferById} from "../../selectors/offers/offer-by-id-selector";
 
-class PropertyPage extends PureComponent {
-  constructor(props) {
-    super(props);
+const PropertyPage = (props) => {
+  const nearPlaces = props.offers.slice(0, 3);
 
-    this.offers = props.offers;
-    this.changeOfferReviewsList = props.changeOfferReviewsList;
-    this.offer = this.offers[0];
-  }
+  return (
+    <div className="page">
+      <Header
+        userName={`Oliver.conner@gmail.com`}
+        userNameClasses={`header__user-name user__name`} />
 
-  componentDidMount() {
-    this.props.changeOfferReviewsList(this.offer.id);
-  }
-
-  render() {
-    const nearPlaces = this.offers.slice(0, 3);
-
-    return (
-      <div className="page">
-        <Header
-          userName={`Oliver.conner@gmail.com`}
-          userNameClasses={`header__user-name user__name`} />
-
-        <main className="page__main page__main--property">
-          <section className="property">
-            <div className="property__gallery-container container">
-              <PropertyGallery imgs={this.offer.imgs} />
-            </div>
-            <div className="property__container container">
-              <PropertyInformation
-                offer={this.offer}
-                offerReviews={this.props.offerReviews} />
-            </div>
-            <Map
-              offers={nearPlaces}
-              mapClasses={`property__map`} />
-          </section>
-
-          <div className="container">
-            <section className="near-places places">
-              <h2 className="near-places__title">Other places in the neighbourhood</h2>
-              <div className="near-places__list places__list">
-                <PropertyNearPlaces nearPlaces={nearPlaces} />
-              </div>
-            </section>
+      <main className="page__main page__main--property">
+        <section className="property">
+          <div className="property__gallery-container container">
+            <PropertyGallery imgs={props.offer.imgs} />
           </div>
-        </main>
-      </div>
-    );
-  }
-}
+          <div className="property__container container">
+            <PropertyInformation
+              offer={props.offer} />
+          </div>
+          <Map
+            offers={nearPlaces}
+            targetOffer={props.offer}
+            mapClasses={`property__map`} />
+        </section>
 
-const mapStateToProps = (state) => ({
+        <div className="container">
+          <section className="near-places places">
+            <h2 className="near-places__title">Other places in the neighbourhood</h2>
+            <div className="near-places__list places__list">
+              <PropertyNearPlaces nearPlaces={nearPlaces} />
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+const mapStateToProps = (state, ownProps) => ({
   offers: state.offers,
-  offerReviews: state.offerReviews
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  changeOfferReviewsList(idOffer) {
-    dispatch(ActionCreator.changeOfferReviewsList(idOffer));
-  }
+  offer: getOfferById(state, ownProps.match.params.id)
 });
 
 PropertyPage.propTypes = {
   offers: offersPropTypes,
-  offerReviews: reviewsPropTypes,
-  changeOfferReviewsList: PropTypes.func
+  offer: offerPropTypes
 };
 
 export {PropertyPage};
-export default connect(mapStateToProps, mapDispatchToProps)(PropertyPage);
+export default connect(mapStateToProps)(PropertyPage);

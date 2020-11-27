@@ -1,5 +1,7 @@
 import React, {PureComponent} from "react";
-import {offersPropTypes, mapClassesPropTypes} from "../../prop-types";
+import {offersPropTypes, offerPropTypes, mapClassesPropTypes} from "../../prop-types";
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
 import leaflet from "leaflet";
 // Импорт стилей карты
 import "leaflet/dist/leaflet.css";
@@ -8,25 +10,43 @@ class Map extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.addMarkers = this.addMarkers.bind(this);
     this.map = 0;
-    this.markGroup = [];
+    this.markerGroup = {};
 
-    // Конфигурация иконки-метки на карте
-    this.icon = leaflet.icon({
-      iconUrl: `img/pin.svg`,
+    this.createIcon = this.createMarker.bind(this);
+    this.addMarkers = this.addMarkers.bind(this);
+  }
+
+  // Конфигурация иконки-метки на карте
+  createMarker(url = `/img/pin.svg`) {
+    return (leaflet.icon({
+      iconUrl: url,
       iconSize: [30, 30]
-    });
+    }));
   }
 
   // Функция добавления на карту маркеров
   addMarkers(offers) {
     let markers = [];
-    const icon = this.icon;
+    let icon = {};
+
+    if (this.props.targetOffer) {
+      offers = [...offers, this.props.targetOffer];
+    }
+
+    if (this.markerGroup.options) {
+      this.map.removeLayer(this.markerGroup);
+    }
+
     offers.forEach((item) => {
+      if ((item.id === this.props.offerId) && (this.props.isCardHover) || (item.id === this.props.targetOffer.id)) {
+        icon = this.createMarker(`/img/pin-active.svg`);
+      } else {
+        icon = this.createMarker();
+      }
       markers.push(leaflet.marker([item.location.latitude, item.location.longitude], {icon}));
     });
-    this.markGroup = leaflet.layerGroup(markers).addTo(this.map);
+    this.markerGroup = leaflet.layerGroup(markers).addTo(this.map);
   }
 
 
@@ -59,7 +79,6 @@ class Map extends PureComponent {
     const [{city: {location}}] = offers;
 
     this.map.setView([location.latitude, location.longitude], location.zoom);
-    this.map.removeLayer(this.markGroup);
     this.addMarkers(offers);
   }
 
@@ -70,9 +89,18 @@ class Map extends PureComponent {
   }
 }
 
+const mapStateToProps = (state) => ({
+  isCardHover: state.isCardHover,
+  offerId: state.mapOfferId
+});
+
 Map.propTypes = {
   offers: offersPropTypes,
-  mapClasses: mapClassesPropTypes
+  mapClasses: mapClassesPropTypes,
+  isCardHover: PropTypes.bool,
+  offerId: PropTypes.number,
+  targetOffer: offerPropTypes
 };
 
-export default Map;
+export {Map};
+export default connect(mapStateToProps)(Map);

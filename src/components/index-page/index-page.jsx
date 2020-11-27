@@ -5,6 +5,7 @@ import Header from "../header/header";
 import Locations from "../locations/locations";
 import Places from "../places/places";
 import Map from "../map/map";
+import {getSameCityOffersList} from "../../selectors/offers/same-cities-list-selector";
 
 const IndexPage = (props) => {
 
@@ -35,13 +36,13 @@ const IndexPage = (props) => {
   );
 };
 
-IndexPage.propTypes = {
-  offersSameCity: offersPropTypes
-};
-
 const mapStateToProps = (state) => ({
-  offersSameCity: state.offersSameCity,
+  offersSameCity: getSameCityOffersList(state, state.offers)
 });
+
+IndexPage.propTypes = {
+  offersSameCity: offersPropTypes,
+};
 
 export {IndexPage};
 export default connect(mapStateToProps)(IndexPage);

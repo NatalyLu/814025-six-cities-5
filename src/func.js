@@ -8,8 +8,13 @@ export const getArrayOfCities = (offers) => {
   return uniqueParameters;
 };
 
-// Возвращает отсортированный массив по выбранному параметру
-export const sortArrayByField = (field) => {
+// Возвращает отсортированный массив по выбранному параметру по возрастанию
+export const sortArrayByFieldLowToHigh = (field) => {
+  return (a, b) => a[field] > b[field] ? 1 : -1;
+};
+
+// Возвращает отсортированный массив по выбранному параметру по убыванию
+export const sortArrayByFieldHighToLow = (field) => {
   return (a, b) => a[field] > b[field] ? -1 : 1;
 };
 

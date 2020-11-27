@@ -1,14 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {offerPropTypes, offersPropTypes} from "../../prop-types";
+import {offerPropTypes} from "../../prop-types";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../action";
 
 const Card = (props) => {
-  const {offer, changeFavoriteOffersList} = props;
+  const {offer, changeFavoriteOffersList, changeActiveOfferId} = props;
   const ratingImgWidth = `${(offer.rating * 20)}%`;
-  const offerLink = `/offer`;
+  let isHovered = false;
 
   const handleChangeStatus = (item, evt) => {
     evt.preventDefault();
@@ -16,16 +16,26 @@ const Card = (props) => {
     return;
   };
 
+  const handelHoverCard = () => {
+    isHovered = true;
+    changeActiveOfferId(isHovered, offer.id);
+  };
+
+  const handelBlurCard = () => {
+    isHovered = false;
+    changeActiveOfferId(isHovered, offer.id);
+  };
+
   return (
-    <article className={`${props.articleClasses} place-card`}>
+    <article className={`${props.articleClasses} place-card`} onMouseEnter={handelHoverCard} onMouseLeave={handelBlurCard}>
       {offer.isPremium &&
         <div className="place-card__mark">
           <span>Premium</span>
         </div>}
       <div className={`${props.cardImageClasses} place-card__image-wrapper`}>
-        <Link to={offerLink}>
+        <a href="#">
           <img className="place-card__image" src={offer.previewImage} width={props.offerImgWidth} height={props.offerImgHeight} alt="Place image"/>
-        </Link>
+        </a>
       </div>
       <div className={`${props.cardInfoClasses} place-card__info`}>
         <div className="place-card__price-wrapper">
@@ -47,7 +57,7 @@ const Card = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{offer.title}</a>
+          <Link to={`/offer/${offer.id}`}>{offer.title}</Link>
         </h2>
         <p className="place-card__type">{offer.type}</p>
       </div>
@@ -55,13 +65,12 @@ const Card = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  offersFavorites: state.offersFavorites
-});
-
 const mapDispatchToProps = (dispatch) => ({
   changeFavoriteOffersList(id) {
     dispatch(ActionCreator.changeFavoriteOffersList(id));
+  },
+  changeActiveOfferId(isCardHover, id) {
+    dispatch(ActionCreator.changeActiveOfferId(isCardHover, id));
   }
 });
 
@@ -74,8 +83,8 @@ Card.propTypes = {
   cardInfoClasses: PropTypes.string,
   bookmarkButtonClasses: PropTypes.string,
   changeFavoriteOffersList: PropTypes.func,
-  offersFavorites: offersPropTypes
+  changeActiveOfferId: PropTypes.func,
 };
 
 export {Card};
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default connect(null, mapDispatchToProps)(Card);

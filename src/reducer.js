@@ -6,11 +6,14 @@ import {ActionType} from "./action";
 const initionalState = {
   selectedCity: offersCities[0].city.name,
   offers: offersCities,
-  offersSameCity: offersCities.filter((offer) => (offer.city.name === offersCities[0].city.name)),
   changedFavorite: false,
   offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
+  filterType: `popular`,
+  isCardHover: false,
+  mapOfferId: -1,
+  isOpenList: false,
+
   reviews: offerReviewsList,
-  offerReviews: [offerReviewsList[0]],
 };
 
 const reducer = (state = initionalState, action) => {
@@ -20,22 +23,32 @@ const reducer = (state = initionalState, action) => {
         selectedCity: action.selectedCity
       });
 
-    case ActionType.CHANGE_SAME_CITY_OFFERS_LIST:
-      return extend(state, {
-        offersSameCity: state.offers.filter((offer) => (offer.city.name === state.selectedCity))
-      });
-
     case ActionType.CHANGE_FAVORITE_OFFERS_LIST:
       const offersFav = state.offers.map((item) => (item.id === action.favoriteId ? extend(item, {isFavorite: !item.isFavorite}) : item));
       return extend(state, {
         offersFavorites: offersFav.filter((Offerfav) => (Offerfav.isFavorite)),
-        offers: offersFav,
-        offersSameCity: offersFav.filter((offer) => (offer.city.name === state.selectedCity))
+        offers: offersFav
       });
 
-    case ActionType.CHANGE_OFFER_REVIEWS_LIST:
+    case ActionType.CHANGE_FILTER_TYPE:
       return extend(state, {
-        offerReviews: state.reviews.filter((review) => (review.id === action.offerId))
+        filterType: action.filterType
+      });
+
+    case ActionType.CHANGE_MAP_MARKER_URL:
+      return extend(state, {
+        isCardHover: action.isCardHover,
+        mapOfferId: action.offerId
+      });
+
+    case ActionType.ADD_NEW_REVIEW:
+      return extend(state, {
+        reviews: [...state.reviews, action.newReview]
+      });
+
+    case ActionType.CHANGE_OPEN_LIST_FLAG:
+      return extend(state, {
+        isOpenList: !state.isOpenList
       });
   }
   return state;

@@ -18,9 +18,7 @@ const App = () => {
         <Route exact path="/login">
           <LoginPage />
         </Route>
-        <Route exact path="/offer/:id?">
-          <PropertyPage />
-        </Route>
+        <Route path="/offer/:id?" component={PropertyPage} />
       </Switch>
     </BrowserRouter>
   );

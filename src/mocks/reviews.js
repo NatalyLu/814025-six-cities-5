@@ -6,7 +6,7 @@ export default [
     id: 1,
     rating: 2,
     user: {
-      avatarUrl: `img/avatar-max.jpg`,
+      avatarUrl: `/img/avatar-max.jpg`,
       id: 4,
       isPro: false,
       name: `Max`
@@ -18,7 +18,7 @@ export default [
     id: 2,
     rating: 3,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 3,
       isPro: false,
       name: `Milla`
@@ -30,7 +30,7 @@ export default [
     id: 2,
     rating: 4,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 2,
       isPro: false,
       name: `Bob`
@@ -42,7 +42,7 @@ export default [
     id: 3,
     rating: 3,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 1,
       isPro: true,
       name: `Lili`
@@ -54,7 +54,7 @@ export default [
     id: 3,
     rating: 3,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 5,
       isPro: true,
       name: `Mikky`
@@ -66,7 +66,7 @@ export default [
     id: 3,
     rating: 4,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 6,
       isPro: false,
       name: `Dally`
@@ -78,7 +78,7 @@ export default [
     id: 4,
     rating: 5,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 6,
       isPro: false,
       name: `May`
@@ -90,7 +90,7 @@ export default [
     id: 4,
     rating: 5,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 7,
       isPro: false,
       name: `Ksenia`
@@ -102,7 +102,7 @@ export default [
     id: 4,
     rating: 5,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 8,
       isPro: false,
       name: `Marush`
@@ -116,7 +116,7 @@ export default [
     id: 5,
     rating: 4,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 9,
       isPro: true,
       name: `Max`
@@ -128,7 +128,7 @@ export default [
     id: 6,
     rating: 3,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 10,
       isPro: false,
       name: `Milla`
@@ -140,7 +140,7 @@ export default [
     id: 6,
     rating: 4,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 11,
       isPro: false,
       name: `Bob`
@@ -152,7 +152,7 @@ export default [
     id: 7,
     rating: 3,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 12,
       isPro: false,
       name: `Lili`
@@ -164,7 +164,7 @@ export default [
     id: 7,
     rating: 3,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 13,
       isPro: false,
       name: `Mikky`
@@ -176,7 +176,7 @@ export default [
     id: 7,
     rating: 4,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 14,
       isPro: false,
       name: `Dally`
@@ -188,7 +188,7 @@ export default [
     id: 8,
     rating: 4,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 15,
       isPro: false,
       name: `Dally`
@@ -200,7 +200,7 @@ export default [
     id: 8,
     rating: 5,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 16,
       isPro: false,
       name: `May`
@@ -212,7 +212,7 @@ export default [
     id: 8,
     rating: 5,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 17,
       isPro: false,
       name: `Ksenia`
@@ -224,7 +224,7 @@ export default [
     id: 8,
     rating: 5,
     user: {
-      avatarUrl: `img/avatar-max.png`,
+      avatarUrl: `/img/avatar-max.png`,
       id: 18,
       isPro: false,
       name: `Marush`
