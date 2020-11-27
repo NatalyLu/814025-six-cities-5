@@ -33,9 +33,9 @@ const Card = (props) => {
           <span>Premium</span>
         </div>}
       <div className={`${props.cardImageClasses} place-card__image-wrapper`}>
-        <a href="#">
+        <Link to={`/offer/${offer.id}`}>
           <img className="place-card__image" src={offer.previewImage} width={props.offerImgWidth} height={props.offerImgHeight} alt="Place image"/>
-        </a>
+        </Link>
       </div>
       <div className={`${props.cardInfoClasses} place-card__info`}>
         <div className="place-card__price-wrapper">

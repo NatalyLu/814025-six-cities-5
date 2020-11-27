@@ -10,7 +10,7 @@ const initionalState = {
   offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
   filterType: `popular`,
   isCardHover: false,
-  mapOfferId: -1,
+  mapOfferId: 0,
   isOpenList: false,
 
   reviews: offerReviewsList,
