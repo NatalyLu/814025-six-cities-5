@@ -4,6 +4,7 @@ import {ActionCreator} from "../action";
 import PropTypes from "prop-types";
 
 const withReviewForm = (Component) => {
+// function withReviewForm(Component) {
   class WithReviewForm extends PureComponent {
     constructor(props) {
       super(props);

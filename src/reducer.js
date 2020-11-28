@@ -9,7 +9,6 @@ const initionalState = {
   changedFavorite: false,
   offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
   filterType: `popular`,
-  isCardHover: false,
   mapOfferId: 0,
   isOpenList: false,
 
@@ -35,9 +34,8 @@ const reducer = (state = initionalState, action) => {
         filterType: action.filterType
       });
 
-    case ActionType.CHANGE_MAP_MARKER_URL:
+    case ActionType.CHANGE_ACTIVE_OFFER_ID:
       return extend(state, {
-        isCardHover: action.isCardHover,
         mapOfferId: action.offerId
       });
 

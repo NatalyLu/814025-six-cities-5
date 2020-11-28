@@ -1,8 +1,6 @@
 import React, {Fragment} from "react";
-// import {connect} from "react-redux";
-// import {ActionCreator} from "../../action";
-// import {reviewPropTypes} from "../../prop-types";
 import PropTypes from "prop-types";
+import {withReviewForm} from "../../hocs/with-review-form";
 
 const ReviewForm = (props) => {
   const {handleSubmit, handleFieldChange, review} = props;
@@ -43,11 +41,11 @@ const ReviewForm = (props) => {
 // });
 
 ReviewForm.propTypes = {
-  addNewReview: PropTypes.func.isRequired,
+  // addNewReview: PropTypes.func.isRequired,
   handleFieldChange: PropTypes.func,
   handleSubmit: PropTypes.func,
   review: PropTypes.string
 };
 
-export default ReviewForm;
+export default withReviewForm(ReviewForm);
 // export default connect(null, mapDispatchToProps)(ReviewForm);

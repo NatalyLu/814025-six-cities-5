@@ -4,13 +4,12 @@ import ReviewForm from "../review-form/review-form";
 import {offerPropTypes, reviewsPropTypes} from "../../prop-types";
 import {connect} from "react-redux";
 import {getOneHotelReviews} from "../../selectors/reviews/one-hotel-reviews-selector";
-import {withReviewForm} from "../../hocs/with-review-form";
+// import {withReviewForm} from "../../hocs/with-review-form";
 
-const ReviewFormWrapped = withReviewForm(ReviewForm);
+// const ReviewFormWrapped = withReviewForm(ReviewForm);
 
 const PropertyInformation = (props) => {
-  const offer = props.offer;
-  const offerReviews = props.offerReviews;
+  const {offer, offerReviews} = props;
 
   return (
     <div className="property__wrapper">
@@ -85,8 +84,8 @@ const PropertyInformation = (props) => {
         <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{offerReviews.length}</span></h2>
 
         <Reviews offerReviews={offerReviews} />
-        <ReviewFormWrapped />
-        {/* <ReviewForm /> */}
+        {/* <ReviewFormWrapped /> */}
+        <ReviewForm />
       </section>
     </div>
   );
