@@ -8,7 +8,7 @@ import {ActionCreator} from "../../action";
 const Card = (props) => {
   const {offer, changeFavoriteOffersList, changeActiveOfferId} = props;
   const ratingImgWidth = `${(offer.rating * 20)}%`;
-  let isHovered = false;
+  // let isHovered = false;
 
   const handleChangeStatus = (item, evt) => {
     evt.preventDefault();
@@ -17,13 +17,11 @@ const Card = (props) => {
   };
 
   const handelHoverCard = () => {
-    isHovered = true;
-    changeActiveOfferId(isHovered, offer.id);
+    changeActiveOfferId(offer.id);
   };
 
   const handelBlurCard = () => {
-    isHovered = false;
-    changeActiveOfferId(isHovered, offer.id);
+    changeActiveOfferId(null);
   };
 
   return (
@@ -69,8 +67,8 @@ const mapDispatchToProps = (dispatch) => ({
   changeFavoriteOffersList(id) {
     dispatch(ActionCreator.changeFavoriteOffersList(id));
   },
-  changeActiveOfferId(isCardHover, id) {
-    dispatch(ActionCreator.changeActiveOfferId(isCardHover, id));
+  changeActiveOfferId(id) {
+    dispatch(ActionCreator.changeActiveOfferId(id));
   }
 });
 

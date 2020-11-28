@@ -39,7 +39,7 @@ class Map extends PureComponent {
     }
 
     offers.forEach((item) => {
-      if ((item.id === this.props.offerId) && (this.props.isCardHover) || ((this.props.targetOffer) ? item.id === this.props.targetOffer.id : ``)) {
+      if ((item.id === this.props.offerId) || ((this.props.targetOffer) ? item.id === this.props.targetOffer.id : ``)) {
         icon = this.createMarker(`/img/pin-active.svg`);
       } else {
         icon = this.createMarker();
