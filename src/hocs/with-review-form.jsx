@@ -65,6 +65,8 @@ const withReviewForm = (Component) => {
   WithReviewForm.propTypes = {
     addNewReview: PropTypes.func.isRequired,
   };
+
+  return (WithReviewForm);
 };
 
 export {withReviewForm};

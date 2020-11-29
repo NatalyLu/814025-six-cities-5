@@ -34,7 +34,6 @@ const ReviewForm = (props) => {
 };
 
 ReviewForm.propTypes = {
-  // addNewReview: PropTypes.func,
   handleFieldChange: PropTypes.func,
   handleSubmit: PropTypes.func,
   review: PropTypes.string

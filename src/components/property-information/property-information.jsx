@@ -87,7 +87,6 @@ const PropertyInformation = (props) => {
 
         <Reviews offerReviews={offerReviews} />
         <ReviewFormWrapped addNewReview={addNewReview} />
-        {/* <ReviewForm /> */}
       </section>
     </div>
   );
