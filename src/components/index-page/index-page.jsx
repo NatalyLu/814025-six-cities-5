@@ -4,7 +4,7 @@ import {offersPropTypes} from "../../prop-types";
 import Header from "../header/header";
 import Locations from "../locations/locations";
 import Places from "../places/places";
-import Map from "../map/map";
+import MapWrapped from "../map-wrapped/map-wrapped";
 import {getSameCityOffersList} from "../../selectors/offers/same-cities-list-selector";
 
 const IndexPage = (props) => {
@@ -25,7 +25,7 @@ const IndexPage = (props) => {
           <div className="cities__places-container container">
             <Places />
             <div className="cities__right-section">
-              <Map
+              <MapWrapped
                 offers={props.offersSameCity}
                 mapClasses={`cities__map`} />
             </div>
