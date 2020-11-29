@@ -1,10 +1,7 @@
 import React, {PureComponent} from "react";
-import {connect} from "react-redux";
-import {ActionCreator} from "../action";
 import PropTypes from "prop-types";
 
 const withReviewForm = (Component) => {
-// function withReviewForm(Component) {
   class WithReviewForm extends PureComponent {
     constructor(props) {
       super(props);
@@ -66,15 +63,8 @@ const withReviewForm = (Component) => {
   }
 
   WithReviewForm.propTypes = {
-    addNewReview: PropTypes.func,
+    addNewReview: PropTypes.func.isRequired,
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  addNewReview(city) {
-    dispatch(ActionCreator.addNewReview(city));
-  }
-});
-
 export {withReviewForm};
-export default connect(null, mapDispatchToProps)(withReviewForm);

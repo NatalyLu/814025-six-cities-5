@@ -1,6 +1,5 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
-import {withReviewForm} from "../../hocs/with-review-form";
 
 const ReviewForm = (props) => {
   const {handleSubmit, handleFieldChange, review} = props;
@@ -34,18 +33,11 @@ const ReviewForm = (props) => {
   );
 };
 
-// const mapDispatchToProps = (dispatch) => ({
-//   addNewReview(city) {
-//     dispatch(ActionCreator.addNewReview(city));
-//   }
-// });
-
 ReviewForm.propTypes = {
-  // addNewReview: PropTypes.func.isRequired,
+  // addNewReview: PropTypes.func,
   handleFieldChange: PropTypes.func,
   handleSubmit: PropTypes.func,
   review: PropTypes.string
 };
 
-export default withReviewForm(ReviewForm);
-// export default connect(null, mapDispatchToProps)(ReviewForm);
+export default ReviewForm;

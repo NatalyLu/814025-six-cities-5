@@ -1,6 +1,6 @@
 import React from "react";
 import PropertyGallery from "../property-gallery/property-gallery";
-import PropertyInformation from "../property-information/property-information";
+import {PropertyInformation} from "../property-information/property-information";
 import PropertyNearPlaces from "../property-near-places/property-near-places";
 import Header from "../header/header";
 import Map from "../map/map";
