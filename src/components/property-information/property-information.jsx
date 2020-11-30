@@ -2,12 +2,16 @@ import React from "react";
 import Reviews from "../reviews/reviews";
 import ReviewForm from "../review-form/review-form";
 import {offerPropTypes, reviewsPropTypes} from "../../prop-types";
+import PropTypes from "prop-types";
 import {connect} from "react-redux";
+import {ActionCreator} from "../../action";
 import {getOneHotelReviews} from "../../selectors/reviews/one-hotel-reviews-selector";
+import {withReviewForm} from "../../hocs/with-review-form";
+
+const ReviewFormWrapped = withReviewForm(ReviewForm);
 
 const PropertyInformation = (props) => {
-  const offer = props.offer;
-  const offerReviews = props.offerReviews;
+  const {offer, offerReviews, addNewReview} = props;
 
   return (
     <div className="property__wrapper">
@@ -82,8 +86,7 @@ const PropertyInformation = (props) => {
         <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{offerReviews.length}</span></h2>
 
         <Reviews offerReviews={offerReviews} />
-
-        <ReviewForm />
+        <ReviewFormWrapped addNewReview={addNewReview} />
       </section>
     </div>
   );
@@ -93,10 +96,17 @@ const mapStateToProps = (state, ownProps) => ({
   offerReviews: getOneHotelReviews(state, ownProps.offer.id)
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  addNewReview(review) {
+    dispatch(ActionCreator.addNewReview(review));
+  }
+});
+
 PropertyInformation.propTypes = {
   offerReviews: reviewsPropTypes,
   offer: offerPropTypes,
+  addNewReview: PropTypes.func
 };
 
 export {PropertyInformation};
-export default connect(mapStateToProps)(PropertyInformation);
+export default connect(mapStateToProps, mapDispatchToProps)(PropertyInformation);

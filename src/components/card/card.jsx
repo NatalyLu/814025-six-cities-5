@@ -8,7 +8,6 @@ import {ActionCreator} from "../../action";
 const Card = (props) => {
   const {offer, changeFavoriteOffersList, changeActiveOfferId} = props;
   const ratingImgWidth = `${(offer.rating * 20)}%`;
-  let isHovered = false;
 
   const handleChangeStatus = (item, evt) => {
     evt.preventDefault();
@@ -17,13 +16,11 @@ const Card = (props) => {
   };
 
   const handelHoverCard = () => {
-    isHovered = true;
-    changeActiveOfferId(isHovered, offer.id);
+    changeActiveOfferId(offer.id);
   };
 
   const handelBlurCard = () => {
-    isHovered = false;
-    changeActiveOfferId(isHovered, offer.id);
+    changeActiveOfferId(null);
   };
 
   return (
@@ -33,9 +30,9 @@ const Card = (props) => {
           <span>Premium</span>
         </div>}
       <div className={`${props.cardImageClasses} place-card__image-wrapper`}>
-        <a href="#">
+        <Link to={`/offer/${offer.id}`}>
           <img className="place-card__image" src={offer.previewImage} width={props.offerImgWidth} height={props.offerImgHeight} alt="Place image"/>
-        </a>
+        </Link>
       </div>
       <div className={`${props.cardInfoClasses} place-card__info`}>
         <div className="place-card__price-wrapper">
@@ -69,8 +66,8 @@ const mapDispatchToProps = (dispatch) => ({
   changeFavoriteOffersList(id) {
     dispatch(ActionCreator.changeFavoriteOffersList(id));
   },
-  changeActiveOfferId(isCardHover, id) {
-    dispatch(ActionCreator.changeActiveOfferId(isCardHover, id));
+  changeActiveOfferId(id) {
+    dispatch(ActionCreator.changeActiveOfferId(id));
   }
 });
 
