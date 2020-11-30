@@ -3,7 +3,7 @@ import PropertyGallery from "../property-gallery/property-gallery";
 import PropertyInformation from "../property-information/property-information";
 import PropertyNearPlaces from "../property-near-places/property-near-places";
 import Header from "../header/header";
-import MapWrapped from "../map-wrapped/map-wrapped";
+import Map from "../map/map";
 import {connect} from "react-redux";
 import {offersPropTypes, offerPropTypes} from "../../prop-types";
 import {getOfferById} from "../../selectors/offers/offer-by-id-selector";
@@ -26,7 +26,7 @@ const PropertyPage = (props) => {
             <PropertyInformation
               offer={props.offer} />
           </div>
-          <MapWrapped
+          <Map
             offers={nearPlaces}
             targetOffer={props.offer}
             mapClasses={`property__map`} />
