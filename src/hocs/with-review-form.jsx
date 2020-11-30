@@ -11,10 +11,8 @@ const withReviewForm = (Component) => {
         review: ``
       };
 
-      this.createNewComment = this.createNewComment.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleFieldChange = this.handleFieldChange.bind(this);
-      this.onFieldsClear = this.onFieldsClear.bind(this);
     }
 
     onFieldsClear() {

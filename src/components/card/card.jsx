@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import {ActionCreator} from "../../action";
 
 const Card = (props) => {
-  const {offer, changeFavoriteOffersList, changeActiveOfferId} = props;
+  const {offer, changeFavoriteOffersList, changeActiveItemId} = props;
   const ratingImgWidth = `${(offer.rating * 20)}%`;
 
   const handleChangeStatus = (item, evt) => {
@@ -16,11 +16,11 @@ const Card = (props) => {
   };
 
   const handelHoverCard = () => {
-    changeActiveOfferId(offer.id);
+    changeActiveItemId(offer.id);
   };
 
   const handelBlurCard = () => {
-    changeActiveOfferId(null);
+    changeActiveItemId(null);
   };
 
   return (
@@ -66,8 +66,8 @@ const mapDispatchToProps = (dispatch) => ({
   changeFavoriteOffersList(id) {
     dispatch(ActionCreator.changeFavoriteOffersList(id));
   },
-  changeActiveOfferId(id) {
-    dispatch(ActionCreator.changeActiveOfferId(id));
+  changeActiveItemId(id) {
+    dispatch(ActionCreator.changeActiveItemId(id));
   }
 });
 
@@ -80,7 +80,7 @@ Card.propTypes = {
   cardInfoClasses: PropTypes.string,
   bookmarkButtonClasses: PropTypes.string,
   changeFavoriteOffersList: PropTypes.func,
-  changeActiveOfferId: PropTypes.func,
+  changeActiveItemId: PropTypes.func,
 };
 
 export {Card};
