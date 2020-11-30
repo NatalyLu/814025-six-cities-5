@@ -9,7 +9,7 @@ const initionalState = {
   changedFavorite: false,
   offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
   filterType: `popular`,
-  mapOfferId: 0,
+  targetHoverItemId: 0,
   isOpenList: false,
 
   reviews: offerReviewsList,
@@ -34,9 +34,9 @@ const reducer = (state = initionalState, action) => {
         filterType: action.filterType
       });
 
-    case ActionType.CHANGE_ACTIVE_OFFER_ID:
+    case ActionType.CHANGE_ACTIVE_ITEM_ID:
       return extend(state, {
-        mapOfferId: action.offerId
+        targetHoverItemId: action.offerId
       });
 
     case ActionType.ADD_NEW_REVIEW:

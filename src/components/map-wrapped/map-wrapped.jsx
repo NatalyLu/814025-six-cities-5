@@ -12,7 +12,7 @@ const Map = (props) => {
 const MapWrapped = withMap(Map);
 
 const mapStateToProps = (state) => ({
-  offerId: state.mapOfferId
+  offerId: state.targetHoverItemId
 });
 
 Map.propTypes = {

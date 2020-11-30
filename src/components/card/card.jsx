@@ -8,7 +8,6 @@ import {ActionCreator} from "../../action";
 const Card = (props) => {
   const {offer, changeFavoriteOffersList, changeActiveOfferId} = props;
   const ratingImgWidth = `${(offer.rating * 20)}%`;
-  // let isHovered = false;
 
   const handleChangeStatus = (item, evt) => {
     evt.preventDefault();

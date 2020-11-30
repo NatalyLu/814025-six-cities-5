@@ -3,7 +3,7 @@ export const ActionType = {
   CHANGE_FAVORITE_OFFERS_LIST: `CHANGE_FAVORITE_OFFERS_LIST`,
   CHANGE_FILTER_TYPE: `CHANGE_FILTER_TYPE`,
   SORTING_OFFERS: `SORTING_OFFERS`,
-  CHANGE_ACTIVE_OFFER_ID: `CHANGE_ACTIVE_OFFER_ID`,
+  CHANGE_ACTIVE_ITEM_ID: `CHANGE_ACTIVE_ITEM_ID`,
   ADD_NEW_REVIEW: `ADD_NEW_REVIEW`,
   CHANGE_OPEN_LIST_FLAG: `CHANGE_OPEN_LIST_FLAG`
 };
@@ -25,8 +25,8 @@ export const ActionCreator = {
     type: ActionType.SORTING_OFFERS,
     array: arrayNameForSorting
   }),
-  changeActiveOfferId: (id) => ({
-    type: ActionType.CHANGE_ACTIVE_OFFER_ID,
+  changeActiveItemId: (id) => ({
+    type: ActionType.CHANGE_ACTIVE_ITEM_ID,
     offerId: id
   }),
 
