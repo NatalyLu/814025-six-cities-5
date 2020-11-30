@@ -15,7 +15,7 @@ const withReviewForm = (Component) => {
       this.handleFieldChange = this.handleFieldChange.bind(this);
     }
 
-    onFieldsClear() {
+    clearFields() {
       this.setState({
         review: ``,
         rating: ``
@@ -41,7 +41,7 @@ const withReviewForm = (Component) => {
     handleSubmit(evt) {
       evt.preventDefault();
       this.props.addNewReview(this.createNewComment(this.state.rating, this.state.review));
-      this.onFieldsClear();
+      this.clearFields();
     }
 
     handleFieldChange(evt) {
