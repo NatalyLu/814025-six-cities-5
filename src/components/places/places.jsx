@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import SortingOptions from "../sorting-options/sorting-options";
 import {getFilteredOffers} from "../../selectors/offers/filter-selector";
 import PropTypes from "prop-types";
-import {ActionCreator} from "../../action";
+import {ActionCreator} from "../../store/action";
 import {Link} from "react-router-dom";
 
 const Places = (props) => {
@@ -37,9 +37,9 @@ const Places = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  offersSameCity: getFilteredOffers(state),
-  selectedCity: state.selectedCity
+const mapStateToProps = ({DATA}) => ({
+  offersSameCity: getFilteredOffers(DATA),
+  selectedCity: DATA.selectedCity
 });
 
 const mapDispatchToProps = (dispatch) => ({

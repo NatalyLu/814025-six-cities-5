@@ -91,8 +91,8 @@ class Map extends PureComponent {
 }
 
 
-const mapStateToProps = (state) => ({
-  offerId: state.targetHoverItemId
+const mapStateToProps = ({DATA}) => ({
+  offerId: DATA.targetHoverItemId
 });
 
 Map.propTypes = {

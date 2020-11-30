@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {offerPropTypes} from "../../prop-types";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {ActionCreator} from "../../action";
+import {ActionCreator} from "../../store/action";
 
 const Card = (props) => {
   const {offer, changeFavoriteOffersList, changeActiveItemId} = props;

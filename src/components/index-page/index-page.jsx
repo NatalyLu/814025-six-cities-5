@@ -36,8 +36,8 @@ const IndexPage = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  offersSameCity: getSameCityOffersList(state)
+const mapStateToProps = ({DATA}) => ({
+  offersSameCity: getSameCityOffersList(DATA)
 });
 
 IndexPage.propTypes = {

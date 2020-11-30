@@ -5,7 +5,9 @@ export const ActionType = {
   SORTING_OFFERS: `SORTING_OFFERS`,
   CHANGE_ACTIVE_ITEM_ID: `CHANGE_ACTIVE_ITEM_ID`,
   ADD_NEW_REVIEW: `ADD_NEW_REVIEW`,
-  CHANGE_OPEN_LIST_FLAG: `CHANGE_OPEN_LIST_FLAG`
+  CHANGE_OPEN_LIST_FLAG: `CHANGE_OPEN_LIST_FLAG`,
+
+  REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`
 };
 
 export const ActionCreator = {
@@ -39,3 +41,8 @@ export const ActionCreator = {
     type: ActionType.CHANGE_OPEN_LIST_FLAG
   })
 };
+
+export const requireAuthorization = (status) => ({
+  type: ActionType.REQUIRED_AUTHORIZATION,
+  payload: status
+});

@@ -45,9 +45,9 @@ const PropertyPage = (props) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  offers: state.offers,
-  offer: getOfferById(state, ownProps.match.params.id)
+const mapStateToProps = ({DATA}, ownProps) => ({
+  offers: DATA.offers,
+  offer: getOfferById(DATA, ownProps.match.params.id)
 });
 
 PropertyPage.propTypes = {

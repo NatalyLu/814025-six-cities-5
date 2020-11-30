@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {ActionCreator} from "../../action";
+import {ActionCreator} from "../../store/action";
 import PropTypes from "prop-types";
 
 const SortingOptions = (props) => {
@@ -27,9 +27,9 @@ const SortingOptions = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  isOpenList: state.isOpenList,
-  filterType: state.filterType
+const mapStateToProps = ({DATA}) => ({
+  isOpenList: DATA.isOpenList,
+  filterType: DATA.filterType
 });
 
 const mapDispatchToProps = (dispatch) => ({
