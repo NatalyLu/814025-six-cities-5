@@ -4,7 +4,7 @@ import {extend} from "../../func";
 import {ActionType} from "../action";
 
 const initionalState = {
-  selectedCity: ``,
+  selectedCity: `Amsterdam`,
   offers: [],
   offersFavorites: [],
   reviews: [],
@@ -53,6 +53,11 @@ const reducer = (state = initionalState, action) => {
     case ActionType.CHANGE_OPEN_LIST_FLAG:
       return extend(state, {
         isOpenList: !state.isOpenList
+      });
+
+    case ActionType.LOAD_OFFERS:
+      return extend(state, {
+        offers: action.payload
       });
   }
   return state;

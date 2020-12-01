@@ -2,7 +2,7 @@ import {AuthorizationStatus} from "../../const";
 import {ActionType} from "../action";
 
 const initialState = {
-  authorizationStatus: AuthorizationStatus.NO_AUTH,
+  authorizationStatus: AuthorizationStatus.AUTH // NO_AUTH,
 };
 
 const user = (state = initialState, action) => {
@@ -12,7 +12,6 @@ const user = (state = initialState, action) => {
         authorizationStatus: action.payload
       });
   }
-
   return state;
 };
 

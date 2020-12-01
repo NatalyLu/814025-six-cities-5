@@ -7,7 +7,9 @@ export const ActionType = {
   ADD_NEW_REVIEW: `ADD_NEW_REVIEW`,
   CHANGE_OPEN_LIST_FLAG: `CHANGE_OPEN_LIST_FLAG`,
 
-  REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`
+  LOAD_OFFERS: `LOAD_OFFERS`,
+  REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`,
+  REDIRECT_TO_ROUTE: `REDIRECT_TO_ROUTE`
 };
 
 export const ActionCreator = {
@@ -42,7 +44,17 @@ export const ActionCreator = {
   })
 };
 
+export const loadOffers = (offers) => ({
+  type: ActionType.LOAD_OFFERS,
+  payload: offers
+});
+
 export const requireAuthorization = (status) => ({
   type: ActionType.REQUIRED_AUTHORIZATION,
   payload: status
+});
+
+export const redirectToRoute = (url) => ({
+  typr: ActionType.REDIRECT_TO_ROUTE,
+  payload: url
 });
