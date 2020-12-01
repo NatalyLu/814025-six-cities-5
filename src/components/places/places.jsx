@@ -7,6 +7,7 @@ import {getFilteredOffers} from "../../selectors/offers/filter-selector";
 import PropTypes from "prop-types";
 import {ActionCreator} from "../../store/action";
 import {Link} from "react-router-dom";
+import {RouteConsts} from "../../const";
 
 const Places = (props) => {
   const offersSameCity = props.offersSameCity;
@@ -19,7 +20,7 @@ const Places = (props) => {
     <section className="cities__places places">
       <h2 className="visually-hidden">Places</h2>
       <b className="places__found">{offersSameCity.length} places to stay in {props.selectedCity}</b>
-      <Link to={`/favorites`}>Favorites</Link>
+      <Link to={RouteConsts.FAVORITES}>Favorites</Link>
       <form className="places__sorting" action="#" method="get">
         <span className="places__sorting-caption">Sort by</span>
         <span className="places__sorting-type" tabIndex="0" onClick={handleOpenList}>

@@ -4,6 +4,7 @@ import {offerPropTypes} from "../../prop-types";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../store/action";
+import {RouteConsts} from "../../const";
 
 const Card = (props) => {
   const {offer, changeFavoriteOffersList, changeActiveItemId} = props;
@@ -30,7 +31,7 @@ const Card = (props) => {
           <span>Premium</span>
         </div>}
       <div className={`${props.cardImageClasses} place-card__image-wrapper`}>
-        <Link to={`/offer/${offer.id}`}>
+        <Link to={`${RouteConsts.OFFER}/${offer.id}`}>
           <img className="place-card__image" src={offer.previewImage} width={props.offerImgWidth} height={props.offerImgHeight} alt="Place image"/>
         </Link>
       </div>
@@ -54,7 +55,7 @@ const Card = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`/offer/${offer.id}`}>{offer.title}</Link>
+          <Link to={`${RouteConsts.OFFER}/${offer.id}`}>{offer.title}</Link>
         </h2>
         <p className="place-card__type">{offer.type}</p>
       </div>
