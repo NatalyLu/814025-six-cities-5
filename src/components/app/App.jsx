@@ -23,7 +23,7 @@ const App = () => {
         </Route>
         {/* <Route exact path="/login"
           render={({history}) => (
-            <LoginPage onReplayButnClick={() => history.push(`/`)} />
+            <LoginPage onReplayButtonClick={() => history.push(`/`)} />
           )}
         /> */}
         <PrivateRoute exact path={RouteConsts.FAVORITES}

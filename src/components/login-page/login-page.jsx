@@ -25,7 +25,7 @@ class LoginPage extends PureComponent {
   }
 
   render() {
-    const {onReplayButnClick} = this.props;
+    const {onReplayButtonClick} = this.props;
 
     return (
       <div className="page page--gray page--login">
@@ -49,7 +49,7 @@ class LoginPage extends PureComponent {
                   <label className="visually-hidden">Password</label>
                   <input ref={this.passwordRef} className="login__input form__input" type="password" name="password" placeholder="Password" required="" />
                 </div>
-                <button onClick={onReplayButnClick} className="login__submit form__submit button" type="submit">Sign in</button>
+                <button onClick={onReplayButtonClick} className="login__submit form__submit button" type="submit">Sign in</button>
               </form>
             </section>
             <section className="locations locations--login locations--current">
@@ -68,7 +68,7 @@ class LoginPage extends PureComponent {
 
 LoginPage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  onReplayButnClick: PropTypes.func.isRequired
+  onReplayButtonClick: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = (dispatch) => ({

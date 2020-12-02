@@ -20,7 +20,7 @@ const PropertyPage = (props) => {
       <main className="page__main page__main--property">
         <section className="property">
           <div className="property__gallery-container container">
-            <PropertyGallery imgs={props.offer.imgs} />
+            <PropertyGallery imgs={props.offer.images} />
           </div>
           <div className="property__container container">
             <PropertyInformation

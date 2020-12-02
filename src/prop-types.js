@@ -19,7 +19,8 @@ export const offerPropTypes = PropTypes.shape({
     isPro: PropTypes.bool.isRequired,
   }).isRequired,
   id: PropTypes.number.isRequired,
-  imgs: PropTypes.array.isRequired,
+  previewImage: PropTypes.string.isRequired,
+  images: PropTypes.array.isRequired,
   isFavorite: PropTypes.bool.isRequired,
   isPremium: PropTypes.bool.isRequired,
   location: PropTypes.shape({
@@ -28,7 +29,6 @@ export const offerPropTypes = PropTypes.shape({
     zoom: PropTypes.number.isRequired
   }).isRequired,
   maxAdults: PropTypes.number.isRequired,
-  previewImage: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   rating: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
