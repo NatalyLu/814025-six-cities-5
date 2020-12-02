@@ -1,6 +1,4 @@
-// import offersCities from "./mocks/offers";
-// import offerReviewsList from "./mocks/reviews";
-import {extend} from "../../func";
+import {extend, adapterOffers} from "../../func";
 import {ActionType} from "../action";
 
 const initionalState = {
@@ -58,6 +56,11 @@ const reducer = (state = initionalState, action) => {
     case ActionType.LOAD_OFFERS:
       return extend(state, {
         offers: action.payload
+      });
+
+    case ActionType.ADAPTER_OFFERS_LIST:
+      return extend(state, {
+        offers: adapterOffers(state.offers)
       });
   }
   return state;

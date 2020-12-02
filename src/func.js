@@ -22,3 +22,44 @@ export const sortArrayByFieldHighToLow = (field) => {
 export const extend = (a, b) => {
   return Object.assign({}, a, b);
 };
+
+// Преобразуем именование свойств, пришедших с сервера
+export const adapterOffers = (originalArray) => {
+  const finalArray = originalArray.map((element) => {
+    return {
+      city: {
+        name: element.city.name,
+        location: {
+          latitude: element.city.location.latitude,
+          longitude: element.city.location.longitude,
+          zoom: element.city.location.zoom,
+        },
+      },
+      previewImage: element.preview_image,
+      images: element.images,
+      title: element.title,
+      isFavorite: element.is_favorite,
+      isPremium: element.is_premium,
+      rating: element.rating,
+      type: element.type,
+      bedrooms: element.bedrooms,
+      maxAdults: element.max_adults,
+      price: element.price,
+      inside: element.goods,
+      host: {
+        id: element.host.id,
+        name: element.host.name,
+        isPro: element.host.is_pro,
+        avatar: element.host.avatar_url,
+      },
+      description: element.description,
+      location: {
+        latitude: element.location.latitude,
+        longitude: element.location.longitude,
+        zoom: element.location.zoom,
+      },
+      id: element.id
+    };
+  });
+  return finalArray;
+};

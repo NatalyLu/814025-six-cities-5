@@ -8,6 +8,7 @@ export const ActionType = {
   CHANGE_OPEN_LIST_FLAG: `CHANGE_OPEN_LIST_FLAG`,
 
   LOAD_OFFERS: `LOAD_OFFERS`,
+  ADAPTER_OFFERS_LIST: `ADAPTER_OFFERS_LIST`,
   REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`,
   REDIRECT_TO_ROUTE: `REDIRECT_TO_ROUTE`
 };
@@ -47,6 +48,10 @@ export const ActionCreator = {
 export const loadOffers = (offers) => ({
   type: ActionType.LOAD_OFFERS,
   payload: offers
+});
+
+export const adapterOffersList = () => ({
+  type: ActionType.ADAPTER_OFFERS_LIST
 });
 
 export const requireAuthorization = (status) => ({

@@ -1,4 +1,4 @@
-import {loadOffers, requireAuthorization, redirectToRoute} from "./action";
+import {loadOffers, requireAuthorization, redirectToRoute, adapterOffersList} from "./action";
 import {AuthorizationStatus, RouteConsts} from "../const";
 
 
@@ -7,14 +7,15 @@ export const fetchOffersList = () => (dispatch, _getState, api) => (
   api.get(RouteConsts.HOTELS)
     // Как только данные загрузятся, выполним соответствующий dispatch
     .then(({data}) => dispatch(loadOffers(data)))
+    .then(() => dispatch(adapterOffersList()))
 );
 
 export const checkAuth = () => (dispatch, _getState, api) => (
   api.get(RouteConsts.LOGIN)
     .then(() => dispatch(requireAuthorization(AuthorizationStatus.AUTH)))
-    .catch((err) => {
-      throw err;
-    })
+    .catch(() => dispatch(requireAuthorization(AuthorizationStatus.NO_AUTH))
+    // throw err;
+    )
 );
 
 // Для проверки введенных пользователем данных. Если всё верно, меняем статус AUTH
