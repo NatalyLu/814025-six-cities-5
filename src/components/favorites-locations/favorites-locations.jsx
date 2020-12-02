@@ -38,8 +38,8 @@ const FavoritesLocations = (props) => {
   );
 };
 
-const mapStateToProps = (state, sortingParam = `city.name`) => ({
-  offersFavoritesSorted: getOffersSortedList(state, sortingParam)
+const mapStateToProps = ({DATA}, sortingParam = `city.name`) => ({
+  offersFavoritesSorted: getOffersSortedList(DATA, sortingParam)
 });
 
 

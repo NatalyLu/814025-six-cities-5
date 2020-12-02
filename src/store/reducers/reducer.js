@@ -1,18 +1,24 @@
-import offersCities from "./mocks/offers";
-import offerReviewsList from "./mocks/reviews";
-import {extend} from "./func";
-import {ActionType} from "./action";
+// import offersCities from "./mocks/offers";
+// import offerReviewsList from "./mocks/reviews";
+import {extend} from "../../func";
+import {ActionType} from "../action";
 
 const initionalState = {
-  selectedCity: offersCities[0].city.name,
-  offers: offersCities,
+  selectedCity: `Amsterdam`,
+  offers: [],
+  offersFavorites: [],
+  reviews: [],
+
+
+  // selectedCity: offersCities[0].city.name,
+  // offers: offersCities,
   changedFavorite: false,
-  offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
+  // offersFavorites: offersCities.filter((favOffer) => (favOffer.isFavorite)),
   filterType: `popular`,
   targetHoverItemId: 0,
   isOpenList: false,
 
-  reviews: offerReviewsList,
+  // reviews: offerReviewsList,
 };
 
 const reducer = (state = initionalState, action) => {
@@ -47,6 +53,11 @@ const reducer = (state = initionalState, action) => {
     case ActionType.CHANGE_OPEN_LIST_FLAG:
       return extend(state, {
         isOpenList: !state.isOpenList
+      });
+
+    case ActionType.LOAD_OFFERS:
+      return extend(state, {
+        offers: action.payload
       });
   }
   return state;

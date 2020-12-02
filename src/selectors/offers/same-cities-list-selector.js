@@ -1,6 +1,6 @@
 import {createSelector} from "reselect";
 
-const getOffers = (state, offers) => offers;
+const getOffers = (state) => state.offers;
 const getselectedCity = (state) => state.selectedCity;
 
 export const getSameCityOffersList = createSelector(

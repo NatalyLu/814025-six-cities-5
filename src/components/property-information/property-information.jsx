@@ -4,7 +4,7 @@ import ReviewForm from "../review-form/review-form";
 import {offerPropTypes, reviewsPropTypes} from "../../prop-types";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {ActionCreator} from "../../action";
+import {ActionCreator} from "../../store/action";
 import {getOneHotelReviews} from "../../selectors/reviews/one-hotel-reviews-selector";
 import {withReviewForm} from "../../hocs/with-review-form";
 
@@ -92,8 +92,8 @@ const PropertyInformation = (props) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  offerReviews: getOneHotelReviews(state, ownProps.offer.id)
+const mapStateToProps = ({DATA}, ownProps) => ({
+  offerReviews: getOneHotelReviews(DATA, ownProps.offer.id)
 });
 
 const mapDispatchToProps = (dispatch) => ({

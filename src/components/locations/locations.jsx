@@ -2,7 +2,7 @@ import React from "react";
 import {getOffersCitiesList} from "../../selectors/offers/cities-list-selector";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {ActionCreator} from "../../action";
+import {ActionCreator} from "../../store/action";
 
 const Locations = (props) => {
   const {selectedCity, changeCity} = props;
@@ -30,8 +30,8 @@ const Locations = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  selectedCity: state.selectedCity,
+const mapStateToProps = ({DATA}) => ({
+  selectedCity: DATA.selectedCity,
   uniqueCities: getOffersCitiesList()
 });
 

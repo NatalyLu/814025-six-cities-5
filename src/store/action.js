@@ -5,7 +5,11 @@ export const ActionType = {
   SORTING_OFFERS: `SORTING_OFFERS`,
   CHANGE_ACTIVE_ITEM_ID: `CHANGE_ACTIVE_ITEM_ID`,
   ADD_NEW_REVIEW: `ADD_NEW_REVIEW`,
-  CHANGE_OPEN_LIST_FLAG: `CHANGE_OPEN_LIST_FLAG`
+  CHANGE_OPEN_LIST_FLAG: `CHANGE_OPEN_LIST_FLAG`,
+
+  LOAD_OFFERS: `LOAD_OFFERS`,
+  REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`,
+  REDIRECT_TO_ROUTE: `REDIRECT_TO_ROUTE`
 };
 
 export const ActionCreator = {
@@ -39,3 +43,18 @@ export const ActionCreator = {
     type: ActionType.CHANGE_OPEN_LIST_FLAG
   })
 };
+
+export const loadOffers = (offers) => ({
+  type: ActionType.LOAD_OFFERS,
+  payload: offers
+});
+
+export const requireAuthorization = (status) => ({
+  type: ActionType.REQUIRED_AUTHORIZATION,
+  payload: status
+});
+
+export const redirectToRoute = (url) => ({
+  typr: ActionType.REDIRECT_TO_ROUTE,
+  payload: url
+});
